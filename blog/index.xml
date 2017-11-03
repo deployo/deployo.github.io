@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Deployo Blog on Deployo</title>
+    <link>http://deployo.github.io/blog/</link>
+    <description>Recent content in The Deployo Blog on Deployo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 03 Nov 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://deployo.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Post 1</title>
+      <link>http://deployo.github.io/blog/post-1/</link>
+      <pubDate>Fri, 03 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://deployo.github.io/blog/post-1/</guid>
+      <description>Content</description>
+    </item>
+    
+  </channel>
+</rss>

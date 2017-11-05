@@ -2,6 +2,11 @@
 
 <head>
     <title>Deployo</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
         crossorigin="anonymous">
     <style>
@@ -13,6 +18,10 @@
         .jumbotron .btn {
             padding: 14px 24px;
             font-size: 21px;
+        }
+
+        nav.navbar {
+            border-bottom: 1px rgba(0, 0, 0, 0.07) solid;
         }
     </style>
 </head>
@@ -30,6 +39,9 @@
                     <a class="nav-link" href="#pricing">Pricing</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="/docs">Docs</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/blog">Blog</a>
                 </li>
                 <li class="nav-item">
@@ -41,7 +53,7 @@
             </ul>
         </div>
     </nav>
-    <div class="container">
+    <div class="container-fluid">
         <div class="jumbotron">
             <h1>Deploy</h1>
             <p class="lead">Easily. Anytime. From anywhere.</p>
@@ -139,7 +151,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-3">
-                    <ul>
+                    <ul class="list-unstyled">
                         <li>
                             <a href="http://deployo.herokuapp.com/login">Log In</a>
                         </li>
@@ -149,7 +161,7 @@
                     </ul>
                 </div>
                 <div class="col-3">
-                    <ul>
+                    <ul class="list-unstyled">
                         <li>
                             <a href="/blog">Blog</a>
                         </li>
@@ -163,7 +175,9 @@
     <footer class="footer bg-primary text-white p-1">
         <div class="container">
             <div class="row">
-                <span>@2017 deployo</span>
+                <div class="col-12">
+                    <span>@2017 deployo</span>
+                </div>
             </div>
         </div>
     </footer>

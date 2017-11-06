@@ -26,8 +26,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://deployo.github.io/</guid>
-      <description>Deployo  .jumbotron { text-align: center; background-color: transparent; } .jumbotron .btn { padding: 14px 24px; font-size: 21px; } nav.navbar { border-bottom: 1px rgba(0, 0, 0, 0.07) solid; }      Deployo Features  Pricing  Docs  Blog  Log In  Sign Up     Deploy Easily. Anytime. From anywhere.
- Create Account Now   Features Deploy. Which is just awesome.</description>
+      <description>Deployo  .jumbotron { text-align: center; background-color: transparent; background-image: url(&#34;/img/background.jpg&#34;); /* color: white; */ } .jumbotron .btn { padding: 14px 24px; font-size: 21px; } nav.navbar { border-bottom: 1px rgba(0, 0, 0, 0.07) solid; } img { overflow: hidden; }     Deployo Features  Pricing  Docs  Blog  Log In  Sign Up     Deploy Easily. Anytime. From anywhere.
+ Create Account Now   Features Deploy.</description>
     </item>
     
   </channel>

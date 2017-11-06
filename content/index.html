@@ -13,6 +13,8 @@
         .jumbotron {
             text-align: center;
             background-color: transparent;
+            background-image: url("/img/background.jpg");
+            /* color: white; */
         }
 
         .jumbotron .btn {
@@ -23,11 +25,15 @@
         nav.navbar {
             border-bottom: 1px rgba(0, 0, 0, 0.07) solid;
         }
+
+        img {
+            overflow: hidden;
+        }
     </style>
 </head>
 
-<body>
-    <nav class="navbar navbar-light navbar-expand-md bg-light">
+<body style="padding-top: 80px;" data-spy="scroll">
+    <nav class="navbar navbar-light navbar-expand-md bg-light fixed-top">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -57,53 +63,58 @@
     </nav>
     <div class="container-fluid">
         <div class="jumbotron">
-            <h1>Deploy</h1>
-            <p class="lead">Easily. Anytime. From anywhere.</p>
+            <h1 class="text-white">Deploy</h1>
+            <p class="lead text-muted">Easily. Anytime. From anywhere.</p>
             <p>
                 <a class="btn btn-lg btn-primary" href="http://deployo.herokuapp.com/signup">Create Account Now</a>
             </p>
         </div>
     </div>
     <div class="container">
-        <h2 id="features">Features</h2>
+        <h2 style="padding-top: 80px;" id="features">Features</h2>
         <div class="row mb-5">
             <div class="col-md-7 order-md-2">
                 <h3>Deploy.</h3>
-                <p class="lead">Which is just awesome.</p>
+                <p class="lead">Run your scrips easily with live output streamed directly from your server.</p>
             </div>
             <div class="col-md-5 order-md-1">
-                <img class="featurette-image img-fluid mx-auto" style="width: 500px; height: 250px;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22500%22%20height%3D%22500%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20500%20500%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15f834647f7%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A25pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15f834647f7%22%3E%3Crect%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22184.8984375%22%20y%3D%22261.1%22%3E500x500%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
-                    data-holder-rendered="true">
+                <img class="img-fluid mx-auto img-thumbnail" style="width: 500px; height: 250px;" src="/img/deploy.png" data-holder-rendered="true">
             </div>
         </div>
         <div class="row mb-5">
             <div class="col-md-7">
                 <h3>See history.</h3>
-                <p class="lead">Which is just awesome.</p>
+                <p class="lead">History of all your script executons is shown right in your dashboard. You can access old executons and execute again the same script with same parameters with ease.</p>
             </div>
             <div class="col-md-5">
-                <img class="featurette-image img-fluid mx-auto" style="width: 500px; height: 250px;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22500%22%20height%3D%22500%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20500%20500%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15f834647f7%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A25pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15f834647f7%22%3E%3Crect%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22184.8984375%22%20y%3D%22261.1%22%3E500x500%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
-                    data-holder-rendered="true">
+                <img class="img-fluid mx-auto img-thumbnail" style="width: 500px; height: 250px;" src="/img/dashboard.png" data-holder-rendered="true">
             </div>
         </div>
         <div class="row mb-5">
             <div class="col-md-7 order-md-2">
                 <h3>Configure easily with YAML.</h3>
-                <p class="lead">Which is just awesome.</p>
+                <p class="lead">All your configuration is stored online in a simple YAML file. Easily edit with syntax highlighting.</p>
             </div>
             <div class="col-md-5 order-md-1">
-                <img class="featurette-image img-fluid mx-auto" style="width: 500px; height: 250px;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22500%22%20height%3D%22500%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20500%20500%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15f834647f7%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A25pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15f834647f7%22%3E%3Crect%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22184.8984375%22%20y%3D%22261.1%22%3E500x500%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
-                    data-holder-rendered="true">
+                <img class="img-fluid mx-auto img-thumbnail" style="width: 500px; height: 250px;" src="/img/configuration.png" data-holder-rendered="true">
             </div>
         </div>
         <div class="row mb-5">
             <div class="col-md-7">
                 <h3>Access from anywhere.</h3>
-                <p class="lead">Which is just awesome.</p>
+                <p class="lead"><a href="/">Deployo</a> is a web based solution accessible from any device with a browser. So desktop, tablet or mobile, it is at your fingertips.</p>
             </div>
             <div class="col-md-5">
-                <img class="featurette-image img-fluid mx-auto" style="width: 500px; height: 250px;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22500%22%20height%3D%22500%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20500%20500%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15f834647f7%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A25pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15f834647f7%22%3E%3Crect%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22184.8984375%22%20y%3D%22261.1%22%3E500x500%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
-                    data-holder-rendered="true">
+                <img class="img-fluid mx-auto img-thumbnail" style="width: 500px; height: 250px;" src="/img/tablet_mobile.jpg" data-holder-rendered="true">
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-md-7 order-md-2">
+                <h3>Store your SSH keys.</h3>
+                <p class="lead">Your SSH keys can be generated and stored online and used everytime you acces your server. Have a private key already? Just upload it!</p>
+            </div>
+            <div class="col-md-5 order-md-1">
+                <img class="img-fluid mx-auto img-thumbnail" style="width: 500px; height: 250px;" src="/img/ssh_keys.png" data-holder-rendered="true">
             </div>
         </div>
         <h2 class="mt-5" id="pricing">Pricing</h2>
@@ -113,9 +124,10 @@
                 <div class="card-body">
                     <h6 class="card-subtitle mb-2 text-muted">Open a free account and get</h6>
                     <ul class="uk-list uk-list-striped">
-                        <li>Unlimited Servers</li>
-                        <li>Unlimited Scripts</li>
-                        <li>Unlimited History</li>
+                        <li>1 server</li>
+                        <li>2 scripts</li>
+                        <li>10 deploys history</li>
+                        <li>No SSH keys</li>
                     </ul>
                 </div>
                 <div class="card-footer">
@@ -168,6 +180,9 @@
                     <ul class="list-unstyled">
                         <li>
                             <a href="/blog">Blog</a>
+                        </li>
+                        <li>
+                            <a href="/docs">Docs</a>
                         </li>
                     </ul>
                 </div>

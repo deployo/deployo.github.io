@@ -9,19 +9,30 @@
     <!-- Bootstrap CSS -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
         crossorigin="anonymous"> -->
-    <link href="https://bootswatch.com/4/flatly/bootstrap.min.css" rel="stylesheet">
+    <link href="https://bootswatch.com/4/cosmo/bootstrap.min.css" rel="stylesheet">
 
     <style>
         .jumbotron {
             text-align: center;
-            background-color: transparent;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
             background-image: url("/img/background.jpg");
-            /* color: white; */
+            margin-left: -15px;
+            margin-right: -15px;
         }
 
         .jumbotron .btn {
             padding: 14px 24px;
             font-size: 21px;
+        }
+
+        .card {
+            box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        nav.navbar {
+            box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2)
         }
 
         .navbar-nav .nav-item+.nav-item {
@@ -35,7 +46,7 @@
     </style>
 </head>
 
-<body style="padding-top: 80px;" data-spy="scroll">
+<body style="padding-top: 70px;" data-spy="scroll">
     <nav class="navbar navbar-light navbar-expand-md bg-light fixed-top">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
@@ -62,33 +73,37 @@
                     <a class="nav-link text-primary" href="http://deployo.herokuapp.com/login">Log In</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-outline-primary" href="http://deployo.herokuapp.com/signup">Sign Up</a>
+                    <a class="btn btn-outline-success" href="http://deployo.herokuapp.com/signup">Sign Up</a>
                 </li>
             </ul>
         </div>
     </nav>
     <div class="container-fluid">
         <div class="jumbotron">
-            <h1 class="text-white">Deploy(o)</h1>
-            <p class="lead text-muted">Easily. Anytime. From anywhere.</p>
+            <h1 class="text-white">
+                <strong>Deployo</strong>
+            </h1>
+            <p class="lead text-muted">
+                <strong>Easily. Anytime. From anywhere.</strong>
+            </p>
             <p>
                 <a class="btn btn-lg btn-success" href="http://deployo.herokuapp.com/signup">Create Account Now</a>
             </p>
         </div>
     </div>
-    <div class="container">
-        <h2 style="padding-top: 80px;" id="overview">Overview</h2>
+    <div class="container mb-4" style="padding-top: 60px; margin-top: -60px;" id="overview">
+        <h2>Overview</h2>
         <div class="row">
             <div class="col-md-12">
                 <p>
-                    <a href="/">Deployo</a> is web bases tool that allows you to execute commands over SSH with a button click.</p>
-                <p>It is perfecly suited for personal projects, freelancers or small companies looking to speed up their remote
-                    execution tasks.</p>
+                    <a href="/">Deployo</a> is web bases tool that allows you to execute commands over SSH with a button click.
+                    </br>It is perfecly suited for personal projects, freelancers or small companies looking to speed up
+                    their remote execution tasks.</p>
             </div>
         </div>
     </div>
-    <div class="container">
-        <h2 style="padding-top: 80px;" id="features">Features</h2>
+    <div class="container mb-4" style="padding-top: 60px; margin-top: -60px;" id="features">
+        <h2>Features</h2>
         <div class="row mb-5">
             <div class="col-md-7 order-md-2">
                 <h3>Deploy.</h3>
@@ -128,7 +143,7 @@
                 <img class="img-fluid mx-auto img-thumbnail" src="/img/tablet_mobile.jpg" data-holder-rendered="true">
             </div>
         </div>
-        <div class="row mb-5">
+        <div class="row">
             <div class="col-md-7 order-md-2">
                 <h3>Store your SSH keys.</h3>
                 <p class="lead">Your SSH keys can be generated and stored online and used everytime you acces your server. Have a private
@@ -138,8 +153,10 @@
                 <img class="img-fluid mx-auto img-thumbnail" src="/img/ssh_keys.png" data-holder-rendered="true">
             </div>
         </div>
-        <h2 style="padding-top: 80px;" id="pricing">Pricing</h2>
-        <div class="card-deck mb-5">
+    </div>
+    <div class="container mb-5" style="padding-top: 60px; margin-top: -60px;" id="pricing">
+        <h2>Pricing</h2>
+        <div class="card-deck">
             <div class="card">
                 <div class="card-header">Free</div>
                 <div class="card-body">
@@ -147,8 +164,7 @@
                     <ul class="uk-list uk-list-striped">
                         <li>1 server</li>
                         <li>2 scripts</li>
-                        <li>10 entries history</li>
-                        <li>No SSH keys</li>
+                        <li>10 entries in history</li>
                     </ul>
                 </div>
                 <div class="card-footer">
@@ -158,28 +174,35 @@
             <div class="card">
                 <div class="card-header">Plan 1</div>
                 <div class="card-body">
-                    <h6 class="card-subtitle mb-2 text-muted">No details yet</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">No price yet</h6>
+                    <ul class="uk-list uk-list-striped">
+                        <li>5 server</li>
+                        <li>20 scripts</li>
+                        <li>1 000 entries in history</li>
+                        <li>SSH keys</li>
+                        <li>Functions</li>
+                    </ul>
                 </div>
                 <div class="card-footer">
-                    <button type="button" disabled="disabled" class="btn btn-primary">Select plan</a>
+                    <a disabled="disabled" class="btn btn-primary text-white">Select plan</a>
                 </div>
             </div>
             <div class="card">
                 <div class="card-header">Plan 2</div>
                 <div class="card-body">
-                    <h6 class="card-subtitle mb-2 text-muted">No details yet</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">No price yet</h6>
+                    <ul class="uk-list uk-list-striped">
+                        <li>10 server</li>
+                        <li>50 scripts</li>
+                        <li>10 000 entries in history</li>
+                        <li>SSH keys</li>
+                        <li>Functions</li>
+                        <li>Metrics</li>
+                        <li>Scheduler</li>
+                    </ul>
                 </div>
                 <div class="card-footer">
-                    <button type="button" disabled="disabled" class="btn btn-primary">Select plan</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">Plan 3</div>
-                <div class="card-body">
-                    <h6 class="card-subtitle mb-2 text-muted">No details yet</h6>
-                </div>
-                <div class="card-footer">
-                    <button type="button" disabled="disabled" class="btn btn-primary">Select plan</a>
+                    <a disabled="disabled" class="btn btn-primary text-white">Select plan</a>
                 </div>
             </div>
         </div>

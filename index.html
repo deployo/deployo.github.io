@@ -11,14 +11,21 @@
     <link href="https://bootswatch.com/4/cosmo/bootstrap.min.css" rel="stylesheet">
 
     <style>
+        body {
+             
+        }
+
         .jumbotron {
             text-align: center;
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center center;
-            background-image: url("/img/background.jpg");
+             
+            background-image: url("/img/background2.jpg");
+             
             margin-left: -15px;
             margin-right: -15px;
+            min-height: 520px;
         }
 
         .jumbotron .btn {
@@ -30,8 +37,15 @@
             box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.2);
         }
 
-        nav.navbar {
-            box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2)
+        #navbar.show {
+            background-color: rgb(0, 0, 0, 0.9);
+            margin-left: -15px;
+            margin-right: -15px;
+            padding: 0 15px 15px 15px;
+        }
+
+        nav.navbar.navbar-shadow {
+            box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
         }
 
         .navbar-nav .nav-item+.nav-item {
@@ -45,8 +59,8 @@
     </style>
 </head>
 
-<body style="padding-top: 70px;" data-spy="scroll">
-    <nav class="navbar navbar-light navbar-expand-md bg-light fixed-top">
+<body data-spy="scroll">
+    <nav class="navbar navbar-dark navbar-expand-sm bg-transparent bg-sm-light fixed-top">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -69,20 +83,20 @@
                     <a class="nav-link" href="/blog">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-primary" href="https://deployo.herokuapp.com/login">Log In</a>
+                    <a class="btn btn-outline-primary mr-2 mb-2" href="https://deployo.herokuapp.com/login">Log In</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-outline-success" href="https://deployo.herokuapp.com/signup">Sign Up</a>
+                    <a class="btn btn-success" href="https://deployo.herokuapp.com/signup">Sign Up</a>
                 </li>
             </ul>
         </div>
     </nav>
     <div class="container-fluid">
         <div class="jumbotron">
-            <h1 class="text-white">
+            <h1 class="text-white mt-5">
                 <strong>Deployo</strong>
             </h1>
-            <p class="lead text-muted">
+            <p class="lead text-white">
                 <strong>Easily. Anytime. From anywhere.</strong>
             </p>
             <p>
@@ -158,50 +172,50 @@
         <div class="card-deck">
             <div class="card">
                 <div class="card-header">Free</div>
-                <div class="card-body">
-                    <h6 class="card-subtitle mb-2 text-muted">Open a free account and get</h6>
-                    <ul class="uk-list uk-list-striped">
-                        <li>1 server</li>
-                        <li>2 scripts</li>
-                        <li>10 entries in history</li>
-                    </ul>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">1 server</li>
+                    <li class="list-group-item">2 scripts</li>
+                    <li class="list-group-item">10 entries in history</li>
+                </ul>
+                <div class="card-body text-center">
+                    <span style="font-size: 34px;" class="mb-4 text-primary font-weight-bold">FREE</span>
                 </div>
-                <div class="card-footer">
-                    <a href="https://deployo.herokuapp.com/signup?plan=free" class="btn btn-primary">Select free plan</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">Plan 1</div>
-                <div class="card-body">
-                    <h6 class="card-subtitle mb-2 text-muted">No price yet</h6>
-                    <ul class="uk-list uk-list-striped">
-                        <li>5 server</li>
-                        <li>20 scripts</li>
-                        <li>1 000 entries in history</li>
-                        <li>SSH keys</li>
-                        <li>Functions</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <a disabled="disabled" class="btn btn-primary text-white disabled">Select plan</a>
+                <div class="card-footer text-center">
+                    <a href="https://deployo.herokuapp.com/signup?plan=free" class="btn btn-lg btn-block btn-primary">Select free plan</a>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-header">Plan 2</div>
-                <div class="card-body">
-                    <h6 class="card-subtitle mb-2 text-muted">No price yet</h6>
-                    <ul class="uk-list uk-list-striped">
-                        <li>10 server</li>
-                        <li>50 scripts</li>
-                        <li>10 000 entries in history</li>
-                        <li>SSH keys</li>
-                        <li>Functions</li>
-                        <li>Metrics</li>
-                        <li>Scheduler</li>
-                    </ul>
+            <div class="card border-success">
+                <div class="card-header">Pro</div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">5 servers</li>
+                    <li class="list-group-item">20 scripts</li>
+                    <li class="list-group-item">1 000 entries in history</li>
+                    <li class="list-group-item">SSH keys</li>
+                    <li class="list-group-item">Functions</li>
+                </ul>
+                <div class="card-body text-center">
+                    <span style="font-size: 34px;" class="mb-4 text-muted font-weight-bold">No price yet</span>
                 </div>
-                <div class="card-footer">
-                    <a disabled="disabled" class="btn btn-primary text-white disabled">Select plan</a>
+                <div class="card-footer text-center">
+                    <a disabled="disabled" class="btn btn-lg btn-block btn-success text-white disabled">Select plan</a>
+                </div>
+            </div>
+            <div class="card border-success">
+                <div class="card-header">Premium</div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">10 servers</li>
+                    <li class="list-group-item">50 scripts</li>
+                    <li class="list-group-item">10 000 entries in history</li>
+                    <li class="list-group-item">SSH keys</li>
+                    <li class="list-group-item">Functions</li>
+                    <li class="list-group-item">Metrics</li>
+                    <li class="list-group-item">Scheduler</li>
+                </ul>
+                <div class="card-body text-center">
+                    <span style="font-size: 34px;" class="mb-2 text-muted font-weight-bold">No price yet</span>
+                </div>
+                <div class="card-footer text-center">
+                    <a disabled="disabled" class="btn btn-lg btn-block btn-success text-white disabled">Select plan</a>
                 </div>
             </div>
         </div>
@@ -247,6 +261,17 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
         crossorigin="anonymous"></script>
+    <script>
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 465) {
+                $('.navbar').addClass('bg-light').addClass('navbar-light').addClass('navbar-shadow');
+                $('.navbar').removeClass('bg-transparent').removeClass('navbar-dark');
+            } else {
+                $('.navbar').addClass('bg-transparent').addClass('navbar-dark');
+                $('.navbar').removeClass('bg-light').removeClass('navbar-light').removeClass('navbar-shadow');
+            }
+        });
+    </script>
 </body>
 
 </html>

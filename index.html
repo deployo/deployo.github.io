@@ -80,10 +80,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/blog">Blog</a>
                 </li>
-                <li class="nav-item">
+                <li id="to-app-link" class="nav-item">
+                    <a class="btn btn-info mr-2 mb-2" href="http://app.deployo.me">To App</a>
+                </li>
+                <li id="login-link" class="nav-item">
                     <a class="btn btn-outline-primary mr-2 mb-2" href="http://app.deployo.me/login">Log In</a>
                 </li>
-                <li class="nav-item">
+                <li id="signup-link" class="nav-item">
                     <a class="btn btn-success" href="http://app.deployo.me/signup">Sign Up</a>
                 </li>
             </ul>
@@ -170,7 +173,9 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="card">
-                    <div class="card-header"><h3>Free</h3></div>
+                    <div class="card-header">
+                        <h3>Free</h3>
+                    </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">1 server</li>
                         <li class="list-group-item">2 scripts</li>
@@ -186,7 +191,9 @@
             </div>
             <div class="col-sm-4">
                 <div class="card border-success">
-                    <div class="card-header"><h3>Personal</h3></div>
+                    <div class="card-header">
+                        <h3>Personal</h3>
+                    </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">3 servers</li>
                         <li class="list-group-item">10 scripts</li>
@@ -204,7 +211,9 @@
             </div>
             <div class="col-sm-4">
                 <div class="card border-success">
-                    <div class="card-header"><h3>Pro</h3></div>
+                    <div class="card-header">
+                        <h3>Pro</h3>
+                    </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">10 servers</li>
                         <li class="list-group-item">50 scripts</li>
@@ -275,6 +284,32 @@
                 $('.navbar').removeClass('bg-light').removeClass('navbar-light').removeClass('navbar-shadow');
             }
         });
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        var cookieValue = getCookie("session");
+        if (cookieValue != "") {
+            document.getElementById("to-app-link").style.display = "block";
+            document.getElementById("login-link").style.display = "none";
+            document.getElementById("signup-link").style.display = "none";
+        } else {
+            document.getElementById("to-app-link").style.display = "none";
+            document.getElementById("login-link").style.display = "block";
+            document.getElementById("signup-link").style.display = "block";
+        }
     </script>
 </body>
 

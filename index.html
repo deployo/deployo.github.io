@@ -33,7 +33,7 @@
 
         @media (max-width: 576px) {
             nav.navbar:not(.navbar-shadow) {
-                background: rgba(34,44,37,0.9) !important;
+                background: rgba(34, 44, 37, 0.9) !important;
             }
         }
 
@@ -68,6 +68,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#pricing">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/docs">Docs</a>
@@ -228,29 +231,19 @@
             </div>
         </div>
     </div>
-    <footer class="footer bg-light border border-right-0 border-left-0 border-bottom-0 border-primary p-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3">
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="//app.deployo.me/login">Log In</a>
-                        </li>
-                        <li>
-                            <a href="//app.deployo.me/signup">Sign Up</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="/blog">Blog</a>
-                        </li>
-                        <li>
-                            <a href="/docs">Docs</a>
-                        </li>
-                    </ul>
-                </div>
+    <footer class="footer bg-dark border border-right-0 border-left-0 border-bottom-0 border-primary p-5" id="contact">
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
+                <h3 class="text-light">Send us a message!</h3>
+                <form method="POST" action="http://formspree.io/contact@deployo.me">
+                    <div class="form-group">
+                        <input name="email" class="form-control form-control-lg" placeholder="Your email" type="email">
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="5" name="message" class="form-control form-control-lg" placeholder="Your message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Send</button>
+                </form>
             </div>
         </div>
     </footer>
@@ -270,7 +263,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
         crossorigin="anonymous"></script>
     <script>
-        $(window).scroll(function () {
+        function updateNavbar() {
             if ($(this).scrollTop() > 505) {
                 $('.navbar').addClass('bg-light').addClass('navbar-light').addClass('navbar-shadow');
                 $('.navbar').removeClass('bg-transparent').removeClass('navbar-dark');
@@ -278,6 +271,10 @@
                 $('.navbar').addClass('bg-transparent').addClass('navbar-dark');
                 $('.navbar').removeClass('bg-light').removeClass('navbar-light').removeClass('navbar-shadow');
             }
+        }
+        updateNavbar();
+        $(window).scroll(function () {
+            updateNavbar();
         });
 
         function getCookie(cname) {

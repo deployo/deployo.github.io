@@ -5,10 +5,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href=/img/favicon.png rel="shortcut icon" />
 
     <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
-        crossorigin="anonymous"> -->
     <link href="https://bootswatch.com/4/cosmo/bootstrap.min.css" rel="stylesheet">
 
     <style>
@@ -42,6 +41,14 @@
             box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
         }
 
+        .navbar-light .navbar-brand #logo-light {
+            display: none;
+        }
+
+        .navbar-dark .navbar-brand #logo-dark {
+            display: none;
+        }
+
         .navbar-nav .nav-item+.nav-item {
             /* override */
             margin-left: 0;
@@ -58,7 +65,10 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="/">Deployo</a>
+        <a class="navbar-brand" href="/">
+            <img id="logo-dark" src="/img/logo_dark.svg" height="32" alt="">
+            <img id="logo-light" src="/img/logo_light.svg" height="32" alt="">
+        </a>
         <div class="collapse navbar-collapse justify-content-end" id="navbar">
             <ul class="navbar-nav">
                 <li class="nav-item">

@@ -3,37 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://deployo.github.io/blog/post-1/</loc>
+    <loc>https://deployo.me/blog/post-1/</loc>
     <lastmod>2017-11-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://deployo.github.io/</loc>
+    <loc>https://deployo.me/</loc>
   </url>
   
   <url>
-    <loc>http://deployo.github.io/categories/</loc>
+    <loc>https://deployo.me/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://deployo.github.io/</loc>
+    <loc>https://deployo.me/</loc>
     <lastmod>2017-11-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://deployo.github.io/tags/</loc>
+    <loc>https://deployo.me/tags/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://deployo.github.io/blog/</loc>
+    <loc>https://deployo.me/blog/</loc>
     <lastmod>2017-11-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://deployo.github.io/docs/</loc>
+    <loc>https://deployo.me/docs/</loc>
   </url>
   
 </urlset>

@@ -1,4 +1,4 @@
-baseurl = "http://deployo.github.io/"
+baseurl = "https://deployo.me/"
 languageCode = "en-us"
 title = "Deployo"
 publishDir = ""

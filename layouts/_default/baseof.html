@@ -15,11 +15,15 @@
       /* override */
       margin-left: 0;
     }
+
+    nav.navbar.navbar-shadow {
+      box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+    }
   </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-light navbar-expand-md bg-light">
+  <nav class="navbar navbar-light navbar-expand-md bg-light navbar-shadow">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -31,9 +35,9 @@
         <li class="nav-item">
           <a class="nav-link" href="/docs">Docs</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="/blog">Blog</a>
-        </li>
+        </li> -->
         <li style="display: none;" id="to-app-link" class="nav-item">
           <a class="btn btn-info mr-2 mb-2" href="//app.deployo.me">To App</a>
         </li>
@@ -46,12 +50,7 @@
       </div>
     </nav>
   </nav>
-  <!-- Code that all your templates share, like a header -->
-  <div class="container mt-5">{{ block "main" . }}</div>
-  <!-- The part of the page that begins to differ between templates -->
-  {{ end }} {{ block "footer" . }}
-  <!-- More shared code, perhaps a footer but that can be overridden if need be in  -->
-  {{ end }}
+  <div class="container mt-5">{{ block "main" . }}{{ end }} </div> {{ block "footer" . }}{{ end }}
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"

@@ -10,5 +10,50 @@
 	<atom:link href="https://deployo.me/docs/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Configuration</title>
+      <link>https://deployo.me/docs/configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deployo.me/docs/configuration/</guid>
+      <description>Conf</description>
+    </item>
+    
+    <item>
+      <title>Dashboard</title>
+      <link>https://deployo.me/docs/dashboard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deployo.me/docs/dashboard/</guid>
+      <description>is realy important.</description>
+    </item>
+    
+    <item>
+      <title>Deploying</title>
+      <link>https://deployo.me/docs/deploying/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deployo.me/docs/deploying/</guid>
+      <description>Deploy</description>
+    </item>
+    
+    <item>
+      <title>SSH Keys</title>
+      <link>https://deployo.me/docs/ssh_keys/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deployo.me/docs/ssh_keys/</guid>
+      <description>Keys</description>
+    </item>
+    
+    <item>
+      <title>User</title>
+      <link>https://deployo.me/docs/user/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deployo.me/docs/user/</guid>
+      <description>User</description>
+    </item>
+    
   </channel>
 </rss>

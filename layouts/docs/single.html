@@ -1,5 +1,15 @@
 {{ define "title" }}{{ .Title }} – {{ .Site.Title }} {{ end }} {{ define "main" }}
-<h1>{{ .Title }}</h1>
-<p class="text-muted">{{.Date.Format "02.01.2006"}}</p>
-<div>{{ .Content }}</div>
+<div class="row">
+    <div class="offset-md-3 offset-sm-4">
+        <h1>{{.Title}}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3 col-sm-4">
+        {{ partial "menu" .}}
+    </div>
+    <div class="col-md-9 col-sm-8 pl-0">
+        {{ .Content }}
+    </div>
+</div>
 {{ end }}

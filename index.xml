@@ -21,15 +21,6 @@
     </item>
     
     <item>
-      <title></title>
-      <link>https://deployo.me/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://deployo.me/</guid>
-      <description>Deployo  .jumbotron { text-align: center; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url(&#34;/img/background4.jpeg&#34;); margin-left: -15px; margin-right: -15px; min-height: 560px; } .jumbotron .btn { padding: 14px 24px; font-size: 21px; } .card { box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.2); } @media (max-width: 576px) { nav.navbar:not(.navbar-shadow) { background: rgba(34, 44, 37, 0.9) !important; } } nav.navbar.navbar-shadow { box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2); } .</description>
-    </item>
-    
-    <item>
       <title>Configuration</title>
       <link>https://deployo.me/docs/configuration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

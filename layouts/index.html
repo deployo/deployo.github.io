@@ -1,0 +1,49 @@
+{{ define "main" }}
+<div class="container-fluid">
+    {{partial "hero" .}}
+</div>
+<div class="container">
+    <section class="section" id="overview">
+        <div class="columns">
+            <div class="column">
+                <h2 class="title is-3">Overview</h2>
+                <p>{{.Content}}</p>
+            </div>
+        </div>
+    </section>
+    <section class="section" id="features">
+        <h2 class="title is-3">Features</h2>
+        <div class="tile is-ancestor">
+            {{range $k, $v := .Params.features}} {{if eq $k 3}}
+        </div>
+        <div class="tile is-ancestor">
+            {{end}}
+            <div class="tile is-parent">
+                {{partial "feature" $v}}
+            </div>
+            {{end}}
+        </div>
+    </section>
+    <section class="section" id="pricing">
+        <h2 class="title is-3">Pricing</h2>
+        <div class="columns">
+            {{range .Params.plans}}
+            <div class="column">
+                {{partial "plan" .}}
+            </div>
+            {{end}}
+        </div>
+    </section>
+</div>
+{{ end }} {{define "footer"}}
+<footer class="footer is-dark" id="contact">
+    <div class="container">
+        {{partial "contact" .}}
+    </div>
+</footer>
+<section class="section hero is-info">
+    <div class="container">
+        @deployo.me 2017-2018
+    </div>
+</section>
+{{ end }} {{define "script"}}{{end}}

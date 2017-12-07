@@ -1,0 +1,20 @@
+<article class="tile is-child box has-text-centered notification is-{{.style}}">
+    <div class="margin-bottom-20">
+        <h4 class="title is-4">
+            {{.title}}
+        </h4>
+    </div>
+    <div class="margin-bottom-20" style="padding-top: 0px;">
+        <ul class="margin-bottom-20">
+            {{range .features}}
+            <li>{{.}}</li>
+            {{end}}
+        </ul>
+        <p>
+            <span class="tag is-warning is-large">{{.price}}</span>
+        </p>
+    </div>
+    <div>
+        <a {{if .is_free}}href="//app.deployo.me/signup?plan=free" {{else}}disabled="disabled" {{end}} class="button is-medium is-{{if .is_free}}light{{else}}link{{end}}">{{.call_to_action}}</a>
+    </div>
+</article>

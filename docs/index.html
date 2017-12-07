@@ -4,51 +4,58 @@
 <head>
   <meta charset="utf-8">
   <title> Deployo </title>
-  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  
-  <link href="https://bootswatch.com/4/cosmo/bootstrap.min.css" rel="stylesheet">
-  <style>
-    .navbar-nav .nav-item+.nav-item {
-       
-      margin-left: 0;
-    }
-
-    nav.navbar.navbar-shadow {
-      box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
-    }
-  </style>
+  <link href="/css/bulma.css" rel="stylesheet">
+  <link href="/css/custom.css" rel="stylesheet">
+  <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body>
-  <nav class="navbar navbar-light navbar-expand-md bg-light navbar-shadow">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="/">
-      <img id="logo-dark" src="/img/logo_dark.svg" height="32" alt="">
-    </a>
-    <nav class="collapse navbar-collapse justify-content-end" id="navbar">
-      <div class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="/docs">Docs</a>
-        </li>
-        
-        <li style="display: none;" id="to-app-link" class="nav-item">
-          <a class="btn btn-info mr-2 mb-2" href="//app.deployo.me">To App</a>
-        </li>
-        <li id="login-link" class="nav-item">
-          <a class="nav-link text-primary" href="https://deployo.me/login">Log In</a>
-        </li>
-        <li id="signup-link" class="nav-item">
-          <a class="btn btn-outline-primary" href="https://deployo.me/signup">Sign Up</a>
-        </li>
-      </div>
-    </nav>
-  </nav>
-  <div class="container mt-5">
+  <nav class="navbar is-fixed-top is-info">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <img src="/img/logo_light.svg" alt="Deployo" width="112" height="28">
+        </a>
+        <button class="button navbar-burger is-transparent" data-target="navbar">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+
+    <div class="navbar-menu is-info" id="navbar">
+        <div class="navbar-end">
+            <a class="navbar-item" href="#overview">Overview</a>
+            <a class="navbar-item" href="#features">Features</a>
+            <a class="navbar-item" href="#pricing">Pricing</a>
+            <a class="navbar-item" href="#contact">Contact</a>
+            <a class="navbar-item" href="/docs">Docs</a>
+            <a class="navbar-item" href="/blog">Blog</a>
+
+            <div class="navbar-item">
+                <div class="field is-grouped">
+                    <p class="control" id="to-app-link">
+                        <a class="button is-dark" href="//app.deployo.me">
+                            <span>To App</span>
+                        </a>
+                    </p>
+                    <p class="control" id="login-link">
+                        <a class="button is-link" href="https://deployo.me/login">
+                            <span>Log In</span>
+                        </a>
+                    </p>
+                    <p class="control" id="signup-link">
+                        <a class="button is-primary" href="https://deployo.me/signup">
+                            <span>Sign Up</span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav> 
 <div class="row">
     <div class="offset-md-3 offset-sm-4">
         <h1>The Deployo Documentation</h1>
@@ -100,13 +107,7 @@
 
     </div>
 </div>
- </div> 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-    crossorigin="anonymous"></script>
+ 
   <script>
     function getCookie(cname) {
       var name = cname + "=";
@@ -133,6 +134,32 @@
       document.getElementById("login-link").style.display = "block";
       document.getElementById("signup-link").style.display = "block";
     }
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      
+      var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+      
+      if ($navbarBurgers.length > 0) {
+
+        
+        $navbarBurgers.forEach(function ($el) {
+          $el.addEventListener('click', function () {
+
+            
+            var target = $el.dataset.target;
+            var $target = document.getElementById(target);
+
+            
+            $el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+
+          });
+        });
+      }
+    });
   </script>
 </body>
 

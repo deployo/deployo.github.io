@@ -24,6 +24,7 @@ plans:
         - 1 server
         - 2 scripts
         - 10 entries in history
+        - Passwords
       price: FREE
       call_to_action: Select free plan
       is_free: true
@@ -33,6 +34,7 @@ plans:
         - 3 servers
         - 10 scripts
         - 1 000 entries in history
+        - Passwords
         - SSH keys
       price: No price yet
       call_to_action: Select plan
@@ -42,9 +44,10 @@ plans:
         - 10 servers
         - 50 scripts
         - 10 000 entries in history
+        - Passwords
         - SSH keys
-        - Metrics
         - Scheduler
+        - Metrics
       price: No price yet
       call_to_action: Select plan
       style: primary

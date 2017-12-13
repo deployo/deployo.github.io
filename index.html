@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<meta name="generator" content="Hugo 0.31" />
+	<meta name="generator" content="Hugo 0.31.1" />
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111128681-1"></script>
   <script>
@@ -47,11 +47,6 @@
 
             <div class="navbar-item">
                 <div class="field is-grouped">
-                    <p class="control" id="to-app-link">
-                        <a class="button is-dark" href="//app.deployo.me">
-                            <span>To App</span>
-                        </a>
-                    </p>
                     <p class="control" id="login-link">
                         <a class="button is-link" href="//app.deployo.me/login">
                             <span>Log In</span>
@@ -205,6 +200,8 @@
             
             <li>10 entries in history</li>
             
+            <li>Passwords</li>
+            
         </ul>
         <p>
             <span class="tag is-warning is-large">FREE</span>
@@ -231,6 +228,8 @@
             <li>10 scripts</li>
             
             <li>1 000 entries in history</li>
+            
+            <li>Passwords</li>
             
             <li>SSH keys</li>
             
@@ -261,11 +260,13 @@
             
             <li>10 000 entries in history</li>
             
+            <li>Passwords</li>
+            
             <li>SSH keys</li>
             
-            <li>Metrics</li>
-            
             <li>Scheduler</li>
+            
+            <li>Metrics</li>
             
         </ul>
         <p>
@@ -324,17 +325,6 @@
         }
       }
       return "";
-    }
-
-    var cookieValue = getCookie("session");
-    if (cookieValue != "") {
-      document.getElementById("to-app-link").style.display = "block";
-      document.getElementById("login-link").style.display = "none";
-      document.getElementById("signup-link").style.display = "none";
-    } else {
-      document.getElementById("to-app-link").style.display = "none";
-      document.getElementById("login-link").style.display = "block";
-      document.getElementById("signup-link").style.display = "block";
     }
   </script>
   <script>

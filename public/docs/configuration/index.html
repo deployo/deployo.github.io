@@ -81,23 +81,38 @@
     <ul class="menu-list">
          
         <li>
-            <a class="is-active" href="/docs/configuration/">Configuration</a>
+            <a class="" href="/docs/dashboard/">Dashboard</a>
+            <ul>
+                
+            </ul>
         </li>
         
         <li>
-            <a class="" href="/docs/dashboard/">Dashboard</a>
+            <a class="is-active" href="/docs/configuration/">Configuration</a>
+            <ul>
+                
+            </ul>
         </li>
         
         <li>
             <a class="" href="/docs/deploying/">Deploying</a>
+            <ul>
+                
+            </ul>
         </li>
         
         <li>
             <a class="" href="/docs/ssh_keys/">SSH Keys</a>
+            <ul>
+                
+            </ul>
         </li>
         
         <li>
             <a class="" href="/docs/user/">User</a>
+            <ul>
+                
+            </ul>
         </li>
         
     </ul>
@@ -105,7 +120,178 @@
             </div>
             <div class="column">
                 <div class="box">
-                    <p>Conf</p>
+                    
+
+<p>The configuration page is the main place where you set up your servers and scripts. The entire configuration iss a YAML file where you can configure everything that you need.</p>
+
+<h1 id="yaml">YAML</h1>
+
+<p>A basic YAML configuration file would looks something like this:</p>
+
+<pre><code class="language-yaml">servers:
+- name: local
+  host: localhost
+  port: 2222
+  user: root
+  password: root
+  environment:
+    ENV_VAR: var1
+scripts:
+- name: name
+  commands:
+  - echo &quot;command&quot;
+  - echo $ENV_VAR
+  variables:
+  - ENV_VAR2
+  environment:
+    ENV_VAR3: var3
+  workdir: /tmp
+</code></pre>
+
+<p>It is consisted of these sections:</p>
+
+<ul>
+<li><a href="#servers"><code>servers</code></a></li>
+<li><a href="#scripts"><code>scripts</code></a></li>
+</ul>
+
+<h2 id="servers">Servers</h2>
+
+<p>In this section you can configure all the servers you have. The configured servers will appear in the <a href="/docs/dashboard/">dashboard</a> where you will be able to execute your scripts.</p>
+
+<p>The available options are:</p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+<th>Default value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>name</td>
+<td>name of your server to be displayed on the dasboard. Should be all lowercase without special characters.</td>
+<td>yes</td>
+<td>string</td>
+<td>n/a</td>
+</tr>
+
+<tr>
+<td>host</td>
+<td>the addrest of your server. Can be IP or a host name.</td>
+<td>yes</td>
+<td>string</td>
+<td>n/a</td>
+</tr>
+
+<tr>
+<td>port</td>
+<td>port of the server</td>
+<td>no</td>
+<td>number</td>
+<td>22</td>
+</tr>
+
+<tr>
+<td>user</td>
+<td>user that will be used by Deployo to ssh in the the server.</td>
+<td>yes</td>
+<td>string</td>
+<td>n/a</td>
+</tr>
+
+<tr>
+<td>password</td>
+<td>password that will be used by Deployo to ssh in the the server. If there is an SSH key configured for a server the password can be ommited. *</td>
+<td>no</td>
+<td>string</td>
+<td></td>
+</tr>
+
+<tr>
+<td>environment</td>
+<td>a list of environment variable that will be available during execution of scripts.</td>
+<td>no</td>
+<td>map of string to string</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>In case both SSH key and password are configured the password will be used first.</li>
+</ul>
+
+<h2 id="scripts">Scripts</h2>
+
+<p>In this section you can configure all the scripts you have. The configured scripts will appear in the <a href="/docs/dashboard/">dashboard</a> where you will be able to execute your them on a selected <a href="#servers">server</a>.</p>
+
+<p>The available options are:</p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+<th>Default value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>name</td>
+<td>name of your script to be displayed on the dasboard. Should be all lowercase without special characters.</td>
+<td>yes</td>
+<td>string</td>
+<td>n/a</td>
+</tr>
+
+<tr>
+<td>commands</td>
+<td>an array of commands that will be executed on a server in the given order.</td>
+<td>yes</td>
+<td>array of strings</td>
+<td>[ ]</td>
+</tr>
+
+<tr>
+<td>variables</td>
+<td>a list of variables required from the user for execution of scripts. When a script is triggered from the dashboard a value for every variable will be required. Empty values are allowed.</td>
+<td>no</td>
+<td>array of strings</td>
+<td>[ ]</td>
+</tr>
+
+<tr>
+<td>environment</td>
+<td>a list of environment variable that will be available during execution of scripts.</td>
+<td>no</td>
+<td>map of string to string</td>
+<td></td>
+</tr>
+
+<tr>
+<td>workdir</td>
+<td>a directory on the server where the script will start execution. Every command will start from here.</td>
+<td>no</td>
+<td>string</td>
+<td>/</td>
+</tr>
+</tbody>
+</table>
+
+<p>In case both a server and a script have the same environment variable exposed, the value from the script will take precedence. The reason for this is that the server will export the variable first and then the script will export its own after that thus overriding the servers variable.</p>
+
+<p>If a script is requiring a variable to be provided and the name of the variable is the same as an environment variable in the script the script environement variable will take precedance.</p>
+
+<p>Script environment variable &gt; User-provided variable &gt; Server environment variable</p>
 
                 </div>
             </div>

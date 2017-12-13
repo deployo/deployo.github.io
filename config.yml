@@ -1,0 +1,27 @@
+---
+baseurl: "https://deployo.me/"
+languageCode: "en-us"
+title: "Deployo"
+
+menu:
+    docs:
+    - name: "Dashboard"
+      identifier: "dashboard"
+      weight: 1
+      url: "/docs/dashboard/"
+    - name: "Configuration"
+      identifier: "configuration"
+      weight: 2
+      url: "/docs/configuration/"
+    - name: "Deploying"
+      weight: 3
+      identifier: "deploying"
+      url: "/docs/deploying/"
+    - name: "SSH Keys"
+      weight: 4
+      identifier: "ssh_Keys"
+      url: "/docs/ssh_Keys/"
+    - name: "User"
+      weight: 5
+      identifier: "user"
+      url: "/docs/user/"

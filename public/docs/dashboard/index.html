@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="has-navbar-fixed-top">
 
 <head>
   
@@ -13,7 +13,7 @@
   </script>
 
   <meta charset="utf-8">
-  <title> Deployo </title>
+  <title>Dashboard – Deployo </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -37,12 +37,12 @@
 
     <div class="navbar-menu is-info" id="navbar">
         <div class="navbar-end">
-            <a class="navbar-item" href="//deployo.me#overview">Overview</a>
-            <a class="navbar-item" href="//deployo.me#features">Features</a>
-            <a class="navbar-item" href="//deployo.me#pricing">Pricing</a>
-            <a class="navbar-item" href="//deployo.me#contact">Contact</a>
-            <a class="navbar-item" href="//deployo.me/docs">Docs</a>
-            <a class="navbar-item" href="//deployo.me/blog">Blog</a>
+            <a class="navbar-item" href='/#overview'>Overview</a>
+            <a class="navbar-item" href='/#features'>Features</a>
+            <a class="navbar-item" href='/#pricing'>Pricing</a>
+            <a class="navbar-item" href='/#contact'>Contact</a>
+            <a class="navbar-item" href='/docs'>Docs</a>
+            <a class="navbar-item" href='/blog'>Blog</a>
 
             <div class="navbar-item">
                 <div class="field is-grouped">
@@ -61,29 +61,58 @@
         </div>
     </div>
 </nav> 
-<main id="main">
-  <div>
-   <h1>404</h1>
-   <h2><a href="/">Go Home</a></h2>
-  </div>
-</main>
+<div class="content">
+    <section class="section">
+        <h1 class="title is-1">Dashboard</h1>
+        <div class="columns">
+            <div class="column is-narrow">
+                <aside class="menu">
+    <p class="menu-label">
+        General
+    </p>
+    <ul class="menu-list">
+        <li>
+            <a href="/docs">Home</a>
+        </li>
+    </ul>
+    <p class="menu-label">
+        Pages
+    </p>
+    <ul class="menu-list">
+         
+        <li>
+            <a class="" href="/docs/configuration/">Configuration</a>
+        </li>
+        
+        <li>
+            <a class="is-active" href="/docs/dashboard/">Dashboard</a>
+        </li>
+        
+        <li>
+            <a class="" href="/docs/deploying/">Deploying</a>
+        </li>
+        
+        <li>
+            <a class="" href="/docs/ssh_keys/">SSH Keys</a>
+        </li>
+        
+        <li>
+            <a class="" href="/docs/user/">User</a>
+        </li>
+        
+    </ul>
+</aside>
+            </div>
+            <div class="column">
+                <div class="box">
+                    <p>is realy important.</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
  
-  <script>
-    function getCookie(cname) {
-      var name = cname + "=";
-      var ca = document.cookie.split(';');
-      for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-          c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-          return c.substring(name.length, c.length);
-        }
-      }
-      return "";
-    }
-  </script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
 

@@ -1,14 +1,20 @@
-<div class="row">
-    <div class="col-12">
-        <h2>
+<aside class="menu">
+    <p class="menu-label">
+        General
+    </p>
+    <ul class="menu-list">
+        <li>
             <a href="/docs">Home</a>
-        </h2>
-    </div>
-    {{$currentPage := .}} {{ range .Site.Menus.docs }}
-    <div class="col-12">
-        <h2>
-            <a href="{{.URL}}">{{.Name}}</a>
-        </h2>
-    </div>
-    {{ end }}
-</div>
+        </li>
+    </ul>
+    <p class="menu-label">
+        Pages
+    </p>
+    <ul class="menu-list">
+        {{$currentPage := .}} {{ range .Site.Menus.docs }}
+        <li>
+            <a class="{{if eq $currentPage.Title .Name}}is-active{{end}}" href="{{.URL}}">{{.Name}}</a>
+        </li>
+        {{ end }}
+    </ul>
+</aside>

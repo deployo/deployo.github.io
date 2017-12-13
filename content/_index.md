@@ -1,4 +1,5 @@
 ---
+aliases: [landing]
 title: Deployo
 call_to_action: Create Account Now 
 subtitle: Easily. Anytime. Anywhere.

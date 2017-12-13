@@ -50,3 +50,11 @@ nav.navbar.shadow {
 .margin-bottom-20 {
     margin-bottom: 20px;
 }
+
+.menu ul {
+    margin-left: 0;
+}
+
+.menu li {
+    list-style: none;
+}

@@ -1,15 +1,17 @@
 {{ define "main" }}
-<div class="row">
-    <div class="offset-md-3 offset-sm-4">
-        <h1>{{.Title}}</h1>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-3 col-sm-4">
-        {{ partial "docs/menu" .}}
-    </div>
-    <div class="col-md-9 col-sm-8 pl-0">
-        {{ .Content }}
-    </div>
+<div class="content">
+    <section class="section">
+        <h1 class="title is-1">{{.Title}}</h1>
+        <div class="columns">
+            <div class="column is-narrow">
+                {{ partial "docs/menu" .}}
+            </div>
+            <div class="column">
+                <div class="box">
+                    {{ .Content }}
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 {{ end }}

@@ -2,16 +2,7 @@
 <div class="content">
     <section class="section">
         <h1 class="title is-1">{{.Title}}</h1>
-        <div class="columns">
-            <div class="column is-narrow">
-                {{ partial "docs/menu" .}}
-            </div>
-            <div class="column">
-                <div class="box">
-                    {{ .Content }}
-                </div>
-            </div>
-        </div>
+        {{ partial "docs/block_menu" .}}
     </section>
 </div>
 {{ end }}

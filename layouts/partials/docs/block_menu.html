@@ -1,0 +1,12 @@
+<div class="tile is-ancestor">
+    {{ range $k, $v := .Site.Menus.docs.ByWeight }} {{if eq (mod $k 4) 0}}
+</div>
+<div class="tile is-ancestor">
+    {{end}}
+    <div class="tile is-parent is-3">
+        <a style="padding-bottom: 50px; padding-top: 50px;" class="tile is-child box has-text-centered" href="{{$v.URL}}">
+            <span class="title is-6">{{$v.Name}}</span>
+        </a>
+    </div>
+    {{end}}
+</div>

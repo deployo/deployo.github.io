@@ -2,7 +2,7 @@ help:
 	@echo "dev"
 	@echo "build"
 dev:
-	hugo -D server
+	hugo -D server --disableFastRender
 build:
 	hugo
 

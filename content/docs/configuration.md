@@ -36,7 +36,7 @@ It is consisted of these sections:
 
 ## Servers
 
-In this section you can configure all the servers you have. The configured servers will appear in the [dashboard]({{< relref "dashboard.md" >}}) where you will be able to execute your scripts. 
+In this section you can configure all the servers you have. The configured servers will appear in the [dashboard]({{< relref "dashboard.md" >}}) where you will be able to execute your [scripts]({{< relref "#scripts" >}}).
 
 The available options are:
 

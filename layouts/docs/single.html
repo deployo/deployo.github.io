@@ -1,12 +1,12 @@
 {{ define "title" }}{{ .Title }} – {{ .Site.Title }} {{ end }} {{ define "main" }}
 <div class="content">
     <section class="section">
-        <h1 class="title is-1">{{.Title}}</h1>
         <div class="columns">
             <div class="column is-narrow">
                 {{ partial "docs/menu" .}}
             </div>
             <div class="column">
+                <h1 class="title is-1">{{.Title}}</h1>
                 <div class="box">
                     {{ .Content }}
                 </div>

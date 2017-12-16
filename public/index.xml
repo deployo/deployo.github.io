@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Deployo</title>
+    <title>Web based shell execution tool on Deployo</title>
     <link>https://deployo.me/</link>
-    <description>Recent content on Deployo</description>
+    <description>Recent content in Web based shell execution tool on Deployo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 03 Nov 2017 00:00:00 +0000</lastBuildDate>

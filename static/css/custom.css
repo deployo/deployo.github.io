@@ -58,3 +58,7 @@ nav.navbar.shadow {
 .menu li {
     list-style: none;
 }
+
+#callToAction {
+    width: 100%;
+}

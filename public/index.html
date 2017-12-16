@@ -13,11 +13,21 @@
     gtag('config', 'UA-111128681-1');
   </script>
 
-  <title> Deployo </title>
+  <title> Deployo - Web based shell execution tool </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href="/img/favicon.png" rel="shortcut icon" />
+  <meta name="description" content="A web based shell execution tool that uses SSH to connect to your servers. Simplify your deployments or remote shell executions." />
 
+  <meta property="og:url" content="https://deployo.me">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Deployo - Web based shell execution tool">
+  <meta property="og:image" content="https://deployo.me/img/og_image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="126">
+  <meta property="og:image:height" content="126">
+  <meta property="og:description" content="A web based shell execution tool that uses SSH to connect to your servers. Simplify your deployments or remote shell executions.">
+
+  <link href="/img/favicon.png" rel="shortcut icon" />
   <link href="/css/bulma.css" rel="stylesheet">
   <link href="/css/custom.css" rel="stylesheet">
   <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -66,35 +76,38 @@
     <section class="hero is-info is-fullheight">
     <div class="hero-body">
         <div class="container has-text-centered">
+            <h1 class="title is-1 is-spaced has-text-weight-normal">
+                Simplify your
+                
+                <span class="has-text-weight-semibold" id="typewriter"></span>
+                
+            </h1>
+            <h2 class="subtitle is-5">
+                Easy. Simple. Accessible.
+            </h2>
             <section class="section">
-                <h1 class="title is-1 is-spaced">
-                    Deployo
-                </h1>
-                <h2 class="subtitle is-5">
-                    Easily. Anytime. Anywhere.
-                </h2>
-            </section>
-            <form action="//app.deployo.me/signup" method="POST">
-                <div class="field is-horizontal">
-                    <div class="field-body">
-                        <div class="field">
-                            <div class="control">
-                                <input type="text" class="input is-large" name="email" placeholder="Email" />
+                <form action="//app.deployo.me/signup" method="POST">
+                    <div class="field is-horizontal">
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control">
+                                    <input type="text" class="input is-large" name="email" placeholder="Email" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="field">
-                            <div class="control">
-                                <input type="password" class="input is-large" name="password" placeholder="Password" />
+                            <div class="field">
+                                <div class="control">
+                                    <input type="password" class="input is-large" name="password" placeholder="Password" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="field">
-                            <div class="control">
-                                <button type="submit" class="button is-primary is-large">Create Account Now</button>
+                            <div class="field">
+                                <div class="control">
+                                    <button id="callToAction" type="submit" class="button is-primary is-large">Create Account Now</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </section>
         </div>
     </div>
 </section>
@@ -104,7 +117,7 @@
         <div class="columns">
             <div class="column">
                 <h2 class="title is-3">Overview</h2>
-                <p><p>Deployo is web based tool that allows you to execute commands over SSH with a button click. It is perfecly suited for personal projects, freelancers or small companies looking to speed up their remote execution tasks.</p>
+                <p><p>Deployo is a web based shell execution tool that allows you to execute over SSH with a button click. It is perfecly suited for personal projects, freelancers or small companies looking to speed up their remote tasks.</p>
 </p>
             </div>
         </div>
@@ -120,8 +133,20 @@
             <i class="fa fa-paper-plane fa-5x"></i>
         </span>
     </section>
-    <h2 class="title is-4">Deploy</h2>
+    <h2 class="title is-4">Execute</h2>
     <p>Run your scrips easily with live output streamed directly from your server.</p>
+</article>
+            </div>
+             
+            <div class="tile is-parent">
+                <article class="tile is-child has-text-centered">
+    <section class="section">
+        <span class="icon is-large">
+            <i class="fa fa-book fa-5x"></i>
+        </span>
+    </section>
+    <h2 class="title is-4">See history</h2>
+    <p>History of all your script executons is shown right on your dashboard. You can access old executons and execute again the same script with same parameters with ease.</p>
 </article>
             </div>
              
@@ -137,6 +162,9 @@
 </article>
             </div>
              
+        </div>
+        <div class="tile is-ancestor">
+            
             <div class="tile is-parent">
                 <article class="tile is-child has-text-centered">
     <section class="section">
@@ -149,18 +177,15 @@
 </article>
             </div>
              
-        </div>
-        <div class="tile is-ancestor">
-            
             <div class="tile is-parent">
                 <article class="tile is-child has-text-centered">
     <section class="section">
         <span class="icon is-large">
-            <i class="fa fa-book fa-5x"></i>
+            <i class="fa fa-clock-o fa-5x"></i>
         </span>
     </section>
-    <h2 class="title is-4">See history</h2>
-    <p>History of all your script executons is shown right in your dashboard. You can access old executons and execute again the same script with same parameters with ease.</p>
+    <h2 class="title is-4">Schedule tasks</h2>
+    <p>Schedule your tasks using standard cron syntax. Run your script in configured intervals. You can see history and output of scheduled tasks.</p>
 </article>
             </div>
              
@@ -168,7 +193,7 @@
                 <article class="tile is-child has-text-centered">
     <section class="section">
         <span class="icon is-large">
-            <i class="fa fa-key fa-5x"></i>
+            <i class="fa fa-lock fa-5x"></i>
         </span>
     </section>
     <h2 class="title is-4">Store your SSH keys</h2>
@@ -309,6 +334,31 @@
     </div>
 </section>
 
+   
+<script src="/js/typewriter.js"></script>
+<script>
+    var t = document.getElementById('typewriter');
+    var typewriter = new Typewriter(t, {
+        loop: true,
+        deleteSpeed: 20
+    });
+
+    typewriter
+        
+        .typeString('deployments.')
+        .pauseFor(1000)
+        .deleteAll()
+        
+        .typeString('shell execution.')
+        .pauseFor(1000)
+        .deleteAll()
+        
+        .typeString('scheduled tasks.')
+        .pauseFor(1000)
+        .deleteAll()
+        
+        .start();
+</script> 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
 

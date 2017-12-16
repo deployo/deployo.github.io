@@ -1,35 +1,38 @@
 <section class="hero is-info is-fullheight">
     <div class="hero-body">
         <div class="container has-text-centered">
+            <h1 class="title is-1 is-spaced has-text-weight-normal">
+                {{.Params.hero.title}}
+                {{if .Params.hero.typewriter}}
+                <span class="has-text-weight-semibold" id="typewriter"></span>
+                {{end}}
+            </h1>
+            <h2 class="subtitle is-5">
+                {{.Params.hero.subtitle}}
+            </h2>
             <section class="section">
-                <h1 class="title is-1 is-spaced">
-                    {{.Title}}
-                </h1>
-                <h2 class="subtitle is-5">
-                    {{.Params.subtitle}}
-                </h2>
-            </section>
-            <form action="//app.deployo.me/signup" method="POST">
-                <div class="field is-horizontal">
-                    <div class="field-body">
-                        <div class="field">
-                            <div class="control">
-                                <input type="text" class="input is-large" name="email" placeholder="Email" />
+                <form action="//app.deployo.me/signup" method="POST">
+                    <div class="field is-horizontal">
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control">
+                                    <input type="text" class="input is-large" name="email" placeholder="Email" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="field">
-                            <div class="control">
-                                <input type="password" class="input is-large" name="password" placeholder="Password" />
+                            <div class="field">
+                                <div class="control">
+                                    <input type="password" class="input is-large" name="password" placeholder="Password" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="field">
-                            <div class="control">
-                                <button type="submit" class="button is-primary is-large">{{.Params.call_to_action}}</button>
+                            <div class="field">
+                                <div class="control">
+                                    <button id="callToAction" type="submit" class="button is-primary is-large">{{.Params.call_to_action}}</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </section>
         </div>
     </div>
 </section>

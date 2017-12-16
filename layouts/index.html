@@ -46,4 +46,20 @@
         @deployo.me 2017-2018
     </div>
 </section>
-{{ end }} {{define "script"}}{{end}}
+{{ end }} {{define "script"}} {{if .Params.hero.typewriter}}
+<script src="/js/typewriter.js"></script>
+<script>
+    var t = document.getElementById('typewriter');
+    var typewriter = new Typewriter(t, {
+        loop: true,
+        deleteSpeed: 20
+    });
+
+    typewriter
+        // {{range $text := .Params.hero.typewriter}}
+        .typeString('{{$text}}')
+        .pauseFor(1000)
+        .deleteAll()
+        // {{end}}
+        .start();
+</script> {{end}}{{end}}

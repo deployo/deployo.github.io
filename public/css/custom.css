@@ -30,6 +30,10 @@ nav.navbar.shadow {
     color: #fff;
 }
 
+.hero h1 {
+    min-height: 75px;
+}
+
 .hero ::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: white;

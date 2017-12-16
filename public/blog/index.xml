@@ -6,19 +6,9 @@
     <description>Recent content in Blog on Deployo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Nov 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://deployo.me/blog/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Post 1</title>
-      <link>https://deployo.me/blog/post-1/</link>
-      <pubDate>Fri, 03 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://deployo.me/blog/post-1/</guid>
-      <description>Content</description>
-    </item>
     
   </channel>
 </rss>

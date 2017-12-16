@@ -37,7 +37,10 @@ servers: - name: local host: localhost port: 2222 user: root password: root envi
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://deployo.me/docs/dashboard/</guid>
-      <description>is realy important.</description>
+      <description>The dashboard shows all your available servers and recent history.
+Servers Every time the dashboard is loaded Deployo will try to ping all of your servers. If it succeds the server will be marked with a label connected in case pinging fails the server will be marked with unreachable.
+Hovering over an unreachable label will give you more information about the error.
+History The hostory displays the latest executions.</description>
     </item>
     
     <item>
@@ -46,7 +49,8 @@ servers: - name: local host: localhost port: 2222 user: root password: root envi
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://deployo.me/docs/deploying/</guid>
-      <description>Deploy</description>
+      <description>Executing scripts When you run a deploy script you will be prompted for any user input configured for the sctript you are running that will manifest itself as an environment variale. After you enter everything you need Deployo will SSH into the chosen server export all environment variables and run the selected script.
+You will be able to follow the execution as Deployo directly streams output from your servers using websockets.</description>
     </item>
     
     <item>
@@ -55,7 +59,9 @@ servers: - name: local host: localhost port: 2222 user: root password: root envi
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://deployo.me/docs/ssh_keys/</guid>
-      <description>Keys</description>
+      <description>SSH keys allow you to connect to your server without using a password. If an SSH key is not configured the password will be used.
+In case both a password and an SSH keys have been configured the password will be used first.
+On this page you have a preview of all the keys stored by Deployo. You can see SSH keys connected to a server or keys that are not connected to any servers anymore.</description>
     </item>
     
     <item>
@@ -64,7 +70,7 @@ servers: - name: local host: localhost port: 2222 user: root password: root envi
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://deployo.me/docs/user/</guid>
-      <description>User</description>
+      <description>The User page allows you to edit some of your user information and change your plan.</description>
     </item>
     
   </channel>

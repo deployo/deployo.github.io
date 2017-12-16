@@ -4,7 +4,7 @@ title: Configuration
 
 The configuration page is the main place where you set up your servers and scripts. The entire configuration iss a YAML file where you can configure everything that you need.
 
-# YAML
+## YAML
 
 A basic YAML configuration file would looks something like this:
 
@@ -34,7 +34,7 @@ It is consisted of these sections:
 * [`servers`]({{< relref "#servers" >}})
 * [`scripts`]({{< relref "#scripts" >}})
 
-## Servers
+### Servers section
 
 In this section you can configure all the servers you have. The configured servers will appear in the [dashboard]({{< relref "dashboard.md" >}}) where you will be able to execute your [scripts]({{< relref "#scripts" >}}).
 
@@ -51,7 +51,7 @@ environment | a list of environment variable that will be available during execu
 
 * In case both SSH key and password are configured the password will be used first.
 
-## Scripts
+### Scripts section
 
 In this section you can configure all the scripts you have. The configured scripts will appear in the [dashboard]({{< relref "dashboard.md" >}}) where you will be able to execute your them on a selected [server]({{< relref "#servers" >}}).
 
@@ -70,3 +70,13 @@ In case both a server and a script have the same environment variable exposed, t
 If a script is requiring a variable to be provided and the name of the variable is the same as an environment variable in the script the script environement variable will take precedance.
 
 Script environment variable > User-provided variable > Server environment variable
+
+## Servers
+
+This page is giving you a nicer prevew over the servers you have configured in YAML.
+Here you can create and delete servers using the UI if you find it easier that way.
+
+## Scripts
+
+This page is giving you a nicer prevew over the scripts you have configured in YAML.
+Here you can create and delete scripts using the UI if you find it easier that way.

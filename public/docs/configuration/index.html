@@ -124,7 +124,7 @@
 
 <p>The configuration page is the main place where you set up your servers and scripts. The entire configuration iss a YAML file where you can configure everything that you need.</p>
 
-<h1 id="yaml">YAML</h1>
+<h2 id="yaml">YAML</h2>
 
 <p>A basic YAML configuration file would looks something like this:</p>
 
@@ -155,7 +155,7 @@ scripts:
 <li><a href="#scripts"><code>scripts</code></a></li>
 </ul>
 
-<h2 id="servers">Servers</h2>
+<h3 id="servers-section">Servers section</h3>
 
 <p>In this section you can configure all the servers you have. The configured servers will appear in the <a href="/docs/dashboard/">dashboard</a> where you will be able to execute your <a href="#scripts">scripts</a>.</p>
 
@@ -227,7 +227,7 @@ scripts:
 <li>In case both SSH key and password are configured the password will be used first.</li>
 </ul>
 
-<h2 id="scripts">Scripts</h2>
+<h3 id="scripts-section">Scripts section</h3>
 
 <p>In this section you can configure all the scripts you have. The configured scripts will appear in the <a href="/docs/dashboard/">dashboard</a> where you will be able to execute your them on a selected <a href="#servers">server</a>.</p>
 
@@ -292,6 +292,16 @@ scripts:
 <p>If a script is requiring a variable to be provided and the name of the variable is the same as an environment variable in the script the script environement variable will take precedance.</p>
 
 <p>Script environment variable &gt; User-provided variable &gt; Server environment variable</p>
+
+<h2 id="servers">Servers</h2>
+
+<p>This page is giving you a nicer prevew over the servers you have configured in YAML.
+Here you can create and delete servers using the UI if you find it easier that way.</p>
+
+<h2 id="scripts">Scripts</h2>
+
+<p>This page is giving you a nicer prevew over the scripts you have configured in YAML.
+Here you can create and delete scripts using the UI if you find it easier that way.</p>
 
                 </div>
             </div>

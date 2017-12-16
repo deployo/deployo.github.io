@@ -1,5 +1,5 @@
 ---
-title: The Deployo Blog
+title: Blog
 ---
 
 Welcome!

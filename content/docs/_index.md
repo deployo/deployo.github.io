@@ -1,5 +1,5 @@
 ---
-title: The Deployo Documentation
+title: Documentation
 ---
 
 Welcome!

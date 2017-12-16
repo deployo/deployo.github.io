@@ -13,7 +13,7 @@ Hovering over an `unreachable` label will give you more information about the er
 
 ## History
 
-The hostory displays the latest executions.
+The history displays the latest executions.
 
 You can see which servers were involved and which scripts are executed alonside any provided variables.
 

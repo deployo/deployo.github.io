@@ -69,4 +69,4 @@ plans:
       call_to_action: Select plan
       style: primary
 ---
-Deployo is a web based shell execution tool that allows you to execute over SSH with a button click. It is perfecly suited for personal projects, freelancers or small companies looking to speed up their remote tasks.
+Deployo is a web based shell execution tool that allows you to execute over SSH with a button click. It is perfectly suited for personal projects, freelancers or small companies looking to speed up their remote tasks.

@@ -10,7 +10,7 @@ hero:
 description: A web based shell execution tool that uses SSH to connect to your servers. Simplify your deployments or remote shell executions.
 call_to_action: Create Account Now 
 features:
-    - title: Execute
+    - title: Execute shell scripts
       description: Run your scrips easily with live output streamed directly from your server.
       icon: paper-plane
     - title: See history
@@ -22,12 +22,19 @@ features:
     - title: Access from anywhere
       description: Deployo is a web based solution accessible from any device with a browser. So desktop, tablet or mobile, it is at your fingertips.
       icon: mobile-phone
-    - title: Schedule tasks
-      description: Schedule your tasks using standard cron syntax. Run your script in configured intervals. You can see history and output of scheduled tasks.
-      icon: clock-o
     - title: Store your SSH keys
       description: Your SSH keys can be generated and stored online and used everytime you acces your server. Have a private key already? Just upload it!
       icon: lock
+roadmap:
+    - title: Schedule tasks
+      description: Schedule your tasks using standard cron syntax. Run your script in configured intervals. You can see history and output of scheduled tasks.
+      icon: clock-o
+    - title: Webhooks
+      description: Run scripts triggered by webhooks from GitHub or Bitbucket.
+      icon: puzzle-piece
+    - title: Slack integration
+      description: Run scripts triggered directly from Slack.
+      icon: slack
 plans:
     - title: Free
       features:
@@ -56,8 +63,8 @@ plans:
         - 10 000 entries in history
         - Passwords
         - SSH keys
-        - Scheduler
-        - Metrics
+        # - Scheduler
+        # - Metrics
       price: No price yet
       call_to_action: Select plan
       style: primary

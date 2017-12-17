@@ -24,6 +24,19 @@
             {{end}}
         </div>
     </section>
+    <section class="section" id="features">
+        <h2 class="title is-3">Roadmap</h2>
+        <div class="tile is-ancestor">
+            {{range $k, $v := .Params.roadmap}} {{if eq $k 3}}
+        </div>
+        <div class="tile is-ancestor">
+            {{end}}
+            <div class="tile is-parent">
+                {{partial "feature" $v}}
+            </div>
+            {{end}}
+        </div>
+    </section>
     <section class="section" id="pricing">
         <h2 class="title is-3">Pricing</h2>
         <div class="columns">

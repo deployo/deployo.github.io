@@ -35,6 +35,9 @@ roadmap:
     - title: Slack integration
       description: Run scripts triggered directly from Slack.
       icon: slack
+    - title: CLI
+      description: A command-line tool for running your scripts from your terminal.
+      icon: terminal
 plans:
     - title: Free
       features:

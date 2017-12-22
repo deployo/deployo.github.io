@@ -46,8 +46,8 @@ plans:
         - 10 entries in history
         - Passwords
       price: FREE
-      call_to_action: Select free plan
-      is_free: true
+      call_to_action: Sign Up
+      code: free
       style: link
     - title: Personal
       features:
@@ -56,8 +56,9 @@ plans:
         - 1 000 entries in history
         - Passwords
         - SSH keys
-      price: No price yet
-      call_to_action: Select plan
+      price: $6.99 / month
+      call_to_action: Sign Up
+      code: personal
       style: info
     - title: Pro
       features:
@@ -68,8 +69,9 @@ plans:
         - SSH keys
         # - Scheduler
         # - Metrics
-      price: No price yet
-      call_to_action: Select plan
+      price: $13.99 / month
+      code: pro
+      call_to_action: Sign Up
       style: primary
 ---
 

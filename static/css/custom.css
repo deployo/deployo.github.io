@@ -23,32 +23,8 @@ nav.navbar.shadow {
     background-image: linear-gradient(to right, #3273dc, #209cee);
 }
 
-.hero input {
-    width: 100%;
-    border: none;
-    background-color: rgba(0, 0, 0, 0.2);
-    color: #fff;
-}
-
 .hero h1 {
     min-height: 75px;
-}
-
-.hero ::placeholder {
-    /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: white;
-    opacity: 1;
-    /* Firefox */
-}
-
-.hero :-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
-    color: white;
-}
-
-.hero ::-ms-input-placeholder {
-    /* Microsoft Edge */
-    color: white;
 }
 
 .margin-bottom-20 {
@@ -61,8 +37,4 @@ nav.navbar.shadow {
 
 .menu li {
     list-style: none;
-}
-
-#callToAction {
-    width: 100%;
 }

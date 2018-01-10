@@ -10,11 +10,13 @@
             <li>{{.}}</li>
             {{end}}
         </ul>
+        {{if .price}}
         <p>
             <span class="tag is-warning is-large">{{.price}}</span>
         </p>
+        {{end}}
     </div>
     <div>
-        <a {{if .is_free}}href="//app.deployo.me/signup?plan=free" {{else}}disabled="disabled" {{end}} class="button is-medium is-{{if .is_free}}light{{else}}link{{end}}">{{.call_to_action}}</a>
+        <a {{if .is_free}}href="//app.deployo.me/signup?plan=free" {{else}}href="#contact" {{end}} class="button is-medium is-{{if .is_free}}light{{else}}link{{end}}">{{.call_to_action}}</a>
     </div>
 </article>

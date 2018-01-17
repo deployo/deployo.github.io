@@ -46,7 +46,7 @@ plans:
         - 10 entries in history
         - Passwords
       price:
-      call_to_action: Select free plan
+      call_to_action: Create Account
       is_free: true
       style: link
     - title: Personal
@@ -56,8 +56,8 @@ plans:
         - 1 000 entries in history
         - Passwords
         - SSH keys
-      price:
-      call_to_action: Contact Us
+      price: 6.99$
+      call_to_action: Create Account
       style: info
     - title: Pro
       features:
@@ -68,8 +68,8 @@ plans:
         - SSH keys
         # - Scheduler
         # - Metrics
-      price:
-      call_to_action: Contact Us
+      price: 13.99$
+      call_to_action: Create Account
       style: primary
 ---
 

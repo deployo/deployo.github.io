@@ -47,7 +47,6 @@ plans:
         - Passwords
       price:
       call_to_action: Create Account
-      is_free: true
       style: link
     - title: Personal
       features:

@@ -17,6 +17,6 @@
         {{end}}
     </div>
     <div>
-        <a {{if .is_free}}href="//app.deployo.me/signup?plan=free" {{else}}href="#contact" {{end}} class="button is-medium is-{{if .is_free}}light{{else}}link{{end}}">{{.call_to_action}}</a>
+        <a href="//app.deployo.me/signup?plan={{.title}}" class='button is-medium is-{{if eq .title "Free" }}light{{else}}link{{end}}'>{{.call_to_action}}</a>
     </div>
 </article>

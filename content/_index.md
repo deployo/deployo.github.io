@@ -17,7 +17,7 @@ features:
       description: Run your scrips easily with live output streamed directly from your server.
       icon: paper-plane
     - title: See history
-      description: History of all your script executons is shown right on your dashboard. You can access old executons and execute again the same script with same parameters with ease.
+      description: History of all your script executions is shown right on your dashboard. You can access old executions and execute again the same script with same parameters with ease.
       icon: book
     - title: Configure easily with YAML
       description: All your configuration is stored online in a simple YAML file. Easily edit with syntax highlighting.

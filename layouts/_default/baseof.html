@@ -15,7 +15,7 @@
   <title>{{ block "title" . }} {{ .Site.Title }} - {{ .Title }} {{ end }}</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="{{.Description | default .Site.Params.SiteDescription}}" />
+  <meta name="description" content="{{.Params.meta.description | default .Site.Params.SiteDescription}}" />
 
   <meta property="og:url" content="https://deployo.me">
   <meta property="og:type" content="website">
@@ -24,7 +24,7 @@
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="126">
   <meta property="og:image:height" content="126">
-  <meta property="og:description" content="{{.Description}}">
+  <meta property="og:description" content="{{.Params.meta.description}}">
 
   <link href="/img/favicon.png" rel="shortcut icon" />
   <link href="/css/bulma.css" rel="stylesheet">

@@ -7,7 +7,10 @@ hero:
     - shell execution.
     - scheduled tasks.
   subtitle: Simple. Easy. Accessible.
-description: A web based shell execution tool that uses SSH to connect to your servers. Simplify your deployments or remote shell executions.
+meta:
+  description: A web based shell execution tool that uses SSH to connect to your servers. Simplify your deployments or remote shell executions.
+overview: Deployo is a web based shell execution tool that allows you to execute over SSH with a button click. It is perfectly suited for personal projects, freelancers or small companies looking to speed up their remote tasks.
+overview_image: /img/screenshot.png
 call_to_action: Create Account Now
 features:
     - title: Execute shell scripts
@@ -71,14 +74,3 @@ plans:
       call_to_action: Create Account
       style: primary
 ---
-
-<div class="columns">
-  <div class="column is-half-desktop">
-    Deployo is a web based shell execution tool that allows you to execute over SSH with a button click. It is perfectly suited for personal projects, freelancers or small companies looking to speed up their remote tasks.
-  </div>
-  <div class="column is-half-desktop">
-    <figure class="image is-2by1 box">
-      <img src="/img/screenshot.png"/>
-    </figure>
-  </div>
-</div>

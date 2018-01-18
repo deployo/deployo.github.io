@@ -5,9 +5,14 @@
 <div class="container">
     <section class="section" id="overview">
         <div class="columns">
-            <div class="column">
+            <div class="column is-half-desktop">
                 <h2 class="title is-3">Overview</h2>
-                <p>{{.Content}}</p>
+                <p>{{.Params.overview}}</p>
+            </div>
+            <div class="column is-half-desktop">
+                <figure class="image is-2by1 box">
+                    <img src="{{.Params.overview_image}}"/>
+                </figure>
             </div>
         </div>
     </section>

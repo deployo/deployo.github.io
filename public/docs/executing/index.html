@@ -12,14 +12,14 @@
     gtag('config', 'UA-111128681-1');
   </script>
 
-  <title> Deployo - Dashboard </title>
+  <title> Deployo - Executing </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="" />
 
   <meta property="og:url" content="https://deployo.me">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Deployo - Dashboard">
+  <meta property="og:title" content="Deployo - Executing">
   <meta property="og:image" content="https://deployo.me/img/og_image.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="126">
@@ -90,7 +90,7 @@
     <ul class="menu-list">
          
         <li>
-            <a class="is-active" href="/docs/dashboard/">Dashboard</a>
+            <a class="" href="/docs/dashboard/">Dashboard</a>
             <ul>
                 
             </ul>
@@ -104,7 +104,7 @@
         </li>
         
         <li>
-            <a class="" href="/docs/executing/">Executing</a>
+            <a class="is-active" href="/docs/executing/">Executing</a>
             <ul>
                 
             </ul>
@@ -128,26 +128,23 @@
 </aside>
             </div>
             <div class="column">
-                <h1 class="title is-1">Dashboard</h1>
+                <h1 class="title is-1">Executing</h1>
                 <div class="box">
                     
 
-<p>The dashboard shows all your available servers and recent history.</p>
+<h2 id="executing-scripts">Executing scripts</h2>
 
-<h2 id="servers">Servers</h2>
+<p>When you run a script you will be prompted for any user input configured for the sctript you are running that will manifest itself as an environment variale. After you enter everything you need Deployo will SSH into the chosen server export all environment variables and run the selected script.</p>
 
-<p>Every time the dashboard is loaded Deployo will try to ping all of your servers.
-If it succeds the server will be marked with a label <code>connected</code> in case pinging fails the server will be marked with <code>unreachable</code>.</p>
+<p>You will be able to follow the execution as Deployo directly streams output from your servers using websockets.</p>
 
-<p>Hovering over an <code>unreachable</code> label will give you more information about the error.</p>
+<h2 id="viewing-output-of-older-executions">Viewing output of older executions</h2>
 
-<h2 id="history">History</h2>
+<p>By clicking on the output icon on the dashboard you will see the deploy page of the selected deploy.</p>
 
-<p>The history displays the latest executions.</p>
+<p>The deploy page is displaying your deploy parameters like environment variables, data, duration of execution, server&hellip;. and most importantly your script execution output.</p>
 
-<p>You can see which servers were involved and which scripts are executed alonside any provided variables.</p>
-
-<p>From this view you can go to the execution output, re-execute the scripts or delete the history entry.</p>
+<p>From this view you can re-run the sscript using the same parameters without having to type them again.</p>
 
                 </div>
             </div>

@@ -13,10 +13,10 @@ menu:
       identifier: "configuration"
       weight: 2
       url: "/docs/configuration/"
-    - name: "Deploying"
+    - name: "Executing"
       weight: 3
-      identifier: "deploying"
-      url: "/docs/deploying/"
+      identifier: "executing"
+      url: "/docs/executing/"
     - name: "SSH Keys"
       weight: 4
       identifier: "ssh_Keys"

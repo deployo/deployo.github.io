@@ -34,12 +34,12 @@ History The history displays the latest executions.</description>
     </item>
     
     <item>
-      <title>Deploying</title>
-      <link>https://deployo.me/docs/deploying/</link>
+      <title>Executing</title>
+      <link>https://deployo.me/docs/executing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://deployo.me/docs/deploying/</guid>
-      <description>Executing scripts When you run a deploy script you will be prompted for any user input configured for the sctript you are running that will manifest itself as an environment variale. After you enter everything you need Deployo will SSH into the chosen server export all environment variables and run the selected script.
+      <guid>https://deployo.me/docs/executing/</guid>
+      <description>Executing scripts When you run a script you will be prompted for any user input configured for the sctript you are running that will manifest itself as an environment variale. After you enter everything you need Deployo will SSH into the chosen server export all environment variables and run the selected script.
 You will be able to follow the execution as Deployo directly streams output from your servers using websockets.</description>
     </item>
     

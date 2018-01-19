@@ -48,7 +48,7 @@ plans:
         - 2 scripts
         - 10 entries in history
         - Passwords
-      price:
+      price: $0
       call_to_action: Create Account
       style: link
     - title: Personal
@@ -58,7 +58,7 @@ plans:
         - 1 000 entries in history
         - Passwords
         - SSH keys
-      price: 6.99$
+      price: $6.99
       call_to_action: Create Account
       style: info
     - title: Pro
@@ -70,7 +70,7 @@ plans:
         - SSH keys
         # - Scheduler
         # - Metrics
-      price: 13.99$
+      price: $13.99
       call_to_action: Create Account
       style: primary
 ---

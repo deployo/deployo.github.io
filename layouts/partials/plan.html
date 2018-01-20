@@ -12,11 +12,11 @@
         </ul>
         {{if .price}}
         <p>
-            <span class="tag is-warning is-large">{{.price}}</span>
+            <span class="tag is-light is-large">{{.price}}</span>
         </p>
         {{end}}
     </div>
     <div>
-        <a href="//app.deployo.me/signup?plan={{.title}}" class='button is-medium is-{{if eq .title "Free" }}light{{else}}link{{end}}'>{{.call_to_action}}</a>
+        <a href="#signup" class='button is-medium is-primary'>{{.call_to_action}}</a>
     </div>
 </article>

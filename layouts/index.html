@@ -29,19 +29,6 @@
             {{end}}
         </div>
     </section>
-    <section class="section" id="roadmap">
-        <h2 class="title is-3">Roadmap</h2>
-        <div class="columns">
-            {{range $k, $v := .Params.roadmap}} {{if eq $k 3}}
-        </div>
-        <div class="columns">
-            {{end}}
-            <div class="column is-4">
-                {{partial "feature" $v}}
-            </div>
-            {{end}}
-        </div>
-    </section>
     <section class="section" id="pricing">
         <h2 class="title is-3">Pricing</h2>
         <div class="columns">
@@ -54,6 +41,19 @@
     </section>
     <section class="section" id="signup">
         {{partial "signup" .}}
+    </section>
+    <section class="section" id="roadmap">
+        <h2 class="title is-3">Roadmap</h2>
+        <div class="columns">
+            {{range $k, $v := .Params.roadmap}} {{if eq $k 3}}
+        </div>
+        <div class="columns">
+            {{end}}
+            <div class="column is-4">
+                {{partial "feature" $v}}
+            </div>
+            {{end}}
+        </div>
     </section>
 </div>
 {{ end }} {{define "footer"}}

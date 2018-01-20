@@ -29,7 +29,7 @@ features:
       description: Your SSH keys can be generated and stored online and used everytime you acces your server. Have a private key already? Just upload it!
       icon: lock
 roadmap:
-    - title: Schedule tasks
+    - title: Scheduled tasks
       description: Schedule your tasks using standard cron syntax. Run your script in configured intervals. You can see history and output of scheduled tasks.
       icon: clock-o
     - title: Webhooks
@@ -50,7 +50,7 @@ plans:
         - Passwords
       price: $0
       call_to_action: Create Account
-      style: link
+      style: info
     - title: Personal
       features:
         - 3 servers
@@ -60,7 +60,7 @@ plans:
         - SSH keys
       price: $6.99
       call_to_action: Create Account
-      style: info
+      style: link
     - title: Pro
       features:
         - 10 servers
@@ -72,5 +72,5 @@ plans:
         # - Metrics
       price: $13.99
       call_to_action: Create Account
-      style: primary
+      style: info
 ---

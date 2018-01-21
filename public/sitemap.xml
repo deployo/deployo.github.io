@@ -3,7 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://deployo.me/blog/</loc>
+    <loc>https://deployo.me/blog/here-we-go/</loc>
+    <lastmod>2018-01-01T19:20:04-07:00</lastmod>
   </url>
   
   <url>
@@ -28,6 +29,11 @@
   </url>
   
   <url>
+    <loc>https://deployo.me/blog/</loc>
+    <lastmod>2018-01-01T19:20:04-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://deployo.me/docs/ssh_keys/</loc>
   </url>
   
@@ -42,6 +48,7 @@
   
   <url>
     <loc>https://deployo.me/</loc>
+    <lastmod>2018-01-01T19:20:04-07:00</lastmod>
   </url>
   
 </urlset>

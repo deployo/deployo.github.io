@@ -5,6 +5,7 @@
             <div class="column">
                 <article>
                     <h1 class="title is-1">{{.Title}}</h1>
+                    <h5 class="title is-5">{{.Description}}</h5>
                     <!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
                     <p>{{.Content}}</p>
                 </article>
@@ -13,7 +14,7 @@
         <div class="columns">
             <!-- Ranges through content/post/*.md -->
             {{ range .Data.Pages }}
-            <div class="column box">
+            <div class="column">
                 <h2 class="title is-4">
                     <a href="{{.Permalink}}">{{.Title}}</a>
                 </h2>

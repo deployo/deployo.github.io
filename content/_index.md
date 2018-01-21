@@ -50,10 +50,10 @@ plans:
         - 2 scripts
         - 10 entries in history
         - Passwords
-      price: $0
-      call_to_action: Create Account For Free*
+      price: $0/mo
+      call_to_action: Create Account For Free
       style: info
-      note: "*no credit card needed"
+      note: "* no credit card needed"
     - title: Personal
       features:
         - 3 servers
@@ -61,10 +61,10 @@ plans:
         - 1 000 entries in history
         - Passwords
         - SSH keys
-      price: $6.99
-      call_to_action: Create Account For Free*
+      price: $6.99/mo
+      call_to_action: Create Account For Free
       style: link
-      note: "*no credit card needed"
+      note: "* no credit card needed"
     - title: Pro
       features:
         - 10 servers
@@ -74,8 +74,8 @@ plans:
         - SSH keys
         # - Scheduler
         # - Metrics
-      price: $13.99
-      call_to_action: Create Account For Free*
+      price: $13.99/mo
+      call_to_action: Create Account For Free
       style: info
-      note: "*no credit card needed"
+      note: "* no credit card needed"
 ---

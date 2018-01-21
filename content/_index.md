@@ -7,6 +7,7 @@ hero:
     - shell execution.
     - scheduled tasks.
   subtitle: Web based shell execution tool.
+  call_to_action: Create Account For Free
 meta:
   description: A web based shell execution tool that uses SSH to connect to your servers. Simplify your deployments or remote shell executions.
 overview: Deployo is a web based shell execution tool that allows you to execute over SSH with a button click. It is perfectly suited for personal projects, freelancers or small companies looking to speed up their remote tasks.
@@ -49,8 +50,9 @@ plans:
         - 10 entries in history
         - Passwords
       price: $0
-      call_to_action: Create Account
+      call_to_action: Create Account For Free*
       style: info
+      note: "*no credit card needed"
     - title: Personal
       features:
         - 3 servers
@@ -59,8 +61,9 @@ plans:
         - Passwords
         - SSH keys
       price: $6.99
-      call_to_action: Create Account
+      call_to_action: Create Account For Free*
       style: link
+      note: "*no credit card needed"
     - title: Pro
       features:
         - 10 servers
@@ -71,6 +74,7 @@ plans:
         # - Scheduler
         # - Metrics
       price: $13.99
-      call_to_action: Create Account
+      call_to_action: Create Account For Free*
       style: info
+      note: "*no credit card needed"
 ---

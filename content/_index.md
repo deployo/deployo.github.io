@@ -17,32 +17,32 @@ call_to_action: Create Account For Free
 features:
     - title: Execute shell scripts
       description: Run your scrips easily with live output streamed directly from your server.
-      icon: paper-plane
+      icon: fas fa-paper-plane
     - title: See history
       description: History of all your script executions is shown right on your dashboard. You can access old executions and execute again the same script with same parameters with ease.
-      icon: book
+      icon: fas fa-book
     - title: Configure easily with YAML
       description: All your configuration is stored online in a simple YAML file. Easily edit with syntax highlighting.
-      icon: file-code-o
+      icon: far fa-file-code
     - title: Access from anywhere
       description: Deployo is a web based solution accessible from any device with a browser. So desktop, tablet or mobile, it is at your fingertips.
-      icon: mobile-phone
+      icon: fas fa-mobile-alt
     - title: Store your SSH keys
       description: Your SSH keys can be generated and stored online and used everytime you acces your server. Have a private key already? Just upload it!
-      icon: lock
+      icon: fas fa-lock
 roadmap:
     - title: Scheduled tasks
       description: Schedule your tasks using standard cron syntax. Run your script in configured intervals. You can see history and output of scheduled tasks.
-      icon: clock-o
+      icon: far fa-clock
     - title: Webhooks
       description: Run scripts triggered by webhooks from GitHub or Bitbucket.
-      icon: puzzle-piece
+      icon: fas fa-puzzle-piece
     - title: Slack integration
       description: Run scripts triggered directly from Slack.
-      icon: slack
+      icon: fab fa-slack-hash
     - title: CLI
       description: A command-line tool for running your scripts from your terminal.
-      icon: terminal
+      icon: fas fa-terminal
 plans:
     - title: Free
       features:

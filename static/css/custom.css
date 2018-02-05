@@ -2,12 +2,12 @@ nav.navbar.shadow {
     box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
-.navbar-burger {
+/* .navbar-burger {
     background: transparent;
     border: none;
-}
+} */
 
-.hero, nav.navbar {
+.hero.is-deployo, nav.navbar, .navbar-menu.is-active {
     background-image: linear-gradient( to right, #3273dc, #209cee);
     /* Fallback (could use .jpg/.png alternatively) */
     background-color: #3273dc;
@@ -23,8 +23,16 @@ nav.navbar.shadow {
     background-image: linear-gradient(to right, #3273dc, #209cee);
 }
 
-.hero h1 {
-    min-height: 75px;
+.hero.is-deployo .hero-foot img {
+    margin-bottom: -100px;
+}
+
+.padding-top-100 {
+    padding-top: 100px;
+}
+
+.hero.is-deployo h2 {
+    min-height: 60px;
 }
 
 .margin-bottom-20 {
@@ -37,4 +45,8 @@ nav.navbar.shadow {
 
 .menu li {
     list-style: none;
+}
+
+.icon {
+    margin-bottom: 16px;
 }

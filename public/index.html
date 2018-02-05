@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html class="has-navbar-fixed-top">
+<html>
 
 <head>
-	<meta name="generator" content="Hugo 0.34" />
+	<meta name="generator" content="Hugo 0.36" />
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111128681-1"></script>
   <script>
@@ -30,16 +30,20 @@
   <link href="/img/favicon.png" rel="shortcut icon" />
   <link href="/css/bulma.css" rel="stylesheet">
   <link href="/css/custom.css" rel="stylesheet">
-  <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/font-awesome/css/fontawesome-all.min.css" rel="stylesheet">
 </head>
 
 <body>
-  <nav class="navbar is-fixed-top is-info">
+  
+<div class="container-fluid">
+    <div class="hero is-deployo is-info">
+    <div class="hero-head">
+        <nav class="navbar is-info">
     <div class="navbar-brand">
         <a class="navbar-item" href="/">
             <img src="/img/logo_light.svg" alt="Deployo" width="112" height="28">
         </a>
-        <button class="button navbar-burger is-transparent" data-target="navbar">
+        <button class="button navbar-burger is-info" data-target="navbar">
             <span></span>
             <span></span>
             <span></span>
@@ -71,111 +75,112 @@
             </div>
         </div>
     </div>
-</nav> 
-<div class="container-fluid">
-    <div class="hero is-info is-medium">
-    <div class="hero-body">
-        <div class="container has-text-left">
-            <h1 class="title is-1 is-size-3-mobile is-spaced has-text-weight-normal">
-                Simplify your 
-                <span class="has-text-weight-semibold is-size-3-mobile" id="typewriter"></span>
-                
-            </h1>
-            <h2 class="subtitle is-4">
-                Web based shell execution tool.
-            </h2>
-            <p class="has-text-left">
-                <a href="#signup" class="button is-primary is-large">Create Account For Free</a>
-            </p>
+</nav>
+    </div>
+    <div class="hero-body has-text-centered">
+        <div class="columns">
+            <div class="column">
+                <h1 class="title is-1 is-size-3-mobile is-spaced has-text-weight-normal">
+                    A web based shell execution tool.
+                </h1>
+                <h2 class="subtitle is-4">
+                    Simplify your 
+                    <span class="has-text-weight-semibold is-size-4-mobile" id="typewriter"></span>
+                    
+                </h2>
+                <p class="has-text-centered">
+                    <a href="#signup" class="button is-primary is-large">Create Account For Free</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="hero-foot">
+        <div class="columns is-centered">
+            <div class="column is-four-fifths">
+                <img src="/img/frame-chrome-mac.png" />
+            </div>
         </div>
     </div>
 </div>
 </div>
-<div class="container">
-    <section class="section" id="overview">
-        <div class="columns">
-            <div class="column is-half-desktop">
-                <h2 class="title is-3">Overview</h2>
-                <p>Deployo is a web based shell execution tool that allows you to execute over SSH with a button click. It is perfectly suited for personal projects, freelancers or small companies looking to speed up their remote tasks.</p>
+<section class="hero is-white padding-top-100" id="overview">
+    <div class="container">
+        <section class="section">
+            <div class="columns">
+                <div class="column is-half-desktop">
+                    <h2 class="title is-3">Overview</h2>
+                    <p>Deployo is a web based shell execution tool that allows you to execute over SSH with a button click. It is perfectly suited for personal projects, freelancers or small companies looking to speed up their remote tasks.</p>
+                </div>
+                <div class="column is-half-desktop">
+                    <figure class="image is-2by1 box">
+                        <img style="border-radius: 5px;" src="/img/demo.gif" />
+                    </figure>
+                </div>
             </div>
-            <div class="column is-half-desktop">
-                <figure class="image is-2by1 box">
-                    <img style="border-radius: 5px;" src="/img/demo.gif"/>
-                </figure>
-            </div>
-        </div>
-    </section>
-    <section class="section" id="features">
-        <h2 class="title is-3">Features</h2>
-        <div class="columns">
-             
-            <div class="column is-4">
-                <article class="has-text-left">
-    <section class="section">
-        <h2 class="title is-4">
-            <i class="fa fa-paper-plane"></i> Execute shell scripts</h2>
-        <p>Run your scrips easily with live output streamed directly from your server.</p>
-    </section>
+        </section>
+    </div>
+</section>
+<section class="hero is-light" id="features">
+    <div class="container">
+        <section class="section">
+            <h2 class="title is-3">Features</h2>
+            <div class="columns">
+                 
+                <div class="column is-4">
+                    <article>
+    <h4 class="title is-4">
+        <i class="fa fa-paper-plane"></i> Execute shell scripts</h4>
+    <p>Run your scrips easily with live output streamed directly from your server.</p>
 </article>
-            </div>
-             
-            <div class="column is-4">
-                <article class="has-text-left">
-    <section class="section">
-        <h2 class="title is-4">
-            <i class="fa fa-book"></i> See history</h2>
-        <p>History of all your script executions is shown right on your dashboard. You can access old executions and execute again the same script with same parameters with ease.</p>
-    </section>
+                </div>
+                 
+                <div class="column is-4">
+                    <article>
+    <h4 class="title is-4">
+        <i class="fa fa-book"></i> See history</h4>
+    <p>History of all your script executions is shown right on your dashboard. You can access old executions and execute again the same script with same parameters with ease.</p>
 </article>
-            </div>
-             
-            <div class="column is-4">
-                <article class="has-text-left">
-    <section class="section">
-        <h2 class="title is-4">
-            <i class="fa fa-file-code-o"></i> Configure easily with YAML</h2>
-        <p>All your configuration is stored online in a simple YAML file. Easily edit with syntax highlighting.</p>
-    </section>
+                </div>
+                 
+                <div class="column is-4">
+                    <article>
+    <h4 class="title is-4">
+        <i class="fa fa-file-code-o"></i> Configure easily with YAML</h4>
+    <p>All your configuration is stored online in a simple YAML file. Easily edit with syntax highlighting.</p>
 </article>
+                </div>
+                 
             </div>
-             
-        </div>
-        <div class="columns">
-            
-            <div class="column is-4">
-                <article class="has-text-left">
-    <section class="section">
-        <h2 class="title is-4">
-            <i class="fa fa-mobile-phone"></i> Access from anywhere</h2>
-        <p>Deployo is a web based solution accessible from any device with a browser. So desktop, tablet or mobile, it is at your fingertips.</p>
-    </section>
+            <div class="columns">
+                
+                <div class="column is-4">
+                    <article>
+    <h4 class="title is-4">
+        <i class="fa fa-mobile-phone"></i> Access from anywhere</h4>
+    <p>Deployo is a web based solution accessible from any device with a browser. So desktop, tablet or mobile, it is at your fingertips.</p>
 </article>
-            </div>
-             
-            <div class="column is-4">
-                <article class="has-text-left">
-    <section class="section">
-        <h2 class="title is-4">
-            <i class="fa fa-lock"></i> Store your SSH keys</h2>
-        <p>Your SSH keys can be generated and stored online and used everytime you acces your server. Have a private key already? Just upload it!</p>
-    </section>
+                </div>
+                 
+                <div class="column is-4">
+                    <article>
+    <h4 class="title is-4">
+        <i class="fa fa-lock"></i> Store your SSH keys</h4>
+    <p>Your SSH keys can be generated and stored online and used everytime you acces your server. Have a private key already? Just upload it!</p>
 </article>
+                </div>
+                
             </div>
-            
-        </div>
-    </section>
-    <section class="section">
-        <h2 class="title is-3">Screenshot</h2>
-        <figure class="image is-paddingless box">
-            <img style="border-radius: 5px;" src="/img/screenshot_full.png"/>
-        </figure>
-    </section>
-    <section class="section" id="pricing">
-        <h2 class="title is-3">Pricing</h2>
-        <div class="columns">
-            
-            <div class="column">
-                <article class="tile is-child box has-text-centered notification is-info">
+        </section>
+    </div>
+</section>
+<section class="hero" id="pricing">
+    <div class="container">
+        <section class="section">
+            <h2 class="title is-3">Pricing</h2>
+            <div class="columns">
+                
+                <div class="column">
+                    <article class="tile is-child box has-text-centered notification is-info">
     <div class="margin-bottom-20">
         <h4 class="title is-4">
             Free
@@ -204,10 +209,10 @@
     </div>
     <span>* no credit card needed</span>
 </article>
-            </div>
-            
-            <div class="column">
-                <article class="tile is-child box has-text-centered notification is-link">
+                </div>
+                
+                <div class="column">
+                    <article class="tile is-child box has-text-centered notification is-link">
     <div class="margin-bottom-20">
         <h4 class="title is-4">
             Personal
@@ -238,10 +243,10 @@
     </div>
     <span>* no credit card needed</span>
 </article>
-            </div>
-            
-            <div class="column">
-                <article class="tile is-child box has-text-centered notification is-info">
+                </div>
+                
+                <div class="column">
+                    <article class="tile is-child box has-text-centered notification is-info">
     <div class="margin-bottom-20">
         <h4 class="title is-4">
             Pro
@@ -272,12 +277,16 @@
     </div>
     <span>* no credit card needed</span>
 </article>
+                </div>
+                
             </div>
-            
-        </div>
-    </section>
-    <section class="section" id="signup">
-        <h2 class="title is-3">Sign up</h2>
+        </section>
+    </div>
+</section>
+<section class="hero is-light" id="signup">
+    <div class="container">
+        <section class="section">
+            <h2 class="title is-3">Sign up</h2>
 <form action="//app.deployo.me/signup" method="POST">
     <div class="field is-horizontal">
         <div class="field-body">
@@ -293,78 +302,75 @@
             </div>
             <div class="field">
                 <div class="control">
-                    <button type="submit" class="button is-primary is-large">Create Account Now</button>
+                    <button type="submit" class="button is-primary is-large">Create Account For Free</button>
                 </div>
             </div>
         </div>
     </div>
-    <p>you will get access to <strong>Deployo Free</strong> plan, free of charge, no credit card needed.</p>
+    <p>you will get access to <strong>Deployo Free</strong> plan, no credit card needed.</p>
 </form>
-    </section>
-    <section class="section" id="roadmap">
-        <h2 class="title is-3">Roadmap</h2>
-        <div class="columns">
-             
-            <div class="column is-4">
-                <article class="has-text-left">
-    <section class="section">
-        <h2 class="title is-4">
-            <i class="fa fa-clock-o"></i> Scheduled tasks</h2>
-        <p>Schedule your tasks using standard cron syntax. Run your script in configured intervals. You can see history and output of scheduled tasks.</p>
-    </section>
-</article>
-            </div>
-             
-            <div class="column is-4">
-                <article class="has-text-left">
-    <section class="section">
-        <h2 class="title is-4">
-            <i class="fa fa-puzzle-piece"></i> Webhooks</h2>
-        <p>Run scripts triggered by webhooks from GitHub or Bitbucket.</p>
-    </section>
-</article>
-            </div>
-             
-            <div class="column is-4">
-                <article class="has-text-left">
-    <section class="section">
-        <h2 class="title is-4">
-            <i class="fa fa-slack"></i> Slack integration</h2>
-        <p>Run scripts triggered directly from Slack.</p>
-    </section>
-</article>
-            </div>
-             
-        </div>
-        <div class="columns">
-            
-            <div class="column is-4">
-                <article class="has-text-left">
-    <section class="section">
-        <h2 class="title is-4">
-            <i class="fa fa-terminal"></i> CLI</h2>
-        <p>A command-line tool for running your scripts from your terminal.</p>
-    </section>
-</article>
-            </div>
-            
-        </div>
-    </section>
-</div>
- 
-<footer class="footer is-dark" id="contact">
+        </section>
+    </div>
+</section>
+<section class="hero is-white" id="roadmap">
     <div class="container">
-        <div style="max-width: 640px;">
+        <section class="section">
+            <h2 class="title is-3">Roadmap</h2>
+            <div class="columns">
+                 
+                <div class="column is-4">
+                    <article>
+    <h4 class="title is-4">
+        <i class="fa fa-clock-o"></i> Scheduled tasks</h4>
+    <p>Schedule your tasks using standard cron syntax. Run your script in configured intervals. You can see history and output of scheduled tasks.</p>
+</article>
+                </div>
+                 
+                <div class="column is-4">
+                    <article>
+    <h4 class="title is-4">
+        <i class="fa fa-puzzle-piece"></i> Webhooks</h4>
+    <p>Run scripts triggered by webhooks from GitHub or Bitbucket.</p>
+</article>
+                </div>
+                 
+                <div class="column is-4">
+                    <article>
+    <h4 class="title is-4">
+        <i class="fa fa-slack"></i> Slack integration</h4>
+    <p>Run scripts triggered directly from Slack.</p>
+</article>
+                </div>
+                 
+            </div>
+            <div class="columns">
+                
+                <div class="column is-4">
+                    <article>
+    <h4 class="title is-4">
+        <i class="fa fa-terminal"></i> CLI</h4>
+    <p>A command-line tool for running your scripts from your terminal.</p>
+</article>
+                </div>
+                
+            </div>
+        </section>
+    </div>
+</section>
+<section class="hero is-light" id="contact">
+    <div class="container">
+        <section class="section">
+            <div style="max-width: 640px;">
     <h3 class="title is-3">Send us a message!</h3>
     <form method="POST" action="https://formspree.io/contact@deployo.me">
         <div class="field">
             <div class="control">
-                <input name="email" class="input is-medium is-link" placeholder="Your email" type="email">
+                <input name="email" class="input is-medium" placeholder="Your email" type="email">
             </div>
         </div>
         <div class="field">
             <div class="control">
-                <textarea rows="5" name="message" class="textarea is-medium is-link" placeholder="Your message"></textarea>
+                <textarea rows="5" name="message" class="textarea is-medium" placeholder="Your message"></textarea>
             </div>
         </div>
         <div class="field">
@@ -374,12 +380,25 @@
         </div>
     </form>
 </div>
+        </section>
     </div>
-</footer>
-<section class="section hero is-info">
+</section>
+ 
+<section class="hero is-link">
     <div class="container">
         <section class="section">
-            Copyright 2018 © deployo.me All rights reserved.
+            <div class="level">
+                <div class="level-left">
+                    2018 © deployo.me
+                </div>
+                <div class="level-right">
+                    made with
+                    &nbsp;<i class="far fa-hand-paper"></i>
+                    &nbsp;<i class="far fa-hand-paper"></i>&nbsp;
+                    &nbsp;by
+                    &nbsp;<a href="https://twitter.com/miloskrca">@miloskrca</a>
+                </div>
+            </div>
         </section>
     </div>
 </section>

@@ -2,76 +2,101 @@
 <div class="container-fluid">
     {{partial "hero" .}}
 </div>
-<div class="container">
-    <section class="section" id="overview">
-        <div class="columns">
-            <div class="column is-half-desktop">
-                <h2 class="title is-3">Overview</h2>
-                <p>{{.Params.overview}}</p>
-            </div>
-            <div class="column is-half-desktop">
-                <figure class="image is-2by1 box">
-                    <img style="border-radius: 5px;" src="{{.Params.overview_image}}"/>
-                </figure>
-            </div>
-        </div>
-    </section>
-    <section class="section" id="features">
-        <h2 class="title is-3">Features</h2>
-        <div class="columns">
-            {{range $k, $v := .Params.features}} {{if eq $k 3}}
-        </div>
-        <div class="columns">
-            {{end}}
-            <div class="column is-4">
-                {{partial "feature" $v}}
-            </div>
-            {{end}}
-        </div>
-    </section>
-    <section class="section">
-        <h2 class="title is-3">Screenshot</h2>
-        <figure class="image is-paddingless box">
-            <img style="border-radius: 5px;" src="{{.Params.screenshot}}"/>
-        </figure>
-    </section>
-    <section class="section" id="pricing">
-        <h2 class="title is-3">Pricing</h2>
-        <div class="columns">
-            {{range .Params.plans}}
-            <div class="column">
-                {{partial "plan" .}}
-            </div>
-            {{end}}
-        </div>
-    </section>
-    <section class="section" id="signup">
-        {{partial "signup" .}}
-    </section>
-    <section class="section" id="roadmap">
-        <h2 class="title is-3">Roadmap</h2>
-        <div class="columns">
-            {{range $k, $v := .Params.roadmap}} {{if eq $k 3}}
-        </div>
-        <div class="columns">
-            {{end}}
-            <div class="column is-4">
-                {{partial "roadmap" $v}}
-            </div>
-            {{end}}
-        </div>
-    </section>
-</div>
-{{ end }} {{define "footer"}}
-<footer class="footer is-dark" id="contact">
-    <div class="container">
-        {{partial "contact" .}}
-    </div>
-</footer>
-<section class="section hero is-info">
+<section class="hero is-white padding-top-100" id="overview">
     <div class="container">
         <section class="section">
-            Copyright 2018 © deployo.me All rights reserved.
+            <div class="columns">
+                <div class="column is-half-desktop">
+                    <h2 class="title is-3">Overview</h2>
+                    <p>{{.Params.overview}}</p>
+                </div>
+                <div class="column is-half-desktop">
+                    <figure class="image is-2by1 box">
+                        <img style="border-radius: 5px;" src="{{.Params.overview_image}}" />
+                    </figure>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+<section class="hero is-light" id="features">
+    <div class="container">
+        <section class="section">
+            <h2 class="title is-3">Features</h2>
+            <div class="columns">
+                {{range $k, $v := .Params.features}} {{if eq $k 3}}
+            </div>
+            <div class="columns">
+                {{end}}
+                <div class="column is-4">
+                    {{partial "feature" $v}}
+                </div>
+                {{end}}
+            </div>
+        </section>
+    </div>
+</section>
+<section class="hero" id="pricing">
+    <div class="container">
+        <section class="section">
+            <h2 class="title is-3">Pricing</h2>
+            <div class="columns">
+                {{range .Params.plans}}
+                <div class="column">
+                    {{partial "plan" .}}
+                </div>
+                {{end}}
+            </div>
+        </section>
+    </div>
+</section>
+<section class="hero is-light" id="signup">
+    <div class="container">
+        <section class="section">
+            {{partial "signup" .}}
+        </section>
+    </div>
+</section>
+<section class="hero is-white" id="roadmap">
+    <div class="container">
+        <section class="section">
+            <h2 class="title is-3">Roadmap</h2>
+            <div class="columns">
+                {{range $k, $v := .Params.roadmap}} {{if eq $k 3}}
+            </div>
+            <div class="columns">
+                {{end}}
+                <div class="column is-4">
+                    {{partial "roadmap" $v}}
+                </div>
+                {{end}}
+            </div>
+        </section>
+    </div>
+</section>
+<section class="hero is-light" id="contact">
+    <div class="container">
+        <section class="section">
+            {{partial "contact" .}}
+        </section>
+    </div>
+</section>
+{{ end }} {{define "footer"}}
+<section class="hero is-link">
+    <div class="container">
+        <section class="section">
+            <div class="level">
+                <div class="level-left">
+                    2018 © deployo.me
+                </div>
+                <div class="level-right">
+                    made with
+                    &nbsp;<i class="far fa-hand-paper"></i>
+                    &nbsp;<i class="far fa-hand-paper"></i>&nbsp;
+                    &nbsp;by
+                    &nbsp;<a href="https://twitter.com/miloskrca">@miloskrca</a>
+                </div>
+            </div>
         </section>
     </div>
 </section>

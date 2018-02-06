@@ -52,23 +52,22 @@
 
     <div class="navbar-menu is-info" id="navbar">
         <div class="navbar-end">
-            <a class="navbar-item" href='/#overview'>Overview</a>
-            <a class="navbar-item" href='/#features'>Features</a>
             <a class="navbar-item" href='/#pricing'>Pricing</a>
-            <a class="navbar-item" href='/#contact'>Contact</a>
+            <a class="navbar-item" href='/#features'>Features</a>
+            
             <a class="navbar-item" href='/docs'>Docs</a>
             
 
             <div class="navbar-item">
                 <div class="field is-grouped">
-                    <p class="control" id="login-link">
-                        <a class="button is-link" href="//app.deployo.me/login">
-                            <span>Log In</span>
-                        </a>
-                    </p>
                     <p class="control" id="signup-link">
                         <a class="button is-primary" href="#signup">
                             <span>Sign Up</span>
+                        </a>
+                    </p>
+                    <p class="control" id="login-link">
+                        <a class="button is-link" href="//app.deployo.me/login">
+                            <span>Log In</span>
                         </a>
                     </p>
                 </div>
@@ -103,18 +102,14 @@
     </div>
 </div>
 </div>
-<section class="hero is-white padding-top-100" id="overview">
+<section class="hero is-dark padding-top-100" id="overview">
     <div class="container">
         <section class="section">
             <div class="columns">
-                <div class="column is-half-desktop">
-                    <h2 class="title is-3">Overview</h2>
-                    <p>Deployo is a web based shell execution tool that allows you to execute over SSH with a button click. It is perfectly suited for personal projects, freelancers or small companies looking to speed up their remote tasks.</p>
-                </div>
-                <div class="column is-half-desktop">
-                    <figure class="image is-2by1 box">
-                        <img style="border-radius: 5px;" src="/img/demo.gif" />
-                    </figure>
+                <div class="column has-text-centered">
+                    <h2 class="title is-3">
+                        <i class="fas fa-mouse-pointer"></i> Execute commands over SSH with a button click.</h2>
+                    <p>It is perfectly suited for personal projects, freelancers or small companies looking to speed up their remote tasks.</p>
                 </div>
             </div>
         </section>
@@ -169,6 +164,23 @@
 </article>
                 </div>
                 
+            </div>
+        </section>
+    </div>
+</section>
+<section class="hero is-primary">
+    <div class="container">
+        <section class="section">
+            <div class="columns">
+                    <div class="column is-half-desktop">
+                        <figure class="image is-2by1 box">
+                            <img style="border-radius: 2px;" src="/img/demo.gif" />
+                        </figure>
+                    </div>
+                <div class="column is-half-desktop has-text-centered">
+                    <h3 class="title is-3">Join other freelancers and companies that are already making their life simpler.</h3>
+                    <p>Deployo is available on all devices with a browser. With your configuration safely stored online you are able to deploy your software or setup servers easily and conveniently.</p>
+                </div>
             </div>
         </section>
     </div>
@@ -283,7 +295,7 @@
         </section>
     </div>
 </section>
-<section class="hero is-light" id="signup">
+<section class="hero is-dark" id="signup">
     <div class="container">
         <section class="section">
             <h2 class="title is-3">Sign up</h2>
@@ -312,7 +324,7 @@
         </section>
     </div>
 </section>
-<section class="hero is-white" id="roadmap">
+<section class="hero is-light" id="roadmap">
     <div class="container">
         <section class="section">
             <h2 class="title is-3">Roadmap</h2>
@@ -357,32 +369,7 @@
         </section>
     </div>
 </section>
-<section class="hero is-light" id="contact">
-    <div class="container">
-        <section class="section">
-            <div style="max-width: 640px;">
-    <h3 class="title is-3">Send us a message!</h3>
-    <form method="POST" action="https://formspree.io/contact@deployo.me">
-        <div class="field">
-            <div class="control">
-                <input name="email" class="input is-medium" placeholder="Your email" type="email">
-            </div>
-        </div>
-        <div class="field">
-            <div class="control">
-                <textarea rows="5" name="message" class="textarea is-medium" placeholder="Your message"></textarea>
-            </div>
-        </div>
-        <div class="field">
-            <div class="control">
-                <button type="submit" class="button is-link is-medium">Send</button>
-            </div>
-        </div>
-    </form>
-</div>
-        </section>
-    </div>
-</section>
+
  
 <section class="hero is-link">
     <div class="container">
@@ -392,11 +379,10 @@
                     2018 © deployo.me
                 </div>
                 <div class="level-right">
-                    made with
-                    &nbsp;<i class="fas fa-hand-paper has-text-warning"></i>
-                    &nbsp;<i class="fas fa-hand-paper has-text-warning"></i>&nbsp;
-                    &nbsp;by
-                    &nbsp;<a href="https://twitter.com/miloskrca">
+                    made with &nbsp;
+                    <i class="fas fa-hand-paper has-text-warning"></i>&nbsp;
+                    <i class="fas fa-hand-paper has-text-warning"></i>&nbsp;&nbsp;by&nbsp;
+                    <a href="https://twitter.com/miloskrca">
                         @miloskrca
                     </a>
                 </div>

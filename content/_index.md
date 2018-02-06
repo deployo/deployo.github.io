@@ -10,8 +10,9 @@ hero:
   call_to_action: Create Account For Free
 meta:
   description: A web based shell execution tool that uses SSH to connect to your servers. Simplify your deployments or remote shell executions.
-overview: Deployo is a web based shell execution tool that allows you to execute over SSH with a button click. It is perfectly suited for personal projects, freelancers or small companies looking to speed up their remote tasks.
-overview_image: /img/demo.gif
+overview:
+  title: Execute commands over SSH with a button click.
+  summary: It is perfectly suited for personal projects, freelancers or small companies looking to speed up their remote tasks.
 screenshot: /img/frame-chrome-mac.png
 call_to_action: Create Account For Free
 features:
@@ -30,19 +31,10 @@ features:
     - title: Store your SSH keys
       description: Your SSH keys can be generated and stored online and used everytime you acces your server. Have a private key already? Just upload it!
       icon: fas fa-lock
-roadmap:
-    - title: Scheduled tasks
-      description: Schedule your tasks using standard cron syntax. Run your script in configured intervals. You can see history and output of scheduled tasks.
-      icon: far fa-clock
-    - title: Webhooks
-      description: Run scripts triggered by webhooks from GitHub or Bitbucket.
-      icon: fas fa-puzzle-piece
-    - title: Slack integration
-      description: Run scripts triggered directly from Slack.
-      icon: fab fa-slack-hash
-    - title: CLI
-      description: A command-line tool for running your scripts from your terminal.
-      icon: fas fa-terminal
+teaser:
+  title: Join other freelancers and companies that are already making their life simpler.
+  summary: Deployo is available on all devices with a browser. With your configuration safely stored online you are able to deploy your software or setup servers easily and conveniently.
+  image: /img/demo.gif
 plans:
     - title: Free
       features:
@@ -78,4 +70,17 @@ plans:
       call_to_action: Create Account For Free
       style: info
       note: "* no credit card needed"
+roadmap:
+    - title: Scheduled tasks
+      description: Schedule your tasks using standard cron syntax. Run your script in configured intervals. You can see history and output of scheduled tasks.
+      icon: far fa-clock
+    - title: Webhooks
+      description: Run scripts triggered by webhooks from GitHub or Bitbucket.
+      icon: fas fa-puzzle-piece
+    - title: Slack integration
+      description: Run scripts triggered directly from Slack.
+      icon: fab fa-slack-hash
+    - title: CLI
+      description: A command-line tool for running your scripts from your terminal.
+      icon: fas fa-terminal
 ---

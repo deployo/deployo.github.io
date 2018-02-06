@@ -2,18 +2,14 @@
 <div class="container-fluid">
     {{partial "hero" .}}
 </div>
-<section class="hero is-white padding-top-100" id="overview">
+<section class="hero is-dark padding-top-100" id="overview">
     <div class="container">
         <section class="section">
             <div class="columns">
-                <div class="column is-half-desktop">
-                    <h2 class="title is-3">Overview</h2>
-                    <p>{{.Params.overview}}</p>
-                </div>
-                <div class="column is-half-desktop">
-                    <figure class="image is-2by1 box">
-                        <img style="border-radius: 5px;" src="{{.Params.overview_image}}" />
-                    </figure>
+                <div class="column has-text-centered">
+                    <h2 class="title is-3">
+                        <i class="fas fa-mouse-pointer"></i> {{.Params.overview.title}}</h2>
+                    <p>{{.Params.overview.summary}}</p>
                 </div>
             </div>
         </section>
@@ -36,6 +32,23 @@
         </section>
     </div>
 </section>
+<section class="hero is-primary">
+    <div class="container">
+        <section class="section">
+            <div class="columns">
+                    <div class="column is-half-desktop">
+                        <figure class="image is-2by1 box">
+                            <img style="border-radius: 2px;" src="{{.Params.teaser.image}}" />
+                        </figure>
+                    </div>
+                <div class="column is-half-desktop has-text-centered">
+                    <h3 class="title is-3">{{.Params.teaser.title}}</h3>
+                    <p>{{.Params.teaser.summary}}</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
 <section class="hero" id="pricing">
     <div class="container">
         <section class="section">
@@ -50,14 +63,14 @@
         </section>
     </div>
 </section>
-<section class="hero is-light" id="signup">
+<section class="hero is-dark" id="signup">
     <div class="container">
         <section class="section">
             {{partial "signup" .}}
         </section>
     </div>
 </section>
-<section class="hero is-white" id="roadmap">
+<section class="hero is-light" id="roadmap">
     <div class="container">
         <section class="section">
             <h2 class="title is-3">Roadmap</h2>
@@ -74,13 +87,13 @@
         </section>
     </div>
 </section>
-<section class="hero is-light" id="contact">
+<!-- <section class="hero is-dark" id="contact">
     <div class="container">
         <section class="section">
             {{partial "contact" .}}
         </section>
     </div>
-</section>
+</section> -->
 {{ end }} {{define "footer"}}
 <section class="hero is-link">
     <div class="container">
@@ -90,11 +103,10 @@
                     2018 © deployo.me
                 </div>
                 <div class="level-right">
-                    made with
-                    &nbsp;<i class="fas fa-hand-paper has-text-warning"></i>
-                    &nbsp;<i class="fas fa-hand-paper has-text-warning"></i>&nbsp;
-                    &nbsp;by
-                    &nbsp;<a href="https://twitter.com/miloskrca">
+                    made with &nbsp;
+                    <i class="fas fa-hand-paper has-text-warning"></i>&nbsp;
+                    <i class="fas fa-hand-paper has-text-warning"></i>&nbsp;&nbsp;by&nbsp;
+                    <a href="https://twitter.com/miloskrca">
                         @miloskrca
                     </a>
                 </div>

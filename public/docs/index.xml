@@ -18,7 +18,7 @@
       <guid>https://deployo.me/docs/configuration/</guid>
       <description>The configuration page is the main place where you set up your servers and scripts. The entire configuration iss a YAML file where you can configure everything that you need.
 YAML A basic YAML configuration file would looks something like this:
-servers: - name: local host: localhost port: 2222 user: root password: root environment: ENV_VAR: var1 scripts: - name: name commands: - echo &amp;quot;command&amp;quot; - echo $ENV_VAR variables: - ENV_VAR2 environment: ENV_VAR3: var3 workdir: /tmp  It is consisted of these sections:</description>
+servers: - name: production host: prod.deployo.me port: 22 user: root password: root environment: ENV_VAR: var1 scripts: - name: echo_variable commands: - echo &amp;quot;command&amp;quot; - echo $ENV_VAR variables: - ENV_VAR2 environment: ENV_VAR3: var3 workdir: /tmp templates: - name: deploy_prod description: Deploy to production servers: - production scripts: - echo_variable variables: ENV_VAR2: value  It is consisted of these sections:</description>
     </item>
     
     <item>
@@ -60,7 +60,9 @@ On this page you have a preview of all the keys stored by Deployo. You can see S
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://deployo.me/docs/user/</guid>
-      <description>The User page allows you to edit some of your user information and change your plan.</description>
+      <description>The User page allows you to edit some of your user information and change your plan.
+You can also add a credit card which will enable you to change your plan. You card information will be safely stored by Stripe.
+No credid card information will be stored by Deployo.</description>
     </item>
     
   </channel>

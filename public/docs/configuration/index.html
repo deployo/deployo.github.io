@@ -139,15 +139,15 @@
 <p>A basic YAML configuration file would looks something like this:</p>
 
 <pre><code class="language-yaml">servers:
-- name: local
-  host: localhost
-  port: 2222
+- name: production
+  host: prod.deployo.me
+  port: 22
   user: root
   password: root
   environment:
     ENV_VAR: var1
 scripts:
-- name: name
+- name: echo_variable
   commands:
   - echo &quot;command&quot;
   - echo $ENV_VAR
@@ -156,13 +156,23 @@ scripts:
   environment:
     ENV_VAR3: var3
   workdir: /tmp
+templates:
+  - name: deploy_prod
+    description: Deploy to production
+    servers:
+    - production
+    scripts:
+    - echo_variable
+    variables:
+      ENV_VAR2: value
 </code></pre>
 
 <p>It is consisted of these sections:</p>
 
 <ul>
-<li><a href="#servers"><code>servers</code></a></li>
-<li><a href="#scripts"><code>scripts</code></a></li>
+<li><a href="#servers-section"><code>servers</code></a></li>
+<li><a href="#scripts-section"><code>scripts</code></a></li>
+<li><a href="#templates-section"><code>templates</code></a></li>
 </ul>
 
 <h3 id="servers-section">Servers section</h3>
@@ -185,7 +195,7 @@ scripts:
 <tbody>
 <tr>
 <td>name</td>
-<td>name of your server to be displayed on the dasboard. Should be all lowercase without special characters.</td>
+<td>name of your server to be displayed on the dasboard. Should be all lowercase without special or space characters.</td>
 <td>yes</td>
 <td>string</td>
 <td>n/a</td>
@@ -257,7 +267,7 @@ scripts:
 <tbody>
 <tr>
 <td>name</td>
-<td>name of your script to be displayed on the dasboard. Should be all lowercase without special characters.</td>
+<td>name of your script to be displayed on the dasboard. Should be all lowercase without special or space characters.</td>
 <td>yes</td>
 <td>string</td>
 <td>n/a</td>
@@ -303,6 +313,64 @@ scripts:
 
 <p>Script environment variable &gt; User-provided variable &gt; Server environment variable</p>
 
+<h3 id="templates-section">Templates section</h3>
+
+<p>Here you can define templates, or more precisely, combinations of servers, scripts and variables. This is useful if you plan to often execute a certain combination.</p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+<th>Default value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>name</td>
+<td>name of your script to be displayed on the dasboard. Should be all lowercase without special and space characters.</td>
+<td>yes</td>
+<td>string</td>
+<td>n/a</td>
+</tr>
+
+<tr>
+<td>description</td>
+<td>User friendly description</td>
+<td>no</td>
+<td>strings</td>
+<td></td>
+</tr>
+
+<tr>
+<td>servers</td>
+<td>List of server names</td>
+<td>yes</td>
+<td>array of strings</td>
+<td>n/a</td>
+</tr>
+
+<tr>
+<td>scripts</td>
+<td>List of script names</td>
+<td>yes</td>
+<td>array of strings</td>
+<td>n/a</td>
+</tr>
+
+<tr>
+<td>variables</td>
+<td>a list of variables required from the user for execution of scripts. When a script is triggered from the dashboard a value for every variable will be required. Empty values are allowed.</td>
+<td>no</td>
+<td>array of strings</td>
+<td>[ ]</td>
+</tr>
+</tbody>
+</table>
+
 <h2 id="servers">Servers</h2>
 
 <p>This page is giving you a nicer prevew over the servers you have configured in YAML.
@@ -312,6 +380,11 @@ Here you can create and delete servers using the UI if you find it easier that w
 
 <p>This page is giving you a nicer prevew over the scripts you have configured in YAML.
 Here you can create and delete scripts using the UI if you find it easier that way.</p>
+
+<h2 id="templates">Templates</h2>
+
+<p>This page is giving you a nicer prevew over the templates you have configured in YAML.
+Here you can create and delete tempaltes using the UI if you find it easier that way.</p>
 
                 </div>
             </div>

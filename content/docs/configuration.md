@@ -10,15 +10,15 @@ A basic YAML configuration file would looks something like this:
 
 ```yaml
 servers:
-- name: local
-  host: localhost
-  port: 2222
+- name: production
+  host: prod.deployo.me
+  port: 22
   user: root
   password: root
   environment:
     ENV_VAR: var1
 scripts:
-- name: name
+- name: echo_variable
   commands:
   - echo "command"
   - echo $ENV_VAR
@@ -27,12 +27,22 @@ scripts:
   environment:
     ENV_VAR3: var3
   workdir: /tmp
+templates:
+  - name: deploy_prod
+    description: Deploy to production
+    servers:
+    - production
+    scripts:
+    - echo_variable
+    variables:
+      ENV_VAR2: value
 ```
 
 It is consisted of these sections:
 
-* [`servers`]({{< relref "#servers" >}})
-* [`scripts`]({{< relref "#scripts" >}})
+* [`servers`]({{< relref "#servers-section" >}})
+* [`scripts`]({{< relref "#scripts-section" >}})
+* [`templates`]({{< relref "#templates-section" >}})
 
 ### Servers section
 
@@ -42,7 +52,7 @@ The available options are:
 
 Name | Description | Required | Type | Default value
 --- |--- |--- |--- |---
-name | name of your server to be displayed on the dasboard. Should be all lowercase without special characters. | yes | string | n/a
+name | name of your server to be displayed on the dasboard. Should be all lowercase without special or space characters. | yes | string | n/a
 host | the addrest of your server. Can be IP or a host name. | yes | string | n/a
 port | port of the server | no | number | 22
 user | user that will be used by Deployo to ssh in the the server. | yes | string | n/a
@@ -59,7 +69,7 @@ The available options are:
 
 Name | Description | Required | Type | Default value
 --- |--- |--- |--- |---
-name | name of your script to be displayed on the dasboard. Should be all lowercase without special characters. | yes | string | n/a
+name | name of your script to be displayed on the dasboard. Should be all lowercase without special or space characters. | yes | string | n/a
 commands | an array of commands that will be executed on a server in the given order. | yes | array of strings | [ ]
 variables | a list of variables required from the user for execution of scripts. When a script is triggered from the dashboard a value for every variable will be required. Empty values are allowed. | no | array of strings | [ ]
 environment | a list of environment variable that will be available during execution of scripts. | no | map of string to string |
@@ -71,6 +81,18 @@ If a script is requiring a variable to be provided and the name of the variable 
 
 Script environment variable > User-provided variable > Server environment variable
 
+### Templates section
+
+Here you can define templates, or more precisely, combinations of servers, scripts and variables. This is useful if you plan to often execute a certain combination.
+
+Name | Description | Required | Type | Default value
+--- |--- |--- |--- |---
+name | name of your script to be displayed on the dasboard. Should be all lowercase without special and space characters. | yes | string | n/a
+description | User friendly description | no | strings |
+servers | List of server names | yes | array of strings | n/a
+scripts | List of script names | yes | array of strings | n/a
+variables | a list of variables required from the user for execution of scripts. When a script is triggered from the dashboard a value for every variable will be required. Empty values are allowed. | no | array of strings | [ ]
+
 ## Servers
 
 This page is giving you a nicer prevew over the servers you have configured in YAML.
@@ -80,3 +102,8 @@ Here you can create and delete servers using the UI if you find it easier that w
 
 This page is giving you a nicer prevew over the scripts you have configured in YAML.
 Here you can create and delete scripts using the UI if you find it easier that way.
+
+## Templates
+
+This page is giving you a nicer prevew over the templates you have configured in YAML.
+Here you can create and delete tempaltes using the UI if you find it easier that way.

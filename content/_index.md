@@ -16,25 +16,34 @@ overview:
 screenshot: /img/frame-chrome-mac.png
 call_to_action: Create Account For Free
 features:
-    - title: Execute shell scripts
-      description: Run your scrips easily with live output streamed directly from your server.
-      icon: fas fa-paper-plane
-    - title: See history
-      description: History of all your script executions is shown right on your dashboard. You can access old executions and execute again the same script with same parameters with ease.
-      icon: fas fa-book
-    - title: Configure easily with YAML
-      description: All your configuration is stored online in a simple YAML file. Easily edit with syntax highlighting.
-      icon: far fa-file-code
-    - title: Access from anywhere
-      description: Deployo is a web based solution accessible from any device with a browser. So desktop, tablet or mobile, it is at your fingertips.
-      icon: fas fa-mobile-alt
-    - title: Store your SSH keys
-      description: Your SSH keys can be generated and stored online and used everytime you acces your server. Have a private key already? Just upload it!
-      icon: fas fa-lock
+- title: Configure easily with YAML
+  description: All your configuration is stored online in a simple YAML file. Easily edit with syntax highlighting.
+  image: /img/configuration.gif
+  style: light
+  inverted: true
+- title: Execute shell scripts
+  description: Run your scrips easily with live output streamed directly from your server. You can configure multiple servers and multiple scripts.
+  image:  /img/deploy.gif
+  style: white
+- title: Deploy preconfigured templates
+  description: Configure templates for your combinations of servers, scripts and variables that you execute most often.
+  image: /img/template_multiple_scripts.gif
+  style: light
+  inverted: true
 teaser:
   title: Join other freelancers and companies that are already making their life simpler.
-  summary: Deployo is available on all devices with a browser. With your configuration safely stored online you are able to deploy your software or setup servers easily and conveniently.
+  description: Deployo is available on all devices with a browser. With your configuration safely stored online you are able to deploy your software or setup servers easily and conveniently.
   image: /img/demo.gif
+more_features:
+- title: Keep history
+  description: History of all your script executions is shown right on your dashboard. You can access old executions and execute again the same script with same parameters with ease.
+  icon: fas fa-book
+- title: Access from anywhere
+  description: Deployo is a web based solution accessible from any device with a browser. So desktop, tablet or mobile, it is at your fingertips.
+  icon: fas fa-mobile-alt
+- title: Store your SSH keys
+  description: Your SSH keys can be generated and stored online and used everytime you acces your server. Have a private key already? Just upload it!
+  icon: fas fa-lock
 plans:
     - title: Free
       features:
@@ -43,7 +52,7 @@ plans:
         - 10 entries in history
         - Passwords
       price: $0/mo
-      call_to_action: Create Account For Free
+      call_to_action: Create Account
       style: info
       note: "* no credit card needed"
     - title: Personal
@@ -54,7 +63,7 @@ plans:
         - Passwords
         - SSH keys
       price: $6.99/mo
-      call_to_action: Create Account For Free
+      call_to_action: Create Account
       style: link
       note: "* no credit card needed"
     - title: Pro
@@ -67,7 +76,7 @@ plans:
         # - Scheduler
         # - Metrics
       price: $13.99/mo
-      call_to_action: Create Account For Free
+      call_to_action: Create Account
       style: info
       note: "* no credit card needed"
 roadmap:

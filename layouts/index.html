@@ -15,13 +15,60 @@
         </section>
     </div>
 </section>
+{{range .Params.features}}
+<section class="hero is-{{.style}}">
+    <div class="container">
+        <section class="section">
+            <div class="columns">
+                {{if .inverted}}
+                <div class="column is-half-desktop">
+                    <figure class="image is-2by1 box">
+                        <img style="border-radius: 2px;" src="{{.image}}" />
+                    </figure>
+                </div>
+                <div class="column is-half-desktop has-text-centered hero">
+                    <div class="hero-body">
+                        <h3 class="title is-3">{{.title}}</h3>
+                        <p>{{.description}}</p>
+                    </div>
+                </div>
+                {{else}}
+                <div class="column is-half-desktop has-text-centered hero">
+                    <div class="hero-body">
+                        <h3 class="title is-3">{{.title}}</h3>
+                        <p>{{.description}}</p>
+                    </div>
+                </div>
+                <div class="column is-half-desktop">
+                    <figure class="image is-2by1 box">
+                        <img style="border-radius: 2px;" src="{{.image}}" />
+                    </figure>
+                </div>
+                {{end}}
+            </div>
+        </section>
+    </div>
+</section>
+{{end}}
+<section class="hero is-primary">
+    <div class="container">
+        <section class="section">
+            <div class="columns is-centered">
+                <div class="column is-half-desktop has-text-centered">
+                    <h3 class="title is-3">{{.Params.teaser.title}}</h3>
+                    <p>{{.Params.teaser.description}}</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
 <section class="hero is-light" id="features">
     <div class="container">
         <section class="section">
-            <h2 class="title is-3">Features</h2>
+            <h2 class="title is-3">More Features</h2>
             <div class="columns">
-                {{range $k, $v := .Params.features}} {{if eq $k 3}}
-            </div>
+                {{range $k, $v := .Params.more_features}} {{if eq $k 3}}
+                    </div>
             <div class="columns">
                 {{end}}
                 <div class="column is-4">
@@ -32,24 +79,7 @@
         </section>
     </div>
 </section>
-<section class="hero is-primary">
-    <div class="container">
-        <section class="section">
-            <div class="columns">
-                    <div class="column is-half-desktop">
-                        <figure class="image is-2by1 box">
-                            <img style="border-radius: 2px;" src="{{.Params.teaser.image}}" />
-                        </figure>
-                    </div>
-                <div class="column is-half-desktop has-text-centered">
-                    <h3 class="title is-3">{{.Params.teaser.title}}</h3>
-                    <p>{{.Params.teaser.summary}}</p>
-                </div>
-            </div>
-        </section>
-    </div>
-</section>
-<section class="hero" id="pricing">
+<section class="" id="pricing">
     <div class="container">
         <section class="section">
             <h2 class="title is-3">Pricing</h2>

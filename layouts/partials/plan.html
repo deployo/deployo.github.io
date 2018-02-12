@@ -1,6 +1,6 @@
 <article class="tile is-child box has-text-centered notification is-{{.style}}">
     <div class="margin-bottom-20">
-        <h4 class="title is-4">
+        <h4 class="title is-3">
             {{.title}}
         </h4>
     </div>
@@ -12,12 +12,14 @@
         </ul>
         {{if .price}}
         <p>
-            <span class="tag is-light is-medium">{{.price}}</span>
+            <span class="title is-3">{{.price}}</span><span>/mo</span>
         </p>
         {{end}}
     </div>
+    {{if .call_to_action}}
     <div>
         <a href="#signup" class='button is-medium is-primary'>{{.call_to_action}}</a>
     </div>
-    <span>{{.note}}</span>
+    {{end}}
+    {{if .note}}<span>{{.note}}</span>{{end }}
 </article>

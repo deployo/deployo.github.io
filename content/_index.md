@@ -51,10 +51,11 @@ plans:
         - 2 scripts
         - 10 entries in history
         - Passwords
-      price: $0/mo
-      call_to_action: Create Account
+        - Templates
+      price: $0
+      call_to_action: 
       style: info
-      note: "* no credit card needed"
+      note: 
     - title: Personal
       features:
         - 3 servers
@@ -62,10 +63,11 @@ plans:
         - 1 000 entries in history
         - Passwords
         - SSH keys
-      price: $6.99/mo
-      call_to_action: Create Account
+        - Templates
+      price: $6.99
+      call_to_action: 
       style: link
-      note: "* no credit card needed"
+      note: 
     - title: Pro
       features:
         - 10 servers
@@ -73,12 +75,13 @@ plans:
         - 10 000 entries in history
         - Passwords
         - SSH keys
+        - Templates
         # - Scheduler
         # - Metrics
-      price: $13.99/mo
-      call_to_action: Create Account
+      price: $13.99
+      call_to_action: 
       style: info
-      note: "* no credit card needed"
+      note: 
 roadmap:
     - title: Scheduled tasks
       description: Schedule your tasks using standard cron syntax. Run your script in configured intervals. You can see history and output of scheduled tasks.

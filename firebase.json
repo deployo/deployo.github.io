@@ -4,7 +4,14 @@
         "ignore": [
             "firebase.json",
             "**/.*",
-            "**/node_modules/**"
+            "**/node_modules/**",
+            "content/**",
+            "layouts/**",
+            "static/**",
+            "logo_design.svg",
+            "Makefile",
+            "config.yml",
+            "generate_gifs.sh"
         ]
     }
 }

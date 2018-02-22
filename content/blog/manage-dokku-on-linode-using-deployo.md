@@ -190,7 +190,7 @@ That is it! You now have a Linode server managed by Deployo.
 
 We used Deployo to prepare your server, install dependencies and create apps. You can see all that we did in History on the Deployo Dashboard.
 
-![Recapitulation](/img/blog/manage-dokku-on-linode-using-deployo/Selection_735.png "Deployo History will all of our commands")
+![Recapitulation](/img/blog/manage-dokku-on-linode-using-deployo/Selection_735.png "Deployo History with all of our commands")
 
 You can now maintain your server from anywhere just by accessing Deployo!
 

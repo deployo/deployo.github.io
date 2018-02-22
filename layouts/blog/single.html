@@ -1,13 +1,41 @@
 {{ define "main" }}
-<div class="content">
-    <section class="section">
-        <div class="has-text-centered">
-            <h1 class="title is-1">{{ .Title }}</h1>
-            <p class="subtitle is-6 is-subtitle">{{.Date.Format "02.01.2006"}}</p>
+<div class="hero is-deployo is-info">
+    <div class="hero-head">
+        {{partial "navbar" .}}
+    </div>
+    <div class="hero-body has-text-centered">
+        <div class="columns">
+            <div class="column">
+                <h1 class="title is-1">{{ .Title }}</h1>
+                <p class="subtitle is-6 is-subtitle">{{.Date.Format "02.01.2006"}}</p>
+            </div>
         </div>
-        <div class="section">
+    </div>
+</div>
+<div class="container deployo-min-height">
+    <section class="section">
+        <div class="content">
             {{ .Content }}
         </div>
     </section>
 </div>
+<section class="hero is-link">
+    <div class="container">
+        <section class="section">
+            <div class="level">
+                <div class="level-left">
+                    2018 © deployo.me
+                </div>
+                <div class="level-right">
+                    made with &nbsp;
+                    <i class="fas fa-hand-paper has-text-warning"></i>&nbsp;
+                    <i class="fas fa-hand-paper has-text-warning"></i>&nbsp;&nbsp;by&nbsp;
+                    <a href="https://twitter.com/miloskrca">
+                        @miloskrca
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
 {{ end }}

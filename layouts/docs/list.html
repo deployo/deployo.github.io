@@ -1,9 +1,39 @@
 {{ define "main" }}
-{{ partial "navbar" .}}
+<div class="hero is-deployo is-info">
+    <div class="hero-head">
+        {{partial "navbar" .}}
+    </div>
+    <div class="hero-body has-text-centered">
+        <div class="columns">
+            <div class="column">
+                <h1 class="title is-1">{{.Title}}</h1>
+                <h5 class="subtitle is-5">{{.Description}}</h5>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="content">
     <section class="section">
-        <h1 class="title is-1">{{.Title}}</h1>
         {{ partial "docs/block_menu" .}}
     </section>
 </div>
+<section class="hero is-link">
+    <div class="container">
+        <section class="section">
+            <div class="level">
+                <div class="level-left">
+                    2018 © deployo.me
+                </div>
+                <div class="level-right">
+                    made with &nbsp;
+                    <i class="fas fa-hand-paper has-text-warning"></i>&nbsp;
+                    <i class="fas fa-hand-paper has-text-warning"></i>&nbsp;&nbsp;by&nbsp;
+                    <a href="https://twitter.com/miloskrca">
+                        @miloskrca
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
 {{ end }}

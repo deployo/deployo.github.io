@@ -50,3 +50,7 @@ nav.navbar.shadow {
 .icon {
     margin-bottom: 16px;
 }
+
+.deployo-min-height {
+    min-height: 640px;
+}

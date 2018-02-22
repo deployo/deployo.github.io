@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home of Deployo on Deployo</title>
+    <title>Blog of Deployo on Deployo</title>
     <link>https://deployo.me/blog/</link>
-    <description>Recent content in Home of Deployo on Deployo</description>
+    <description>Recent content in Blog of Deployo on Deployo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Jan 2018 19:20:04 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 22 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://deployo.me/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Here we go</title>
-      <link>https://deployo.me/blog/here-we-go/</link>
-      <pubDate>Mon, 01 Jan 2018 19:20:04 -0700</pubDate>
+      <title>Manage Dokku on Linode using Deployo</title>
+      <link>https://deployo.me/blog/manage-dokku-on-linode-using-deployo/</link>
+      <pubDate>Thu, 22 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://deployo.me/blog/here-we-go/</guid>
-      <description> Who am I What is Deployo Who is Deployo for How did I make Deployo </description>
+      <guid>https://deployo.me/blog/manage-dokku-on-linode-using-deployo/</guid>
+      <description>I will show you how to install and use Dokku on a Linode instance and manage all that using Deployo.
+First you need to create a Linode instance. I chose the cheapest one which is only 5$ a month.
+After selecting an instance and clcking &amp;ldquo;Add this Linode!&amp;rdquo; button, your server will be created. Initially the server is empty, there is no operating system or anything there at all. To be able run anything on the node we have to install an operating system by deploying an Image.</description>
     </item>
     
   </channel>

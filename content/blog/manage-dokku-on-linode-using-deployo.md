@@ -70,9 +70,9 @@ After arround 4 minutes Dokku should be install on your server. Visit you server
 
 Note: do not use you Deployo generated SSH key for Dokku, this key is going to be used by Deployo to connect to your server. For Dokku you should use your SSH key from your personal laptop/desktop.
 
-#### Optional step
+#### Optional step - Assign an SSH key to your server
 
-Go to the SSH Keys page and generate SSH keys for the linode_dokku server. When the keys get generated you will be provided with command that you can eecute to quickly add this key to you servers authorized_keys file.
+We can configure Deployo to use an SSH key every time it connects to your server. This way you can remove the password from your configuration. To assign an SSH key to your server and use it go to the SSH Keys page and generate SSH keys for the `linode_dokku` server. When the keys get generated you will be provided with a command that you can execute to quickly add this key to you servers `authorized_keys` file. Paste the following script in your terminal window and hit ENTER.
 
 ```bash
 echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7pGgHZfFl0+R7w+bjpllwteyI/rUv0Hw+5WpZUwJsE8VvzpTBsOR57SGdv9vSyrzY+o0KaoWOh2t56QUg4Bs4rw/Z8a6F7MfuQS7n1Zp01jj9Ff04eSZ7ljZ+vIIB+cW6Fg98giQU6uDlloR36sBO4y8nRmzli7Lyg54TZI6FPsIFu1NMh+1997CkTlPAJiIb/u4f0bgxD69e2hzFWQ0QpPrufKKz+/kMsXDwA9fX8bgg08gHjA6Gl4K1RKLg5vAxanRqHHCt+uJJt+NCru2MAgNdHSGgElGuH6Tbz7V6mr+z5yHD1ZURJa0obwv645NLfWzcvcTk7//CaxCqRyun root@198.58.123.61" | ssh -p 22 root@198.58.123.61 "[ -d ~/.ssh ] || mkdir ~/.ssh && cat >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys"
@@ -83,6 +83,8 @@ When asked to continue connecting choose yes:
 ```bash
 Are you sure you want to continue connecting (yes/no)? yes
 ```
+
+You will be prompted for a password, wnter the root password you used when creating your linode and that should be it.
 
 Now you can go to your Deployo configuration and remove the password, your freshly generated SSH keys will be used.
 

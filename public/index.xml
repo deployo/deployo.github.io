@@ -12,14 +12,13 @@
     
     
     <item>
-      <title>Manage Dokku on Linode using Deployo</title>
-      <link>https://deployo.me/blog/manage-dokku-on-linode-using-deployo/</link>
+      <title>Install and Manage Dokku on Linode</title>
+      <link>https://deployo.me/blog/install-and-manage-dokku-on-linode/</link>
       <pubDate>Thu, 22 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://deployo.me/blog/manage-dokku-on-linode-using-deployo/</guid>
-      <description>I will show you how to install and use Dokku on a Linode instance and manage all that using Deployo.
-First you need to create a Linode instance. I chose the cheapest one which is only 5$ a month.
-After selecting an instance and clcking &amp;ldquo;Add this Linode!&amp;rdquo; button, your server will be created. Initially the server is empty, there is no operating system or anything there at all. To be able run anything on the node we have to install an operating system by deploying an Image.</description>
+      <guid>https://deployo.me/blog/install-and-manage-dokku-on-linode/</guid>
+      <description>I will show you how to install and use Dokku on a Linode instance. I will be using Deployo to manage the server but you can also just SSH into the server and execute the same commands.
+First you need to create a Linode instance. Go to linode.com and create an account if you already do not have one. When you login you will be taken to your linode manager view where you will be offered to create a linode instance.</description>
     </item>
     
     <item>

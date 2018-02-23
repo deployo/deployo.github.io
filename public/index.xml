@@ -18,7 +18,7 @@
       
       <guid>https://deployo.me/blog/install-and-manage-dokku-on-linode/</guid>
       <description>I will show you how to install and use Dokku on a Linode instance. I will be using Deployo to manage the server but you can also just SSH into the server and execute the same commands.
-First you need to create a Linode instance. Go to linode.com and create an account if you already do not have one. When you login you will be taken to your linode manager view where you will be offered to create a linode instance.</description>
+First you need to create a Linode instance. Go to linode.com and create an account if you do not already have one. When you login you will be taken to your linode manager view where you will be offered to create a linode instance.</description>
     </item>
     
     <item>

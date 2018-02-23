@@ -6,14 +6,15 @@ slug: install-and-manage-dokku-on-linode
 
 I will show you how to install and use Dokku on a Linode instance. I will be using [Deployo](https://deployo.me) to manage the server but you can also just SSH into the server and execute the same commands.
 
-First you need to create a Linode instance. Go to [linode.com](https://www.linode.com/?r=a353c3bb9c2ebc925fe7a565fb81cb5a2378120f) and create an account if you already do not have one. When you login you will be taken to your linode manager view where you will be offered to create a linode instance.
+First you need to create a Linode instance. Go to [linode.com](https://www.linode.com/?r=a353c3bb9c2ebc925fe7a565fb81cb5a2378120f) and create an account if you do not already have one. When you login you will be taken to your linode manager view where you will be offered to create a linode instance.
 
 {{< figure src="/img/blog/dokku-on-linode/Selection_738.png" caption="Linode manager" alt="Linode manager" width="740px" >}}
 
-After selecting an instance and clicking "Add this Linode!" button, your server will be created.
-Initially the server is empty, there is no operating system or anything there at all. To be able run anything on the node we have to install an operating system by deploying an Image. I chose to deploy ubutu 16.04 LTS because it is the most stable ubuntu available at the moment. I chose Ubuntu because there is a huge community of developers using Ubuntu and there is almost no problem that somebody already did not have and has not already fixed.
+After selecting an instance and clicking "Add this Linode!" button at the bottom of the page, your server will be created.
 
-Now when the OS is installed your machine is in "Powered Off" state, click the "Boot" button to start it up.
+Initially the server is empty, there is no operating system or anything there at all. To be able run anything on the server we have to install an operating system by deploying an Image. I chose to deploy ubutu 16.04 LTS because it is the most stable ubuntu available at the moment. I chose Ubuntu because there is a huge community of developers using Ubuntu and there is almost no problem that somebody already did not have and has not already fixed.
+
+Now when the OS is installed your server is in "Powered Off" state, click the "Boot" button to start it up.
 
 ## Configure Deployo and install Dokku
 

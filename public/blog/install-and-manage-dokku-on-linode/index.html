@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111128681-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111128681-1');
+  </script>
+
+  <title> Deployo - Install and Manage Dokku on Linode </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="" />
+
+  <meta property="og:url" content="https://deployo.me">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Deployo - Install and Manage Dokku on Linode">
+  <meta property="og:image" content="https://deployo.me/img/og_image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="126">
+  <meta property="og:image:height" content="126">
+  <meta property="og:description" content="">
+
+  <link href="/img/favicon.png" rel="shortcut icon" />
+  <link href="/css/bulma.css" rel="stylesheet">
+  <link href="/css/custom.css" rel="stylesheet">
+  <link href="/fontawesome/css/fontawesome-all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  
+<div class="hero is-deployo is-info">
+    <div class="hero-head">
+        <nav class="navbar is-info">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <img src="/img/logo_light.svg" alt="Deployo" width="112" height="28">
+        </a>
+        <button class="button navbar-burger is-info" data-target="navbar">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+
+    <div class="navbar-menu is-info" id="navbar">
+        <div class="navbar-end">
+            <a class="navbar-item" href='/#pricing'>Pricing</a>
+            <a class="navbar-item" href='/#features'>Features</a>
+            
+            <a class="navbar-item" href='/docs'>Docs</a>
+            <a class="navbar-item" href='/blog'>Blog</a>
+
+            <div class="navbar-item">
+                <div class="field is-grouped">
+                    <p class="control" id="signup-link">
+                        <a class="button is-primary" href='/#signup'>
+                            <span>Sign Up</span>
+                        </a>
+                    </p>
+                    <p class="control" id="login-link">
+                        <a class="button is-link" href="//app.deployo.me/auth/login">
+                            <span>Log In</span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    </div>
+    <div class="hero-body has-text-centered">
+        <div class="columns">
+            <div class="column">
+                <h1 class="title is-1">Install and Manage Dokku on Linode</h1>
+                <p class="subtitle is-6 is-subtitle">22.02.2018</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container deployo-min-height">
+    <section class="section">
+        <div class="content">
+            
+
+<p>I will show you how to install and use Dokku on a Linode instance. I will be using <a href="https://deployo.me">Deployo</a> to manage the server but you can also just SSH into the server and execute the same commands.</p>
+
+<p>First you need to create a Linode instance. Go to <a href="https://www.linode.com/?r=a353c3bb9c2ebc925fe7a565fb81cb5a2378120f">linode.com</a> and create an account if you do not already have one. When you login you will be taken to your linode manager view where you will be offered to create a linode instance.</p>
+
+
+<figure >
+    
+        <img src="/img/blog/dokku-on-linode/Selection_738.png" alt="Linode manager" width="740px" />
+    
+    
+    <figcaption>
+        <p>
+        Linode manager
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<p>After selecting an instance and clicking &ldquo;Add this Linode!&rdquo; button at the bottom of the page, your server will be created.</p>
+
+<p>Initially the server is empty, there is no operating system or anything there at all. To be able run anything on the server we have to install an operating system by deploying an Image. I chose to deploy ubutu 16.04 LTS because it is the most stable ubuntu available at the moment. I chose Ubuntu because there is a huge community of developers using Ubuntu and there is almost no problem that somebody already did not have and has not already fixed.</p>
+
+<p>Now when the OS is installed your server is in &ldquo;Powered Off&rdquo; state, click the &ldquo;Boot&rdquo; button to start it up.</p>
+
+<h2 id="configure-deployo-and-install-dokku">Configure Deployo and install Dokku</h2>
+
+<p>While your server is starting lets configure it in Deployo. We set up the password for now, but we will configure SSH keys soon.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">servers:
+- name: linode_dokku
+  host: <span style="color:#ae81ff">198.58</span>.<span style="color:#ae81ff">123.61</span>
+  port: <span style="color:#ae81ff">22</span>
+  user: root
+  password: &lt;your root password&gt;</code></pre></div>
+
+<p>You can visit Dokku at <a href="http://dokku.viewdocs.io/dokku/">http://dokku.viewdocs.io/dokku/</a> to get the command to install Dokku on your machin. I did this for you, the command is:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ wget https://raw.githubusercontent.com/dokku/dokku/v0.11.3/bootstrap.sh
+$ sudo DOKKU_TAG<span style="color:#f92672">=</span>v0.11.3 bash bootstrap.sh</code></pre></div>
+
+<p>We will use these commands to configure a Deployo script and will replace the version with a variable. This variable will allow us to switch out versions for the script more easily in the future.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">scripts:
+- name: install_dokku
+  commands:
+  - wget https://raw.githubusercontent.com/dokku/dokku/$VERSION/bootstrap.sh
+  - sudo DOKKU_TAG=$VERSION bash bootstrap.sh
+  variables:
+  - VERSION</code></pre></div>
+
+<p>Now that we have a server and a script let us make a template that rounds all of this up.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">templates:
+- name: install_dokku
+  description: Install Dokku to linode server
+  servers:
+  - linode_dokku
+  scripts:
+  - install_dokku
+  variables:
+    VERSION: v<span style="color:#ae81ff">0.11</span>.<span style="color:#ae81ff">3</span></code></pre></div>
+
+<p>Now go to the Deployo dashboard, you should see your template. The server status should be green (connected). Click the Deploy button of your template and the execution will start.</p>
+
+
+<figure >
+    
+        <img src="/img/blog/dokku-on-linode/Selection_731.png" alt="Install Dokku" width="740px" />
+    
+    
+    <figcaption>
+        <p>
+        Install Dokku
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<p>After arround 4 minutes Dokku should be install on your server. Visit you server IP (in my case it is 198.58.123.61) to finish the installation.</p>
+
+
+<figure >
+    
+        <img src="/img/blog/dokku-on-linode/Selection_737.png" alt="Dokku Installation" width="740px" />
+    
+    
+    <figcaption>
+        <p>
+        Dokku Installation
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<p>Note: do not use you Deployo generated SSH key for Dokku, this key is going to be used by Deployo to connect to your server. For Dokku you should use your SSH key from your personal laptop/desktop.</p>
+
+<h4 id="optional-step-assign-an-ssh-key-to-your-server">Optional step - Assign an SSH key to your server</h4>
+
+<p>We can configure Deployo to use an SSH key every time it connects to your server. This way you can remove the password from your configuration. To assign an SSH key to your server and use it go to the SSH Keys page and generate SSH keys for the <code>linode_dokku</code> server. When the keys get generated you will be provided with a command that you can execute to quickly add this key to you servers <code>authorized_keys</code> file. Paste the following script in your terminal window and hit ENTER.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7pGgHZfFl0+R7w+bjpllwteyI/rUv0Hw+5WpZUwJsE8VvzpTBsOR57SGdv9vSyrzY+o0KaoWOh2t56QUg4Bs4rw/Z8a6F7MfuQS7n1Zp01jj9Ff04eSZ7ljZ+vIIB+cW6Fg98giQU6uDlloR36sBO4y8nRmzli7Lyg54TZI6FPsIFu1NMh+1997CkTlPAJiIb/u4f0bgxD69e2hzFWQ0QpPrufKKz+/kMsXDwA9fX8bgg08gHjA6Gl4K1RKLg5vAxanRqHHCt+uJJt+NCru2MAgNdHSGgElGuH6Tbz7V6mr+z5yHD1ZURJa0obwv645NLfWzcvcTk7//CaxCqRyun root@198.58.123.61&#34;</span> | ssh -p <span style="color:#ae81ff">22</span> root@198.58.123.61 <span style="color:#e6db74">&#34;[ -d ~/.ssh ] || mkdir ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys &amp;&amp; chmod 600 ~/.ssh/authorized_keys&#34;</span></code></pre></div>
+
+<p>When asked to continue connecting, choose yes:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Are you sure you want to continue connecting (yes/no)? yes</code></pre></div>
+
+<p>You will be prompted for a password, enter the root password you used when creating your linode and that should be it.</p>
+
+<p>Now you can go to your Deployo configuration and remove the password, your freshly generated SSH keys will be used.</p>
+
+<h2 id="create-a-dokku-app">Create a Dokku app</h2>
+
+<p>Let&rsquo;s create an app on Dokku. Go to your Deployo configuration and add another script:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">scripts:
+- name: create_dokku_app
+  commands:
+  - dokku apps:create $APP_NAME
+  variables:
+  - APP_NAME</code></pre></div>
+
+<p>By providing a value for the APP_NAME variable we will be able to choose a name for the app. Click the &ldquo;New Deploy&rdquo; button in Deployo Dashboard and select your server, the &ldquo;create_dokku_app&rdquo; script and write down the name you would like to use, I chose to use the name from the Dokku documentation &ldquo;ruby-rails-sample&rdquo;.</p>
+
+
+<figure >
+    
+        <img src="/img/blog/dokku-on-linode/Selection_733.png" alt="New Deploy" width="740px" />
+    
+    
+    <figcaption>
+        <p>
+        New Deploy
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<p>Let&rsquo;s now add a couple of more scripts so we can setup a database for our Dokku app:</p>
+
+<p>Install the Postgres plugin:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">scripts:
+- name: install_dokku_postgres_plugin
+  commands:
+  - sudo dokku plugin:install https://github.com/dokku/dokku-postgres.git</code></pre></div>
+
+<p>Create a postgres service with the name rails-database:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">scripts:
+- name: create_dokku_postgres_database
+  commands:
+  - dokku postgres:create $DB_NAME
+  variables:
+  - DB_NAME</code></pre></div>
+
+<p>Link the application with the database:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">scripts:
+- name: link_dokku_postgres_database
+  commands:
+  - dokku postgres:link $DB_NAME $APP_NAME
+  variables:
+  - DB_NAME
+  - APP_NAME</code></pre></div>
+
+<p>Run these commands from the Deployo dashboard by clicking the &ldquo;New Deploy&rdquo; button and filling up the fields. For the name of the database choose &ldquo;rails-database&rdquo;.</p>
+
+<p>You could also combine all of the scripts in a template:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">templates:
+- name: create_dokku_postgres_app
+  description: Create Dokku app with postgres
+  servers:
+  - linode_dokku
+  scripts:
+  - install_dokku_postgres_plugin
+  - create_dokku_app
+  - create_dokku_postgres_database
+  - link_dokku_postgres_database
+  variables:
+    DB_NAME: rails-database
+    APP_NAME: ruby-rails-sample</code></pre></div>
+
+<h2 id="deploy-dokku-app">Deploy Dokku app</h2>
+
+<p>Now from you local machine clone the Dokku demo app:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git@github.com:heroku/ruby-rails-sample.git</code></pre></div>
+
+<p>On your local mashine execute the next commands:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd ruby-rails-sample
+git remote add dokku dokku@198.58.123.61:ruby-rails-sample
+git push dokku master</code></pre></div>
+
+<p>Dokku will deploy your app now. After it is done you should get an address of your application, it should look something like:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">=====&gt; Application deployed:
+       http://198.58.123.61:59826</code></pre></div>
+
+<p>Open that addres in you browser and you should see your app deployed.</p>
+
+
+<figure >
+    
+        <img src="/img/blog/dokku-on-linode/Selection_734_small.png" alt="Dokku demo app" />
+    
+    
+    <figcaption>
+        <p>
+        Dokku demo app
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<p>That is it! You now have a Linode server managed by Deployo.</p>
+
+<p>We used Deployo to prepare your server, install dependencies and create apps. You can see all that we did in History on the Deployo Dashboard.</p>
+
+
+<figure >
+    
+        <img src="/img/blog/dokku-on-linode/Selection_735.png" alt="Deployo History with all of our commands" width="860px" />
+    
+    
+    <figcaption>
+        <p>
+        Deployo History with all of our commands
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<p>You can now maintain your server from anywhere just by accessing Deployo!</p>
+
+<p>Happy Deployo-ing!</p>
+
+        </div>
+    </section>
+</div>
+<section class="hero is-link">
+    <div class="container">
+        <section class="section">
+            <div class="level">
+                <div class="level-left">
+                    2018 © deployo.me
+                </div>
+                <div class="level-right">
+                    made with &nbsp;
+                    <i class="fas fa-hand-paper has-text-warning"></i>&nbsp;
+                    <i class="fas fa-hand-paper has-text-warning"></i>&nbsp;&nbsp;by&nbsp;
+                    <a href="https://twitter.com/miloskrca">
+                        @miloskrca
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+ 
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      
+      var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+      
+      if ($navbarBurgers.length > 0) {
+
+        
+        $navbarBurgers.forEach(function ($el) {
+          $el.addEventListener('click', function () {
+
+            
+            var target = $el.dataset.target;
+            var $target = document.getElementById(target);
+
+            
+            $el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+
+          });
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

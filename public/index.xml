@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web based shell execution tool on Deployo</title>
+    <link>https://deployo.me/</link>
+    <description>Recent content in Web based shell execution tool on Deployo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 22 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://deployo.me/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Install and Manage Dokku on Linode</title>
+      <link>https://deployo.me/blog/install-and-manage-dokku-on-linode/</link>
+      <pubDate>Thu, 22 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://deployo.me/blog/install-and-manage-dokku-on-linode/</guid>
+      <description>I will show you how to install and use Dokku on a Linode instance. I will be using Deployo to manage the server but you can also just SSH into the server and execute the same commands.
+First you need to create a Linode instance. Go to linode.com and create an account if you do not already have one. When you login you will be taken to your linode manager view where you will be offered to create a linode instance.</description>
+    </item>
+    
+    <item>
+      <title>Configuration</title>
+      <link>https://deployo.me/docs/configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deployo.me/docs/configuration/</guid>
+      <description>The configuration page is the main place where you set up your servers and scripts. The entire configuration iss a YAML file where you can configure everything that you need.
+YAML A basic YAML configuration file would looks something like this:
+servers: - name: production host: prod.deployo.me port: 22 user: root password: root environment: ENV_VAR: var1 scripts: - name: echo_variable commands: - echo &amp;quot;command&amp;quot; - echo $ENV_VAR variables: - ENV_VAR2 environment: ENV_VAR3: var3 workdir: /tmp templates: - name: deploy_prod description: Deploy to production servers: - production scripts: - echo_variable variables: ENV_VAR2: value  It is consisted of these sections:</description>
+    </item>
+    
+    <item>
+      <title>Dashboard</title>
+      <link>https://deployo.me/docs/dashboard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deployo.me/docs/dashboard/</guid>
+      <description>The dashboard shows all your available servers and recent history.
+Servers Every time the dashboard is loaded Deployo will try to ping all of your servers. If it succeds the server will be marked with a label connected in case pinging fails the server will be marked with unreachable.
+Hovering over an unreachable label will give you more information about the error.
+History The history displays the latest executions.</description>
+    </item>
+    
+    <item>
+      <title>Executing</title>
+      <link>https://deployo.me/docs/executing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deployo.me/docs/executing/</guid>
+      <description>Executing scripts When you run a script you will be prompted for any user input configured for the sctript you are running that will manifest itself as an environment variale. After you enter everything you need Deployo will SSH into the chosen server export all environment variables and run the selected script.
+You will be able to follow the execution as Deployo directly streams output from your servers using websockets.</description>
+    </item>
+    
+    <item>
+      <title>SSH Keys</title>
+      <link>https://deployo.me/docs/ssh_keys/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deployo.me/docs/ssh_keys/</guid>
+      <description>SSH keys allow you to connect to your server without using a password. If an SSH key is not configured the password will be used.
+In case both a password and an SSH keys have been configured the password will be used first.
+On this page you have a preview of all the keys stored by Deployo. You can see SSH keys connected to a server or keys that are not connected to any servers anymore.</description>
+    </item>
+    
+    <item>
+      <title>User</title>
+      <link>https://deployo.me/docs/user/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deployo.me/docs/user/</guid>
+      <description>The User page allows you to edit some of your user information and change your plan.
+You can also add a credit card which will enable you to change your plan. You card information will be safely stored by Stripe.
+No credid card information will be stored by Deployo.</description>
+    </item>
+    
+  </channel>
+</rss>

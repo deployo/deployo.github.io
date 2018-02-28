@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111128681-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111128681-1');
+  </script>
+
+  <title> Deployo - SSH Keys </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="" />
+
+  <meta property="og:url" content="https://deployo.me">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Deployo - SSH Keys">
+  <meta property="og:image" content="https://deployo.me/img/og_image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="126">
+  <meta property="og:image:height" content="126">
+  <meta property="og:description" content="">
+
+  <link href="/img/favicon.png" rel="shortcut icon" />
+  <link href="/css/bulma.css" rel="stylesheet">
+  <link href="/css/custom.css" rel="stylesheet">
+  <link href="/fontawesome/css/fontawesome-all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  
+<nav class="navbar is-info">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <img src="/img/logo_light.svg" alt="Deployo" width="112" height="28">
+        </a>
+        <button class="button navbar-burger is-info" data-target="navbar">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+
+    <div class="navbar-menu is-info" id="navbar">
+        <div class="navbar-end">
+            <a class="navbar-item" href='/#pricing'>Pricing</a>
+            <a class="navbar-item" href='/#features'>Features</a>
+            
+            <a class="navbar-item" href='/docs'>Docs</a>
+            <a class="navbar-item" href='/blog'>Blog</a>
+
+            <div class="navbar-item">
+                <div class="field is-grouped">
+                    <p class="control" id="signup-link">
+                        <a class="button is-primary" href='/#signup'>
+                            <span>Sign Up</span>
+                        </a>
+                    </p>
+                    <p class="control" id="login-link">
+                        <a class="button is-link" href="//app.deployo.me/auth/login">
+                            <span>Log In</span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="content">
+    <section class="section">
+        <div class="columns">
+            <div class="column is-narrow">
+                <aside class="menu">
+    <p class="menu-label">
+        General
+    </p>
+    <ul class="menu-list">
+        <li>
+            <a href="/docs">Home</a>
+        </li>
+    </ul>
+    <p class="menu-label">
+        Pages
+    </p>
+    <ul class="menu-list">
+         
+        <li>
+            <a class="" href="/docs/dashboard/">Dashboard</a>
+            <ul>
+                
+            </ul>
+        </li>
+        
+        <li>
+            <a class="" href="/docs/configuration/">Configuration</a>
+            <ul>
+                
+            </ul>
+        </li>
+        
+        <li>
+            <a class="" href="/docs/executing/">Executing</a>
+            <ul>
+                
+            </ul>
+        </li>
+        
+        <li>
+            <a class="is-active" href="/docs/ssh_keys/">SSH Keys</a>
+            <ul>
+                
+            </ul>
+        </li>
+        
+        <li>
+            <a class="" href="/docs/user/">User</a>
+            <ul>
+                
+            </ul>
+        </li>
+        
+    </ul>
+</aside>
+            </div>
+            <div class="column">
+                <h1 class="title is-1">SSH Keys</h1>
+                <div class="box">
+                    
+
+<p>SSH keys allow you to connect to your server without using a password.
+If an SSH key is not configured the password will be used.</p>
+
+<p><strong>In case both a password and an SSH keys have been configured the password will be used first</strong>.</p>
+
+<p>On this page you have a preview of all the keys stored by Deployo. You can see SSH keys connected to a server or keys that are not connected to any servers anymore. You can see following sections:</p>
+
+<ul>
+<li>Servers with Keys</li>
+<li>Servers without Keys</li>
+<li>Unused Keys</li>
+<li>Upload Private Key</li>
+</ul>
+
+<h2 id="servers-with-keys">Servers with Keys</h2>
+
+<p>Here you have a list og SSH keys connected to a server, this key will be used to connect to your server alongside with the user that is configured in the configuration for that server.
+You can load the keys to see the public key and a cnvenient command for quickly <a href="#adding-a-generated-private-key-to-your-server">adding that key to your server</a>.</p>
+
+<h2 id="servers-without-keys">Servers without Keys</h2>
+
+<p>These servers have no SSH keys connected to them. Deployo will stray to SSH into them using the password.</p>
+
+<h2 id="unused-keys">Unused Keys</h2>
+
+<p>These are the SSH keys connected to server that do not exist anymore. By changing a server name to match the server name used for the key the server will take over the SSH key and will continue to use it.</p>
+
+<h2 id="upload-private-key">Upload Private Key</h2>
+
+<p>Here you can upload any private keys you have already generated. This allows you to continue to use your public-private key-pair that you have and that is already configured to work with your server.</p>
+
+<h2 id="adding-a-generated-private-key-to-your-server">Adding a generated private key to your server</h2>
+
+<p>After you uploaded an already existing private key or generated a new one you have to authorize that key on your server. You do this by adding the key to the <code>authorized_keys</code> file located in the <code>.ssh</code> folder in your home folder. A convenient bash command is displayed next to every private key that allows you to do this easily. The necessary steps are:</p>
+
+<ul>
+<li>genereate or upload a privat key</li>
+<li>click <code>Show keys</code> button to display the keys for the selected server</li>
+<li>bllow the <code>Command</code> label there is a bash command</li>
+<li>copy that command</li>
+<li>open your terminal and paste the command into it</li>
+<li>hit <code>ENTER</code></li>
+<li>you will be prompted to enter a password of the configured user for the server</li>
+<li>enter the pasword and hit <code>ENTER</code></li>
+<li>your SSH keys should now be authprized and Deployo will now use them every time it connects to the server</li>
+</ul>
+
+<p>Example of the command:</p>
+
+<pre><code class="language-bash">echo &quot;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC6+5JAwOILJlav
++OPtYR2BnckbKUT6MxkTCCxCU09dWZewQLP242bShn7lvuDTu+bsiccBkX0/Sq4T4gXZOM3vkgUlrV6G
++N48V5vMs4XHFoiu5AS3bTit+UvN2REo3XqH5M/uzKQX5b+VbJY/DzU6IBHWvs3xHZu3r+mnsoqGh6ouerk4brVPYd
++DkGMUlltnYN4PJleREKxtLY8NMTP+ut1dreBKchQUwxsMr+moXzIWbV2oVaoVIQ96JDx7
++b6Cu4Iaf3N/esfwo4U0OvPd7pC1pxx2RKzXzBgdwTjBnbzBvhYvXp6HoO/UfSAV95bgnslnjZb4DRjZTFoYGJ5P
+root@localhost&quot; | ssh -p 22 user@server &quot;[ -d ~/.ssh ] || mkdir ~/.ssh &amp;&amp; cat &gt;&gt;
+~/.ssh/authorized_keys &amp;&amp; chmod 600 ~/.ssh/authorized_keys&quot;
+</code></pre>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+ 
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      
+      var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+      
+      if ($navbarBurgers.length > 0) {
+
+        
+        $navbarBurgers.forEach(function ($el) {
+          $el.addEventListener('click', function () {
+
+            
+            var target = $el.dataset.target;
+            var $target = document.getElementById(target);
+
+            
+            $el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+
+          });
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

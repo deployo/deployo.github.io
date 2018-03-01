@@ -51,34 +51,34 @@ plans:
         - 2 scripts
         - 10 entries in history
         - Passwords
-        - Templates
+        - Deploy Templates
       price: $0
       call_to_action: 
       style: info
       note: 
-    - title: Personal
+    - title: Hobbyist
       features:
         - 3 servers
         - 10 scripts
         - 1 000 entries in history
         - Passwords
         - SSH keys
-        - Templates
-      price: $6.99
+        - Deploy Templates
+      price: $14
       call_to_action: 
       style: link
       note: 
-    - title: Pro
+    - title: Professional
       features:
         - 10 servers
         - 50 scripts
         - 10 000 entries in history
         - Passwords
         - SSH keys
-        - Templates
+        - Deploy Templates
         # - Scheduler
         # - Metrics
-      price: $13.99
+      price: $24
       call_to_action: 
       style: info
       note: 

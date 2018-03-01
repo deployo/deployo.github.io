@@ -147,6 +147,10 @@
 </section>
 {{ end }} {{define "script"}} {{if .Params.hero.typewriter}}
 <script src="/js/typewriter.js"></script>
+<script src="/js/smooth-scroll.js"></script>
+<script>
+	new SmoothScroll('a[href*="#"]');
+</script>
 <script>
     var t = document.getElementById('typewriter');
     var typewriter = new Typewriter(t, {

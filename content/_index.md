@@ -44,7 +44,7 @@ more_features:
 - title: Cronjobs
   description: Schedule your tasks using standard crontab notation. Run your scripts in configured intervals. You can see cronjobs in history and preview the output like with any other execution.
   icon: far fa-clock
-- title: Store your SSH keys
+- title: Connect using SSH keys
   description: Your SSH keys can be generated and stored online and used everytime you acces your server. Have a private key already? Just upload it!
   icon: fas fa-lock
 plans:

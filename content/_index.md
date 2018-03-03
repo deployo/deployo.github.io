@@ -55,7 +55,7 @@ plans:
         - 10 entries in history
         - Passwords
         - Deploy Templates
-        - 5 minutes of allowed execution time
+        - 5 minutes of execution time
       price: $0
       call_to_action: 
       style: info
@@ -69,7 +69,7 @@ plans:
         - SSH keys
         - Deploy Templates
         - Cronjobs
-        - 30 minutes of allowed execution time
+        - 30 minutes of execution time
       price: $14
       call_to_action: 
       style: link
@@ -83,7 +83,7 @@ plans:
         - SSH keys
         - Deploy Templates
         - Cronjobs
-        - 60 minutes of allowed execution time
+        - 60 minutes of execution time
         # - Metrics
       price: $24
       call_to_action: 

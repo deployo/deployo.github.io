@@ -36,6 +36,14 @@ templates:
     - echo_variable
     variables:
       ENV_VAR2: value
+cronjobs:
+- schedule: '* * * * *'
+  servers:
+  - production
+  scripts:
+  - echo_variable
+  variables:
+    ENV_VAR2: value
 ```
 
 It is consisted of these sections:
@@ -43,6 +51,7 @@ It is consisted of these sections:
 * [`servers`]({{< relref "#servers-section" >}})
 * [`scripts`]({{< relref "#scripts-section" >}})
 * [`templates`]({{< relref "#templates-section" >}})
+* [`cronjobs`]({{< relref "#cronjobs-section" >}})
 
 ### Servers section
 
@@ -88,7 +97,18 @@ Here you can define templates, or more precisely, combinations of servers, scrip
 Name | Description | Required | Type | Default value
 --- |--- |--- |--- |---
 name | name of your script to be displayed on the dasboard. Should be all lowercase without special and space characters. | yes | string | n/a
-description | User friendly description | no | strings |
+description | User friendly description | no | string | n/a
+servers | List of server names | yes | array of strings | n/a
+scripts | List of script names | yes | array of strings | n/a
+variables | a list of variables required from the user for execution of scripts. When a script is triggered from the dashboard a value for every variable will be required. Empty values are allowed. | no | array of strings | [ ]
+
+### Cronjobs section
+
+Here you can define cronjobs. By using familiar crontab notation you can periodically execute combinations of servers, scripts and variables.
+
+Name | Description | Required | Type | Default value
+--- |--- |--- |--- |---
+schedule | Definition of when this job should be executed using [Crontab notation](https://en.wikipedia.org/wiki/Cron#Overview). | yes | string | n/a
 servers | List of server names | yes | array of strings | n/a
 scripts | List of script names | yes | array of strings | n/a
 variables | a list of variables required from the user for execution of scripts. When a script is triggered from the dashboard a value for every variable will be required. Empty values are allowed. | no | array of strings | [ ]

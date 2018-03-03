@@ -220,6 +220,17 @@
                 <div class="column is-4">
                     <article>
     <h4 class="title is-4">
+        <i class="far fa-clock"></i>&nbsp;&nbsp;&nbsp;Cronjobs</h4>
+    <p>Schedule your tasks using standard crontab notation. Run your scripts in configured intervals. You can see cronjobs in history and preview the output like with any other execution.</p>
+</article>
+                </div>
+                 
+                    </div>
+            <div class="columns">
+                
+                <div class="column is-4">
+                    <article>
+    <h4 class="title is-4">
         <i class="fas fa-lock"></i>&nbsp;&nbsp;&nbsp;Store your SSH keys</h4>
     <p>Your SSH keys can be generated and stored online and used everytime you acces your server. Have a private key already? Just upload it!</p>
 </article>
@@ -255,6 +266,8 @@
             
             <li>Deploy Templates</li>
             
+            <li>5 minutes of allowed execution time</li>
+            
         </ul>
         
         <p>
@@ -289,6 +302,10 @@
             
             <li>Deploy Templates</li>
             
+            <li>Cronjobs</li>
+            
+            <li>30 minutes of allowed execution time</li>
+            
         </ul>
         
         <p>
@@ -322,6 +339,10 @@
             <li>SSH keys</li>
             
             <li>Deploy Templates</li>
+            
+            <li>Cronjobs</li>
+            
+            <li>60 minutes of allowed execution time</li>
             
         </ul>
         
@@ -377,14 +398,6 @@
                 <div class="column is-4">
                     <article>
     <h4 class="title is-4">
-        <i class="far fa-clock"></i>&nbsp;&nbsp;&nbsp;Scheduled tasks</h4>
-    <p>Schedule your tasks using standard cron syntax. Run your script in configured intervals. You can see history and output of scheduled tasks.</p>
-</article>
-                </div>
-                 
-                <div class="column is-4">
-                    <article>
-    <h4 class="title is-4">
         <i class="fas fa-puzzle-piece"></i>&nbsp;&nbsp;&nbsp;Webhooks</h4>
     <p>Run scripts triggered by webhooks from GitHub or Bitbucket.</p>
 </article>
@@ -398,9 +411,6 @@
 </article>
                 </div>
                  
-            </div>
-            <div class="columns">
-                
                 <div class="column is-4">
                     <article>
     <h4 class="title is-4">
@@ -454,11 +464,11 @@
         .pauseFor(1000)
         .deleteAll()
         
-        .typeString('shell execution.')
+        .typeString('shell executions.')
         .pauseFor(1000)
         .deleteAll()
         
-        .typeString('scheduled tasks.')
+        .typeString('scheduled jobs.')
         .pauseFor(1000)
         .deleteAll()
         

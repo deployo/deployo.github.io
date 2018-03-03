@@ -165,6 +165,14 @@ templates:
     - echo_variable
     variables:
       ENV_VAR2: value
+cronjobs:
+- schedule: '* * * * *'
+  servers:
+  - production
+  scripts:
+  - echo_variable
+  variables:
+    ENV_VAR2: value
 </code></pre>
 
 <p>It is consisted of these sections:</p>
@@ -173,6 +181,7 @@ templates:
 <li><a href="#servers-section"><code>servers</code></a></li>
 <li><a href="#scripts-section"><code>scripts</code></a></li>
 <li><a href="#templates-section"><code>templates</code></a></li>
+<li><a href="#cronjobs-section"><code>cronjobs</code></a></li>
 </ul>
 
 <h3 id="servers-section">Servers section</h3>
@@ -341,8 +350,58 @@ templates:
 <td>description</td>
 <td>User friendly description</td>
 <td>no</td>
-<td>strings</td>
-<td></td>
+<td>string</td>
+<td>n/a</td>
+</tr>
+
+<tr>
+<td>servers</td>
+<td>List of server names</td>
+<td>yes</td>
+<td>array of strings</td>
+<td>n/a</td>
+</tr>
+
+<tr>
+<td>scripts</td>
+<td>List of script names</td>
+<td>yes</td>
+<td>array of strings</td>
+<td>n/a</td>
+</tr>
+
+<tr>
+<td>variables</td>
+<td>a list of variables required from the user for execution of scripts. When a script is triggered from the dashboard a value for every variable will be required. Empty values are allowed.</td>
+<td>no</td>
+<td>array of strings</td>
+<td>[ ]</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="cronjobs-section">Cronjobs section</h3>
+
+<p>Here you can define cronjobs. By using familiar crontab notation you can periodically execute combinations of servers, scripts and variables.</p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+<th>Default value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>schedule</td>
+<td>Definition of when this job should be executed using <a href="https://en.wikipedia.org/wiki/Cron#Overview">Crontab notation</a>.</td>
+<td>yes</td>
+<td>string</td>
+<td>n/a</td>
 </tr>
 
 <tr>

@@ -4,8 +4,8 @@ hero:
   subtitle: Simplify your
   typewriter:
     - deployments.
-    - shell execution.
-    - scheduled tasks.
+    - shell executions.
+    - scheduled jobs.
   title: A web based shell execution tool.
   call_to_action: Create Account For Free
 meta:
@@ -41,6 +41,9 @@ more_features:
 - title: Access from anywhere
   description: Deployo is a web based solution accessible from any device with a browser. So desktop, tablet or mobile, it is at your fingertips.
   icon: fas fa-mobile-alt
+- title: Cronjobs
+  description: Schedule your tasks using standard crontab notation. Run your scripts in configured intervals. You can see cronjobs in history and preview the output like with any other execution.
+  icon: far fa-clock
 - title: Store your SSH keys
   description: Your SSH keys can be generated and stored online and used everytime you acces your server. Have a private key already? Just upload it!
   icon: fas fa-lock
@@ -52,6 +55,7 @@ plans:
         - 10 entries in history
         - Passwords
         - Deploy Templates
+        - 5 minutes of allowed execution time
       price: $0
       call_to_action: 
       style: info
@@ -64,6 +68,8 @@ plans:
         - Passwords
         - SSH keys
         - Deploy Templates
+        - Cronjobs
+        - 30 minutes of allowed execution time
       price: $14
       call_to_action: 
       style: link
@@ -76,16 +82,14 @@ plans:
         - Passwords
         - SSH keys
         - Deploy Templates
-        # - Scheduler
+        - Cronjobs
+        - 60 minutes of allowed execution time
         # - Metrics
       price: $24
       call_to_action: 
       style: info
       note: 
 roadmap:
-    - title: Scheduled tasks
-      description: Schedule your tasks using standard cron syntax. Run your script in configured intervals. You can see history and output of scheduled tasks.
-      icon: far fa-clock
     - title: Webhooks
       description: Run scripts triggered by webhooks from GitHub or Bitbucket.
       icon: fas fa-puzzle-piece

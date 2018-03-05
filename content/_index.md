@@ -84,6 +84,7 @@ plans:
         - Deploy Templates
         - Cronjobs
         - 60 minutes execution time
+        - Priority Support
         # - Metrics
       price: $24
       call_to_action: 

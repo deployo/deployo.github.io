@@ -11,45 +11,46 @@
             "logo_design.svg",
             "Makefile",
             "config.yml",
-            "generate_gifs.sh"
+            "generate_gifs.sh",
+            "gif_to_mp4.sh"
+        ],
+        "headers": [
+            {
+                "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
+                "headers": [
+                    {
+                        "key": "Access-Control-Allow-Origin",
+                        "value": "*"
+                    }
+                ]
+            },
+            {
+                "source": "**/*.@(js|css)",
+                "headers": [
+                    {
+                        "key": "Cache-Control",
+                        "value": "max-age=7200"
+                    }
+                ]
+            },
+            {
+                "source": "**/*.@(jpg|jpeg|gif|png|mp4)",
+                "headers": [
+                    {
+                        "key": "Cache-Control",
+                        "value": "max-age=7200"
+                    }
+                ]
+            },
+            {
+                "source": "404.html",
+                "headers": [
+                    {
+                        "key": "Cache-Control",
+                        "value": "max-age=300"
+                    }
+                ]
+            }
         ]
-    },
-    "headers": [
-        {
-            "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
-            "headers": [
-                {
-                    "key": "Access-Control-Allow-Origin",
-                    "value": "*"
-                }
-            ]
-        },
-        {
-            "source": "**/*.@(js|css)",
-            "headers": [
-                {
-                    "key": "Cache-Control",
-                    "value": "max-age=7200"
-                }
-            ]
-        },
-        {
-            "source": "**/*.@(jpg|jpeg|gif|png|mp4)",
-            "headers": [
-                {
-                    "key": "Cache-Control",
-                    "value": "max-age=7200"
-                }
-            ]
-        },
-        {
-            "source": "404.html",
-            "headers": [
-                {
-                    "key": "Cache-Control",
-                    "value": "max-age=300"
-                }
-            ]
-        }
-    ]
+    }
 }

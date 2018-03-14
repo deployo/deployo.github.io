@@ -1,5 +1,5 @@
 ---
-title: Documentation of Deployo
+title: Deployo Docs
 description: A web based shell execution tool. 
 ---
 

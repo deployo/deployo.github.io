@@ -3,7 +3,7 @@ title: Web based shell execution tool
 hero:
   subtitle: Simplify your
   typewriter:
-    - deployments.
+    - server management.
     - shell executions.
     - scheduled jobs.
   title: A web based shell execution tool.
@@ -19,15 +19,18 @@ features:
 - title: Configure easily with YAML
   description: All your configuration is stored online in a simple YAML file. Easily edit with syntax highlighting.
   image: /img/configuration.gif
+  video: /img/configuration.mp4
   style: light
   inverted: true
 - title: Execute shell scripts
   description: Run your scrips easily with live output streamed directly from your server. You can configure multiple servers and multiple scripts.
   image:  /img/deploy.gif
+  video:  /img/deploy.mp4
   style: white
 - title: Deploy preconfigured templates
   description: Configure templates for your combinations of servers, scripts and variables that you execute most often.
   image: /img/template_multiple_scripts.gif
+  video: /img/template_multiple_scripts.mp4
   style: light
   inverted: true
 teaser:
@@ -57,9 +60,7 @@ plans:
         - Deploy Templates
         - 5 minutes execution time
       price: $0
-      call_to_action: 
       style: info
-      note: 
     - title: Hobbyist
       features:
         - 3 servers
@@ -71,9 +72,7 @@ plans:
         - Cronjobs
         - 30 minutes execution time
       price: $14
-      call_to_action: 
       style: link
-      note: 
     - title: Professional
       features:
         - 10 servers
@@ -87,9 +86,7 @@ plans:
         - Priority Support
         # - Metrics
       price: $24
-      call_to_action: 
       style: info
-      note: 
 roadmap:
     - title: Webhooks
       description: Run scripts triggered by webhooks from GitHub or Bitbucket.

@@ -88,7 +88,8 @@
                     
                 </h2>
                 <p class="has-text-centered">
-                    <a data-scroll href="#signup" class="button is-primary is-large">Create Account For Free</a>
+                    <a data-scroll href="#signup" class="button is-primary is-large is-hidden-mobile">Create Account For Free</a>
+                    <a data-scroll href="#signup" class="button is-primary is-medium is-hidden-tablet">Create Account For Free</a>
                 </p>
             </div>
         </div>
@@ -115,7 +116,7 @@
         </section>
     </div>
 </section>
-<div  id="features"></div>
+<div id="features"></div>
 
 <section class="hero is-light">
     <div class="container">
@@ -123,9 +124,9 @@
             <div class="columns">
                 
                 <div class="column is-half-desktop">
-                    <figure class="image is-2by1 box">
-                        <img style="border-radius: 2px;" src="/img/configuration.gif" />
-                    </figure>
+                    <video style="border-radius: 2px;" autoplay="autoplay" loop="loop">
+                        <source src="/img/configuration.mp4" type="video/mp4" />
+                    </video>
                 </div>
                 <div class="column is-half-desktop has-text-centered hero">
                     <div class="hero-body">
@@ -151,9 +152,9 @@
                     </div>
                 </div>
                 <div class="column is-half-desktop">
-                    <figure class="image is-2by1 box">
-                        <img style="border-radius: 2px;" src="/img/deploy.gif" />
-                    </figure>
+                    <video style="border-radius: 2px;" autoplay="autoplay" loop="loop">
+                        <source src="/img/deploy.mp4" type="video/mp4" />
+                    </video>
                 </div>
                 
             </div>
@@ -167,9 +168,9 @@
             <div class="columns">
                 
                 <div class="column is-half-desktop">
-                    <figure class="image is-2by1 box">
-                        <img style="border-radius: 2px;" src="/img/template_multiple_scripts.gif" />
-                    </figure>
+                    <video style="border-radius: 2px;" autoplay="autoplay" loop="loop">
+                        <source src="/img/template_multiple_scripts.mp4" type="video/mp4" />
+                    </video>
                 </div>
                 <div class="column is-half-desktop has-text-centered hero">
                     <div class="hero-body">
@@ -225,7 +226,7 @@
 </article>
                 </div>
                  
-                    </div>
+            </div>
             <div class="columns">
                 
                 <div class="column is-4">
@@ -275,8 +276,6 @@
         </p>
         
     </div>
-    
-    
 </article>
                 </div>
                 
@@ -313,8 +312,6 @@
         </p>
         
     </div>
-    
-    
 </article>
                 </div>
                 
@@ -353,8 +350,6 @@
         </p>
         
     </div>
-    
-    
 </article>
                 </div>
                 
@@ -451,7 +446,7 @@
 <script src="/js/typewriter.js"></script>
 <script src="/js/smooth-scroll.js"></script>
 <script>
-	new SmoothScroll('a[href*="#"]');
+    new SmoothScroll('a[href*="#"]');
 </script>
 <script>
     var t = document.getElementById('typewriter');
@@ -462,7 +457,7 @@
 
     typewriter
         
-        .typeString('deployments.')
+        .typeString('server management.')
         .pauseFor(1000)
         .deleteAll()
         

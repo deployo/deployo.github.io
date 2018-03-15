@@ -1,5 +1,5 @@
 ---
-title: Install and Manage Dokku on Linode
+title: Install and manage Dokku on Linode
 date: 2018-02-22
 slug: install-and-manage-dokku-on-linode
 ---

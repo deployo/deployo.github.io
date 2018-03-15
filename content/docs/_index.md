@@ -1,6 +1,6 @@
 ---
 title: Deployo Docs
-description: A web based shell execution tool. 
+description: Web based server management tool. 
 ---
 
 Welcome!

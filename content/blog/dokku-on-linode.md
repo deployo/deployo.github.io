@@ -4,6 +4,8 @@ date: 2018-02-22
 slug: install-and-manage-dokku-on-linode
 ---
 
+Dokku is a Heroku-like "docker-powered PaaS that helps you build and manage the lifecycle of applications", as it says on its GitHub page. It has a simmilar git-centric interface for running and managing your applications.
+
 I will show you how to install and use Dokku on a Linode instance. I will be using [Deployo](https://deployo.me) to manage the server but you can also just SSH into the server and execute the same commands.
 
 First you need to create a Linode instance. Go to [linode.com](https://www.linode.com/?r=a353c3bb9c2ebc925fe7a565fb81cb5a2378120f) and create an account if you do not already have one. When you login you will be taken to your linode manager view where you will be offered to create a linode instance.

@@ -1,4 +1,4 @@
 ---
 title: Deployo Blog
-description: A web based shell execution tool. 
+description: Web based server management tool.
 ---

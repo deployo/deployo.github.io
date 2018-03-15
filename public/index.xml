@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Web based shell execution tool on Deployo</title>
+    <title>Web based server management tool on Deployo</title>
     <link>https://deployo.me/</link>
-    <description>Recent content in Web based shell execution tool on Deployo</description>
+    <description>Recent content in Web based server management tool on Deployo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 22 Feb 2018 00:00:00 +0000</lastBuildDate>
@@ -17,8 +17,8 @@
       <pubDate>Thu, 22 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://deployo.me/blog/install-and-manage-dokku-on-linode/</guid>
-      <description>I will show you how to install and use Dokku on a Linode instance. I will be using Deployo to manage the server but you can also just SSH into the server and execute the same commands.
-First you need to create a Linode instance. Go to linode.com and create an account if you do not already have one. When you login you will be taken to your linode manager view where you will be offered to create a linode instance.</description>
+      <description>Dokku is a Heroku-like &amp;ldquo;docker-powered PaaS that helps you build and manage the lifecycle of applications&amp;rdquo;, as it says on its GitHub page. It has a simmilar git-centric interface for running and managing your applications.
+I will show you how to install and use Dokku on a Linode instance. I will be using Deployo to manage the server but you can also just SSH into the server and execute the same commands.</description>
     </item>
     
     <item>

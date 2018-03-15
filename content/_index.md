@@ -1,17 +1,17 @@
 ---
-title: Web based shell execution tool
+title: Web based server management tool
 hero:
   subtitle: Simplify your
   typewriter:
     - server management.
     - shell executions.
     - scheduled jobs.
-  title: A web based shell execution tool.
+  title: Web based server management tool.
   call_to_action: Create Account For Free
 meta:
-  description: A web based shell execution tool that uses SSH to connect to your servers. Simplify your deployments or remote shell executions.
+  description: A web based server management tool that uses SSH to connect to your servers. Simplify your server maintenence, deployments or remote shell executions.
 overview:
-  title: Execute commands over SSH with a button click.
+  title: Manage your servers with a button click.
   summary: It is perfectly suited for personal projects, freelancers or small companies looking to speed up their remote tasks.
 screenshot: /img/frame-chrome-mac.png
 call_to_action: Create Account For Free
@@ -47,9 +47,9 @@ more_features:
 - title: Cronjobs
   description: Schedule your tasks using standard crontab notation. Run your scripts in configured intervals. You can see cronjobs in history and preview the output like with any other execution.
   icon: far fa-clock
-- title: Connect using SSH keys
-  description: Your SSH keys can be generated and stored online and used everytime you acces your server. Have a private key already? Just upload it!
-  icon: fas fa-lock
+# - title: Connect using SSH keys
+#   description: Your SSH keys can be generated and stored online and used everytime you acces your server. Have a private key already? Just upload it!
+#   icon: fas fa-lock
 plans:
     - title: Free
       features:

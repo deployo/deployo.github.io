@@ -6,8 +6,11 @@
     <div class="hero-body has-text-centered">
         <div class="columns">
             <div class="column">
-                <h1 class="title is-1">{{ .Title }}</h1>
-                <p class="subtitle is-6 is-subtitle">{{.Date.Format "02.01.2006"}}</p>
+                <h1 class="title is-1 is-spaced">{{ .Title }}</h1>
+                <h2 class="subtitle is-6 is-subtitle">
+                    by {{.Params.Author}}
+                    <p>{{.Date.Format "02.01.2006"}}</p>
+                </h2>
             </div>
         </div>
     </div>

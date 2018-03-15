@@ -2,6 +2,7 @@
 title: Install and manage Dokku on Linode
 date: 2018-02-22
 slug: install-and-manage-dokku-on-linode
+author: Miloš Krsmanović
 ---
 
 Dokku is a Heroku-like "docker-powered PaaS that helps you build and manage the lifecycle of applications", as it says on its GitHub page. It has a simmilar git-centric interface for running and managing your applications.

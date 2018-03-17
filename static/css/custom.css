@@ -31,6 +31,10 @@ nav.navbar.shadow {
     margin-bottom: 20px;
 }
 
+.margin-bottom-50 {
+    margin-bottom: 50px;
+}
+
 .menu ul {
     margin-left: 0;
 }
@@ -45,4 +49,16 @@ nav.navbar.shadow {
 
 .deployo-min-height {
     min-height: 820px;
+}
+
+.has-shadow-close {
+    box-shadow: 15px 15px 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+.has-shadow-far.has-shadow-inverse {
+    box-shadow: 25px 25px 40px 0px rgba(0, 0, 0, 0.2);
+}
+
+.has-shadow-far {
+    box-shadow: -25px 25px 40px 0px rgba(0, 0, 0, 0.2);
 }

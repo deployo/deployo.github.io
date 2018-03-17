@@ -20,7 +20,7 @@ features:
   description: All your configuration is stored online in a simple YAML file. Easily edit with syntax highlighting.
   image: /img/configuration.gif
   video: /img/configuration.mp4
-  style: light
+  style: white
   inverted: true
 - title: Execute shell scripts
   description: Run your scrips easily with live output streamed directly from your server. You can configure multiple servers and multiple scripts.
@@ -31,7 +31,7 @@ features:
   description: Configure templates for your combinations of servers, scripts and variables that you execute most often.
   image: /img/template_multiple_scripts.gif
   video: /img/template_multiple_scripts.mp4
-  style: light
+  style: white
   inverted: true
 teaser:
   title: Join other freelancers and companies that are already making their life simpler.

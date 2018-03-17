@@ -15,17 +15,19 @@
         </section>
     </div>
 </section>
-<div id="features"></div>
+<div id="features" class="margin-bottom-50"></div>
 {{range .Params.features}}
-<section class="hero is-{{.style}}">
+<section class="hero is-{{.style}} margin-bottom-50">
     <div class="container">
         <section class="section">
             <div class="columns">
                 {{if .inverted}}
                 <div class="column is-half-desktop">
-                    <video style="border-radius: 2px;" autoplay="autoplay" loop="loop">
-                        <source src="{{.video}}" type="video/mp4" />
-                    </video>
+                    <div class="has-shadow-far has-shadow-inverse">
+                        <video style="border-radius: 2px;" autoplay="autoplay" loop="loop">
+                            <source src="{{.video}}" type="video/mp4" />
+                        </video>
+                    </div>
                 </div>
                 <div class="column is-half-desktop has-text-centered hero">
                     <div class="hero-body">
@@ -41,9 +43,11 @@
                     </div>
                 </div>
                 <div class="column is-half-desktop">
-                    <video style="border-radius: 2px;" autoplay="autoplay" loop="loop">
-                        <source src="{{.video}}" type="video/mp4" />
-                    </video>
+                    <div class="has-shadow-far ">
+                        <video style="border-radius: 2px;" autoplay="autoplay" loop="loop">
+                            <source src="{{.video}}" type="video/mp4" />
+                        </video>
+                    </div>
                 </div>
                 {{end}}
             </div>
@@ -51,19 +55,7 @@
     </div>
 </section>
 {{end}}
-<section class="hero is-primary">
-    <div class="container">
-        <section class="section">
-            <div class="columns is-centered">
-                <div class="column is-half-desktop has-text-centered">
-                    <h3 class="title is-3">{{.Params.teaser.title}}</h3>
-                    <p>{{.Params.teaser.description}}</p>
-                </div>
-            </div>
-        </section>
-    </div>
-</section>
-<section class="hero is-light">
+<section class="hero is-white margin-bottom-50">
     <div class="container">
         <section class="section">
             <div class="columns">
@@ -79,7 +71,26 @@
         </section>
     </div>
 </section>
-<section class="" id="pricing">
+<section class="hero is-primary">
+    <div class="container">
+        <section class="section">
+            <div class="columns is-centered">
+                <div class="column is-half-desktop has-text-centered">
+                    <h3 class="title is-3">{{.Params.teaser.title}}</h3>
+                    <p>{{.Params.teaser.description}}</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+<section class="hero is-dark margin-bottom-50" id="signup">
+    <div class="container">
+        <section class="section">
+            {{partial "signup" .}}
+        </section>
+    </div>
+</section>
+<section class="margin-bottom-50" id="pricing">
     <div class="container">
         <section class="section">
             <h2 class="title is-3">Pricing</h2>
@@ -93,14 +104,7 @@
         </section>
     </div>
 </section>
-<section class="hero is-dark" id="signup">
-    <div class="container">
-        <section class="section">
-            {{partial "signup" .}}
-        </section>
-    </div>
-</section>
-<section class="hero is-light" id="roadmap">
+<section class="hero is-white margin-bottom-50" id="roadmap">
     <div class="container">
         <section class="section">
             <h2 class="title is-3">Roadmap</h2>

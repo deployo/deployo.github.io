@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<meta name="generator" content="Hugo 0.37.1" />
+	<meta name="generator" content="Hugo 0.31" />
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111128681-1"></script>
   <script>
@@ -116,17 +116,19 @@
         </section>
     </div>
 </section>
-<div id="features"></div>
+<div id="features" class="margin-bottom-50"></div>
 
-<section class="hero is-light">
+<section class="hero is-white margin-bottom-50">
     <div class="container">
         <section class="section">
             <div class="columns">
                 
                 <div class="column is-half-desktop">
-                    <video style="border-radius: 2px;" autoplay="autoplay" loop="loop">
-                        <source src="/img/configuration.mp4" type="video/mp4" />
-                    </video>
+                    <div class="has-shadow-far has-shadow-inverse">
+                        <video style="border-radius: 2px;" autoplay="autoplay" loop="loop">
+                            <source src="/img/configuration.mp4" type="video/mp4" />
+                        </video>
+                    </div>
                 </div>
                 <div class="column is-half-desktop has-text-centered hero">
                     <div class="hero-body">
@@ -140,7 +142,7 @@
     </div>
 </section>
 
-<section class="hero is-white">
+<section class="hero is-white margin-bottom-50">
     <div class="container">
         <section class="section">
             <div class="columns">
@@ -152,9 +154,11 @@
                     </div>
                 </div>
                 <div class="column is-half-desktop">
-                    <video style="border-radius: 2px;" autoplay="autoplay" loop="loop">
-                        <source src="/img/deploy.mp4" type="video/mp4" />
-                    </video>
+                    <div class="has-shadow-far ">
+                        <video style="border-radius: 2px;" autoplay="autoplay" loop="loop">
+                            <source src="/img/deploy.mp4" type="video/mp4" />
+                        </video>
+                    </div>
                 </div>
                 
             </div>
@@ -162,15 +166,17 @@
     </div>
 </section>
 
-<section class="hero is-light">
+<section class="hero is-white margin-bottom-50">
     <div class="container">
         <section class="section">
             <div class="columns">
                 
                 <div class="column is-half-desktop">
-                    <video style="border-radius: 2px;" autoplay="autoplay" loop="loop">
-                        <source src="/img/template_multiple_scripts.mp4" type="video/mp4" />
-                    </video>
+                    <div class="has-shadow-far has-shadow-inverse">
+                        <video style="border-radius: 2px;" autoplay="autoplay" loop="loop">
+                            <source src="/img/template_multiple_scripts.mp4" type="video/mp4" />
+                        </video>
+                    </div>
                 </div>
                 <div class="column is-half-desktop has-text-centered hero">
                     <div class="hero-body">
@@ -184,19 +190,7 @@
     </div>
 </section>
 
-<section class="hero is-primary">
-    <div class="container">
-        <section class="section">
-            <div class="columns is-centered">
-                <div class="column is-half-desktop has-text-centered">
-                    <h3 class="title is-3">Join other freelancers and companies that are already making their life simpler.</h3>
-                    <p>Deployo is available on all devices with a browser. With your configuration safely stored online you are able to deploy your software or setup servers easily and conveniently.</p>
-                </div>
-            </div>
-        </section>
-    </div>
-</section>
-<section class="hero is-light">
+<section class="hero is-white margin-bottom-50">
     <div class="container">
         <section class="section">
             <div class="columns">
@@ -229,14 +223,55 @@
         </section>
     </div>
 </section>
-<section class="" id="pricing">
+<section class="hero is-primary">
+    <div class="container">
+        <section class="section">
+            <div class="columns is-centered">
+                <div class="column is-half-desktop has-text-centered">
+                    <h3 class="title is-3">Join other freelancers and companies that are already making their life simpler.</h3>
+                    <p>Deployo is available on all devices with a browser. With your configuration safely stored online you are able to deploy your software or setup servers easily and conveniently.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+<section class="hero is-dark margin-bottom-50" id="signup">
+    <div class="container">
+        <section class="section">
+            <h2 class="title is-3">Sign up</h2>
+<form action="//app.deployo.me/auth/signup" method="POST">
+    <div class="field is-horizontal">
+        <div class="field-body">
+            <div class="field">
+                <div class="control">
+                    <input type="text" class="input is-large" name="email" placeholder="Email" />
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <input type="password" class="input is-large" name="password" placeholder="Password" />
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <button type="submit" class="button is-primary is-large">Create Account For Free</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>you will get access to <strong>Deployo Free</strong> plan, no credit card needed.</p>
+</form>
+        </section>
+    </div>
+</section>
+<section class="margin-bottom-50" id="pricing">
     <div class="container">
         <section class="section">
             <h2 class="title is-3">Pricing</h2>
             <div class="columns">
                 
                 <div class="column">
-                    <article class="tile is-child box has-text-centered notification is-info">
+                    <article class="tile is-child box has-text-centered notification is-info has-shadow-close">
     <div class="margin-bottom-20">
         <h4 class="title is-3">
             Free
@@ -268,7 +303,7 @@
                 </div>
                 
                 <div class="column">
-                    <article class="tile is-child box has-text-centered notification is-link">
+                    <article class="tile is-child box has-text-centered notification is-link has-shadow-close">
     <div class="margin-bottom-20">
         <h4 class="title is-3">
             Hobbyist
@@ -304,7 +339,7 @@
                 </div>
                 
                 <div class="column">
-                    <article class="tile is-child box has-text-centered notification is-info">
+                    <article class="tile is-child box has-text-centered notification is-info has-shadow-close">
     <div class="margin-bottom-20">
         <h4 class="title is-3">
             Professional
@@ -345,36 +380,7 @@
         </section>
     </div>
 </section>
-<section class="hero is-dark" id="signup">
-    <div class="container">
-        <section class="section">
-            <h2 class="title is-3">Sign up</h2>
-<form action="//app.deployo.me/auth/signup" method="POST">
-    <div class="field is-horizontal">
-        <div class="field-body">
-            <div class="field">
-                <div class="control">
-                    <input type="text" class="input is-large" name="email" placeholder="Email" />
-                </div>
-            </div>
-            <div class="field">
-                <div class="control">
-                    <input type="password" class="input is-large" name="password" placeholder="Password" />
-                </div>
-            </div>
-            <div class="field">
-                <div class="control">
-                    <button type="submit" class="button is-primary is-large">Create Account For Free</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <p>you will get access to <strong>Deployo Free</strong> plan, no credit card needed.</p>
-</form>
-        </section>
-    </div>
-</section>
-<section class="hero is-light" id="roadmap">
+<section class="hero is-white margin-bottom-50" id="roadmap">
     <div class="container">
         <section class="section">
             <h2 class="title is-3">Roadmap</h2>

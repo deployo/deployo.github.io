@@ -16,16 +16,16 @@ overview:
 screenshot: /img/frame-chrome-mac.png
 call_to_action: Create Account For Free
 features:
+- title: Manage your servers
+  description: Manage your servers by running scrips easily with live output streamed directly to your browser. You can configure multiple servers and multiple scripts.
+  image:  /img/deploy.gif
+  video:  /img/deploy.mp4
+  style: white
+  inverted: true
 - title: Configure easily with YAML
   description: All your configuration is stored online in a simple YAML file. Easily edit with syntax highlighting.
   image: /img/configuration.gif
   video: /img/configuration.mp4
-  style: white
-  inverted: true
-- title: Execute shell scripts
-  description: Run your scrips easily with live output streamed directly from your server. You can configure multiple servers and multiple scripts.
-  image:  /img/deploy.gif
-  video:  /img/deploy.mp4
   style: white
 - title: Deploy preconfigured templates
   description: Configure templates for your combinations of servers, scripts and variables that you execute most often.
@@ -38,15 +38,15 @@ teaser:
   description: Deployo is available on all devices with a browser. With your configuration safely stored online you are able to deploy your software or setup servers easily and conveniently.
   image: /img/demo.gif
 more_features:
-- title: Keep history
-  description: History of all your script executions is shown right on your dashboard. You can access old executions and execute again the same script with same parameters with ease.
-  icon: fas fa-book
-- title: Access from anywhere
-  description: Deployo is a web based solution accessible from any device with a browser. So desktop, tablet or mobile, it is at your fingertips.
-  icon: fas fa-mobile-alt
 - title: Cronjobs
   description: Schedule your tasks using standard crontab notation. Run your scripts in configured intervals. You can see cronjobs in history and preview the output like with any other execution.
   icon: far fa-clock
+- title: Access from anywhere
+  description: Deployo is a web based solution accessible from any device with a browser. So desktop, tablet or mobile, it is at your fingertips.
+  icon: fas fa-mobile-alt
+- title: Keep history
+  description: History of all your script executions is shown right on your dashboard. You can access old executions and execute again the same script with same parameters with ease.
+  icon: fas fa-book
 # - title: Connect using SSH keys
 #   description: Your SSH keys can be generated and stored online and used everytime you acces your server. Have a private key already? Just upload it!
 #   icon: fas fa-lock

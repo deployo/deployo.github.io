@@ -5,7 +5,7 @@ slug: install-and-manage-dokku-on-linode
 author: Miloš Krsmanović
 ---
 
-Dokku is a Heroku-like "docker-powered PaaS that helps you build and manage the lifecycle of applications", as it says on its GitHub page. It has a simmilar git-centric interface for running and managing your applications.
+Dokku is a Heroku-like "docker-powered PaaS that helps you build and manage the lifecycle of applications", as it says on its GitHub page. It has a similar git-centric interface for running and managing your applications.
 
 I will show you how to install and use Dokku on a Linode instance. I will be using [Deployo](https://deployo.me) to manage the server but you can also just SSH into the server and execute the same commands.
 
@@ -15,7 +15,7 @@ First you need to create a Linode instance. Go to [linode.com](https://www.linod
 
 After selecting an instance and clicking "Add this Linode!" button at the bottom of the page, your server will be created.
 
-Initially the server is empty, there is no operating system or anything there at all. To be able run anything on the server we have to install an operating system by deploying an Image. I chose to deploy ubutu 16.04 LTS because it is the most stable ubuntu available at the moment. I chose Ubuntu because there is a huge community of developers using Ubuntu and there is almost no problem that somebody already did not have and has not already fixed.
+Initially the server is empty, there is no operating system or anything there at all. To be able run anything on the server we have to install an operating system by deploying an Image. I chose to deploy Ubuntu 16.04 LTS because it is the most stable Ubuntu available at the moment. I chose Ubuntu because there is a huge community of developers using Ubuntu and there is almost no problem that somebody already did not have and has not already fixed.
 
 Now when the OS is installed your server is in "Powered Off" state, click the "Boot" button to start it up.
 
@@ -32,7 +32,7 @@ servers:
   password: <your root password>
 {{< /highlight >}}
 
-You can visit Dokku at http://dokku.viewdocs.io/dokku/ to get the command to install Dokku on your machin. I did this for you, the command is:
+You can visit Dokku at http://dokku.viewdocs.io/dokku/ to get the command to install Dokku on your machine. I did this for you, the command is:
 
 {{< highlight bash >}}
 $ wget https://raw.githubusercontent.com/dokku/dokku/v0.11.3/bootstrap.sh
@@ -69,11 +69,11 @@ Now go to the Deployo dashboard, you should see your template. The server status
 
 {{< figure src="/img/blog/dokku-on-linode/Selection_731.png" caption="Install Dokku" alt="Install Dokku" width="740px" >}}
 
-After arround 4 minutes Dokku should be install on your server. Visit you server IP (in my case it is 198.58.123.61) to finish the installation.
+After around 4 minutes Dokku should be install on your server. Visit you server IP (in my case it is 198.58.123.61) to finish the installation.
 
 {{< figure src="/img/blog/dokku-on-linode/Selection_737.png" caption="Dokku Installation" alt="Dokku Installation" width="740px" >}}
 
-Note: do not use you Deployo generated SSH key for Dokku, this key is going to be used by Deployo to connect to your server. For Dokku you should use your SSH key from your personal laptop/desktop.
+Note: do not use your Deployo generated SSH key for Dokku, this key is going to be used by Deployo to connect to your server. For Dokku you should use your SSH key from your personal laptop/desktop.
 
 #### Optional step - Assign an SSH key to your server
 
@@ -172,7 +172,7 @@ Now from you local machine clone the Dokku demo app:
 git clone git@github.com:heroku/ruby-rails-sample.git
 {{< /highlight >}}
 
-On your local mashine execute the next commands:
+On your local machine execute the next commands:
 
 {{< highlight bash >}}
 cd ruby-rails-sample
@@ -187,7 +187,7 @@ Dokku will deploy your app now. After it is done you should get an address of yo
        http://198.58.123.61:59826
 {{< /highlight >}}
 
-Open that addres in you browser and you should see your app deployed.
+Open that address in you browser and you should see your app deployed.
 
 {{< figure src="/img/blog/dokku-on-linode/Selection_734_small.png" caption="Dokku demo app" alt="Dokku demo app" >}}
 

@@ -91,7 +91,7 @@
         <div class="content">
             
 
-<p>Dokku is a Heroku-like &ldquo;docker-powered PaaS that helps you build and manage the lifecycle of applications&rdquo;, as it says on its GitHub page. It has a simmilar git-centric interface for running and managing your applications.</p>
+<p>Dokku is a Heroku-like &ldquo;docker-powered PaaS that helps you build and manage the lifecycle of applications&rdquo;, as it says on its GitHub page. It has a similar git-centric interface for running and managing your applications.</p>
 
 <p>I will show you how to install and use Dokku on a Linode instance. I will be using <a href="https://deployo.me">Deployo</a> to manage the server but you can also just SSH into the server and execute the same commands.</p>
 
@@ -117,7 +117,7 @@
 
 <p>After selecting an instance and clicking &ldquo;Add this Linode!&rdquo; button at the bottom of the page, your server will be created.</p>
 
-<p>Initially the server is empty, there is no operating system or anything there at all. To be able run anything on the server we have to install an operating system by deploying an Image. I chose to deploy ubutu 16.04 LTS because it is the most stable ubuntu available at the moment. I chose Ubuntu because there is a huge community of developers using Ubuntu and there is almost no problem that somebody already did not have and has not already fixed.</p>
+<p>Initially the server is empty, there is no operating system or anything there at all. To be able run anything on the server we have to install an operating system by deploying an Image. I chose to deploy Ubuntu 16.04 LTS because it is the most stable Ubuntu available at the moment. I chose Ubuntu because there is a huge community of developers using Ubuntu and there is almost no problem that somebody already did not have and has not already fixed.</p>
 
 <p>Now when the OS is installed your server is in &ldquo;Powered Off&rdquo; state, click the &ldquo;Boot&rdquo; button to start it up.</p>
 
@@ -132,7 +132,7 @@
   user: root
   password: &lt;your root password&gt;</code></pre></div>
 
-<p>You can visit Dokku at <a href="http://dokku.viewdocs.io/dokku/">http://dokku.viewdocs.io/dokku/</a> to get the command to install Dokku on your machin. I did this for you, the command is:</p>
+<p>You can visit Dokku at <a href="http://dokku.viewdocs.io/dokku/">http://dokku.viewdocs.io/dokku/</a> to get the command to install Dokku on your machine. I did this for you, the command is:</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ wget https://raw.githubusercontent.com/dokku/dokku/v0.11.3/bootstrap.sh
 $ sudo DOKKU_TAG<span style="color:#f92672">=</span>v0.11.3 bash bootstrap.sh</code></pre></div>
@@ -179,7 +179,7 @@ $ sudo DOKKU_TAG<span style="color:#f92672">=</span>v0.11.3 bash bootstrap.sh</c
 </figure>
 
 
-<p>After arround 4 minutes Dokku should be install on your server. Visit you server IP (in my case it is 198.58.123.61) to finish the installation.</p>
+<p>After around 4 minutes Dokku should be install on your server. Visit you server IP (in my case it is 198.58.123.61) to finish the installation.</p>
 
 
 <figure >
@@ -199,7 +199,7 @@ $ sudo DOKKU_TAG<span style="color:#f92672">=</span>v0.11.3 bash bootstrap.sh</c
 </figure>
 
 
-<p>Note: do not use you Deployo generated SSH key for Dokku, this key is going to be used by Deployo to connect to your server. For Dokku you should use your SSH key from your personal laptop/desktop.</p>
+<p>Note: do not use your Deployo generated SSH key for Dokku, this key is going to be used by Deployo to connect to your server. For Dokku you should use your SSH key from your personal laptop/desktop.</p>
 
 <h4 id="optional-step-assign-an-ssh-key-to-your-server">Optional step - Assign an SSH key to your server</h4>
 
@@ -298,7 +298,7 @@ $ sudo DOKKU_TAG<span style="color:#f92672">=</span>v0.11.3 bash bootstrap.sh</c
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git@github.com:heroku/ruby-rails-sample.git</code></pre></div>
 
-<p>On your local mashine execute the next commands:</p>
+<p>On your local machine execute the next commands:</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd ruby-rails-sample
 git remote add dokku dokku@198.58.123.61:ruby-rails-sample
@@ -309,7 +309,7 @@ git push dokku master</code></pre></div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">=====&gt; Application deployed:
        http://198.58.123.61:59826</code></pre></div>
 
-<p>Open that addres in you browser and you should see your app deployed.</p>
+<p>Open that address in you browser and you should see your app deployed.</p>
 
 
 <figure >

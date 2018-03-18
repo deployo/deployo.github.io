@@ -21,7 +21,10 @@
                 <h2 class="title is-2">
                     <a href="{{.Permalink}}">{{.Title}}</a>
                 </h2>
-                <p class="subtitle is-6">{{.Date.Format "02.01.2006"}}</p>
+                <p class="subtitle is-6">
+                    by {{.Params.Author}}
+                    <br> {{.Date.Format "02.01.2006"}}
+                </p>
             </div>
             {{ end }}
         </div>

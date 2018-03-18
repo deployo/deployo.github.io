@@ -22,6 +22,12 @@
         <section class="section">
             <div class="columns">
                 {{if .inverted}}
+                <div class="column is-half-desktop has-text-centered hero is-hidden-tablet">
+                    <div class="hero-body">
+                        <h3 class="title is-3">{{.title}}</h3>
+                        <p>{{.description}}</p>
+                    </div>
+                </div>
                 <div class="column is-half-desktop">
                     <div class="has-shadow-far has-shadow-inverse">
                         <video style="border-radius: 2px;" autoplay="autoplay" loop="loop">
@@ -29,7 +35,7 @@
                         </video>
                     </div>
                 </div>
-                <div class="column is-half-desktop has-text-centered hero">
+                <div class="column is-half-desktop has-text-centered hero is-hidden-mobile">
                     <div class="hero-body">
                         <h3 class="title is-3">{{.title}}</h3>
                         <p>{{.description}}</p>

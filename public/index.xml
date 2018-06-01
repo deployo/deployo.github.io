@@ -6,10 +6,21 @@
     <description>Recent content in Web based server management tool on Deployo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 Jun 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://deployo.me/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Interservice communication with Docker and Dokku</title>
+      <link>https://deployo.me/blog/interservice-communication-docker-dokku/</link>
+      <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://deployo.me/blog/interservice-communication-docker-dokku/</guid>
+      <description>Dokku is a wonderfull tool if you want to run you own Heroku-like platform where you can host a number of you applications. It helps you set up your deployment, database connection, nginx configuration and even SSL with Let&amp;rsquo;s Encrypt.
+Dokku makes runing your application and connecting it to a database very easy, but what if you have multiple applications that need to talk to each other?
+Let&amp;rsquo;s say that you have an application and a database.</description>
+    </item>
     
     <item>
       <title>Install and manage Dokku on Linode</title>

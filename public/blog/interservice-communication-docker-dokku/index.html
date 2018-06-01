@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111128681-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111128681-1');
+  </script>
+
+  <title> Deployo - Interservice communication with Docker and Dokku </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="" />
+
+  <meta property="og:url" content="https://deployo.me">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Deployo - Interservice communication with Docker and Dokku">
+  <meta property="og:image" content="https://deployo.me/img/og_image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="126">
+  <meta property="og:image:height" content="126">
+  <meta property="og:description" content="">
+
+  <link href="/img/favicon.png" rel="shortcut icon" />
+  <link href="/css/bulma.css" rel="stylesheet">
+  <link href="/css/custom.css" rel="stylesheet">
+  <link href="/fontawesome/css/fontawesome-all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  
+<div class="hero is-deployo is-info">
+    <div class="hero-head">
+        <nav class="navbar is-info">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <img src="/img/logo_light.svg" alt="Deployo" width="112" height="28">
+        </a>
+        <button class="button navbar-burger is-info" data-target="navbar">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+
+    <div class="navbar-menu is-info" id="navbar">
+        <div class="navbar-end">
+            <a class="navbar-item" data-scroll href='/#features'>Features</a>
+            <a class="navbar-item" data-scroll href='/#pricing'>Pricing</a>
+            
+            <a class="navbar-item" href='/docs'>Docs</a>
+            <a class="navbar-item" href='/blog'>Blog</a>
+
+            <div class="navbar-item">
+                <div class="field is-grouped">
+                    <p class="control" id="login-link">
+                        <a class="button is-link" href="//app.deployo.me/auth/login">
+                            <span>Log In</span>
+                        </a>
+                    </p>
+                    <p class="control" id="signup-link">
+                        <a class="button is-primary" href='/#signup'>
+                            <span>Sign Up</span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    </div>
+    <div class="hero-body has-text-centered">
+        <div class="columns">
+            <div class="column">
+                <h1 class="title is-1 is-spaced">Interservice communication with Docker and Dokku</h1>
+                <h2 class="subtitle is-6 is-subtitle">
+                    by Miloš Krsmanović
+                    <p>01.06.2018</p>
+                </h2>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container deployo-min-height">
+    <section class="section">
+        <div class="content">
+            <p>Dokku is a wonderfull tool if you want to run you own Heroku-like platform where you can host a number of you applications. It helps you set up your deployment, database connection, nginx configuration and even SSL with Let&rsquo;s Encrypt.</p>
+
+<p>Dokku makes runing your application and connecting it to a database very easy, but what if you have multiple applications that need to talk to each other?</p>
+
+<p>Let&rsquo;s say that you have an application and a database. Your application can talk to your database without a problem using the DATABASE_URL environment variable provided by Dokku, after linking your database to your application. In this case, I wrote the applications in Golang just because I like it, but this approach works with any language, of course.</p>
+
+<p>Everything the application, named <code>db-checker</code>, is doing is pingin the database to check if it is still available.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;database/sql&#34;</span>
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+	<span style="color:#e6db74">&#34;log&#34;</span>
+	<span style="color:#e6db74">&#34;os&#34;</span>
+
+	<span style="color:#a6e22e">_</span> <span style="color:#e6db74">&#34;github.com/lib/pq&#34;</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">db</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">sql</span>.<span style="color:#a6e22e">Open</span>(<span style="color:#e6db74">&#34;postgres&#34;</span>, <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Getenv</span>(<span style="color:#e6db74">&#34;DATABASE_URL&#34;</span>))
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+		<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#a6e22e">err</span>)
+	}
+	<span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">Close</span>()
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">Ping</span>(); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;DB is not available. Error: %v&#34;</span>, <span style="color:#a6e22e">err</span>)
+		<span style="color:#66d9ef">return</span>
+	}
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;DB is available&#34;</span>)
+}</code></pre></div>
+
+<p>We can run this app buy executing <code>dokku --rm run db-checker</code> and see if our application can access the database or not.</p>
+
+<p>So far so good.</p>
+
+<p>Now let&rsquo;s make this more interesting by introducing a web application that should expose an http endpoint so we can check if the database is available using the web browser. We will connect our apps and database like this:</p>
+
+
+<figure>
+    
+        <img src="/img/blog/interservice-communication-docker-dokku/diagram.png" alt="A diagram of our apps" width="740px" />
+    
+    
+    <figcaption>
+        <p>
+        A diagram of our apps
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<p>We need to change our <code>db-checker</code> application so it now exposes an http endpoint called <code>/ping</code> which will execute the Ping method like before but this time it will return a status code which we could use in the <code>web</code> application (which we will implement soon).</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;database/sql&#34;</span>
+	<span style="color:#e6db74">&#34;log&#34;</span>
+	<span style="color:#e6db74">&#34;net/http&#34;</span>
+	<span style="color:#e6db74">&#34;os&#34;</span>
+
+	<span style="color:#a6e22e">_</span> <span style="color:#e6db74">&#34;github.com/lib/pq&#34;</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">db</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">sql</span>.<span style="color:#a6e22e">Open</span>(<span style="color:#e6db74">&#34;postgres&#34;</span>, <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Getenv</span>(<span style="color:#e6db74">&#34;DATABASE_URL&#34;</span>))
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+		<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#a6e22e">err</span>)
+	}
+	<span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">Close</span>()
+
+	<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Handle</span>(<span style="color:#e6db74">&#34;/ping&#34;</span>, <span style="color:#a6e22e">ping</span>(<span style="color:#a6e22e">db</span>))
+	<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ListenAndServe</span>(<span style="color:#e6db74">&#34;:8080&#34;</span>, <span style="color:#66d9ef">nil</span>))
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">ping</span>(<span style="color:#a6e22e">db</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">sql</span>.<span style="color:#a6e22e">DB</span>) <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Handler</span> {
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">HandlerFunc</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">w</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ResponseWriter</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Request</span>) {
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">Ping</span>(); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+			<span style="color:#a6e22e">w</span>.<span style="color:#a6e22e">WriteHeader</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusFailedDependency</span>)
+			<span style="color:#66d9ef">return</span>
+		}
+		<span style="color:#a6e22e">w</span>.<span style="color:#a6e22e">WriteHeader</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusOK</span>)
+	})
+}</code></pre></div>
+
+<p>We extract the Pinging functionality into an <code>http.Handler</code> function that has a pointer to the database that we injected. We initialize the handler and attatch it to the <code>/ping</code> endpoint so it is executed every time we call <code>/ping</code>.</p>
+
+<p>We introduce a new application, cleverly called <code>web</code>.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+	<span style="color:#e6db74">&#34;log&#34;</span>
+	<span style="color:#e6db74">&#34;net/http&#34;</span>
+	<span style="color:#e6db74">&#34;os&#34;</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">url</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Getenv</span>(<span style="color:#e6db74">&#34;CHECK_DB_URL&#34;</span>)
+	<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Handle</span>(<span style="color:#e6db74">&#34;/check_db&#34;</span>, <span style="color:#a6e22e">checkDB</span>(<span style="color:#a6e22e">url</span>))
+	<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ListenAndServe</span>(<span style="color:#e6db74">&#34;:9090&#34;</span>, <span style="color:#66d9ef">nil</span>))
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">checkDB</span>(<span style="color:#a6e22e">url</span> <span style="color:#66d9ef">string</span>) <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Handler</span> {
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">HandlerFunc</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">w</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ResponseWriter</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Request</span>) {
+		<span style="color:#a6e22e">resp</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Get</span>(<span style="color:#a6e22e">url</span>)
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+			<span style="color:#a6e22e">w</span>.<span style="color:#a6e22e">WriteHeader</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusInternalServerError</span>)
+			<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Fprintf</span>(<span style="color:#a6e22e">w</span>, <span style="color:#e6db74">&#34;could not check if DB is available: %v&#34;</span>, <span style="color:#a6e22e">err</span>)
+			<span style="color:#66d9ef">return</span>
+		}
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">resp</span>.<span style="color:#a6e22e">StatusCode</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusOK</span> {
+			<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Fprint</span>(<span style="color:#a6e22e">w</span>, <span style="color:#e6db74">&#34;DB is not available&#34;</span>)
+			<span style="color:#66d9ef">return</span>
+		}
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Fprint</span>(<span style="color:#a6e22e">w</span>, <span style="color:#e6db74">&#34;DB is available&#34;</span>)
+	})
+}</code></pre></div>
+
+<p>What the application is doing is exposing an http endpoint called <code>/check_db</code> which should contact the <code>db-checker</code> and tell us if the database is available or not.</p>
+
+<p>The address of the <code>db-checker</code> is provided using an environment variable called <code>CHECK_DB_URL</code> which is provided using Dokku command <code>dokku config:set web CHECK_DB_URL=http://db-checker/ping</code>.</p>
+
+<p>Now if we ran both of these applications and tried to access <code>web</code> and its <code>/check_db</code> endpoint it would throw an error with something along the lines of: <code>dial tcp: lookup db-checker on 127.0.0.11:53: no such host</code></p>
+
+<p>The reason for this is that our <code>web</code> application does not know the address of <code>db-checker</code>.</p>
+
+<p>Since both of our applications are actually Docker containers we can create links between <code>web</code> and <code>db-checker</code> with something like:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">dokku</span> <span style="color:#a6e22e">docker</span><span style="color:#f92672">-</span><span style="color:#a6e22e">options</span>:<span style="color:#a6e22e">add</span> <span style="color:#a6e22e">web</span> <span style="color:#a6e22e">deploy</span> <span style="color:#e6db74">&#34;--link db-checker.web.1:db-checker&#34;</span></code></pre></div>
+
+<p>This solution works with one caveat. In case you want to scale the <code>db-checker</code> (wich makes no sence in our use-case but let&rsquo;s pretend it does for the sake of this blog post) our link is not good enough because <code>web</code> can only to talk to one container (<code>db-checker.web.1</code>) and it is not able to access other contaners (ther names would be <code>db-checker.web.2</code>, <code>db-checker.web.3</code>, &hellip; and so on).</p>
+
+<p>What we can do (if we use a Docker version 1.11 or up) is put all containers in a user defined Docker network and put a Docker network alias on <code>db-checker</code> app so that every container of this app running in this network has this alias.
+Our <code>web</code> application is now able to use this alias to talk to one (any) <code>db-checker</code> container. Which <code>db-checker</code> container is accessed depends on the internal Docker DNS but they will be load balanced in a round-robin way by Docker (with some limitiations).</p>
+
+<p>What we need to do to make this works is:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#  create a network called &#34;demo&#34;
+</span><span style="color:#75715e"></span>docker network create demo
+
+<span style="color:#75715e"># configure application to run in &#34;demo&#34; network 
+</span><span style="color:#75715e"></span>dokku docker-options:add web deploy <span style="color:#e6db74">&#34;--net demo&#34;</span>
+dokku docker-options:add db-checker deploy <span style="color:#e6db74">&#34;--net demo&#34;</span>
+
+<span style="color:#75715e"># set an alias to &#34;db-checker&#34;
+</span><span style="color:#75715e"></span>dokku docker-options:add db-checker deploy <span style="color:#e6db74">&#34;--net-alias db-checker&#34;</span>
+
+<span style="color:#75715e"># add database container to the &#34;demo&#34; network
+</span><span style="color:#75715e"></span>docker network connect demo dokku.postgres.db</code></pre></div>
+
+<p>With this we create a Docker network called <code>demo</code>, we add a docker-option so both our applications are running in this network. We then set an alias for <code>db-checker</code> and connect our database container called <code>dokku.postgres.db</code> to the <code>demo</code> network.</p>
+
+<p>Now if you try to access the <code>/check_db</code> endpoint of our <code>web</code> application you get status 200 and a message &ldquo;DB is available&rdquo;.</p>
+
+<p>You only need to execute these commands once because <code>Dokku</code> will save them in special files made just for your app called DOCKER_OPTIONS_DEPLOY. You can execute the commands directly in the terminal, have them in a bash script or run them using <a href="https://deployo.me">Deployo</a>. The next time you deploy your app the <code>Docker</code> options will be picked up automatically.</p>
+
+<p>Special thanks to Luis and his blog post <a href="https://medium.com/@lherrera/poor-mans-load-balancing-with-docker-2be014983e5">Poor man’s load balancing with Docker</a> that helped me connect the dots and successfully configure my Dokku  applications to talk to each other.</p>
+
+        </div>
+    </section>
+</div>
+<section class="hero is-link is-deployo">
+    <div class="container">
+        <section class="section">
+            <div class="level">
+                <div class="level-left">
+                    2018 © deployo.me
+                </div>
+                <div class="level-right">
+                    made with &nbsp;
+                    <i class="fas fa-hand-paper has-text-warning"></i>&nbsp;
+                    <i class="fas fa-hand-paper has-text-warning"></i>&nbsp;&nbsp;by&nbsp;
+                    <a href="https://twitter.com/miloskrca">
+                        @miloskrca
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+ 
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      
+      var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+      
+      if ($navbarBurgers.length > 0) {
+
+        
+        $navbarBurgers.forEach(function ($el) {
+          $el.addEventListener('click', function () {
+
+            
+            var target = $el.dataset.target;
+            var $target = document.getElementById(target);
+
+            
+            $el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+
+          });
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

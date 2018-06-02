@@ -5,11 +5,11 @@ slug: interservice-communication-docker-dokku
 author: Miloš Krsmanović
 ---
 
-Dokku is a wonderfull tool if you want to run you own Heroku-like platform where you can host a number of you applications. It helps you set up your deployment, database connection, nginx configuration and even SSL with Let's Encrypt.
+Dokku is a wonderfull tool if you want to run you own Heroku-like platform where you can host a number of your applications. It helps you set up your deployment, database connection, nginx configuration and even SSL with Let's Encrypt.
 
 Dokku makes runing your application and connecting it to a database very easy, but what if you have multiple applications that need to talk to each other?
 
-Let's say that you have an application and a database. Your application can talk to your database without a problem using the DATABASE_URL environment variable provided by Dokku, after linking your database to your application. In this case, I wrote the applications in Golang just because I like it, but this approach works with any language, of course.
+Let's say that you have an application and a database. Your application can talk to your database without a problem using the DATABASE_URL environment variable provided by Dokku, after linking your database to your application. In this case, I wrote everything in Golang just because I like it, but this approach works with any language, of course.
 
 Everything the application, named `db-checker`, is doing is pingin the database to check if it is still available.
 
@@ -47,7 +47,7 @@ Now let's make this more interesting by introducing a web application that shoul
 
 {{< figure src="/img/blog/interservice-communication-docker-dokku/diagram.png" caption="A diagram of our apps" alt="A diagram of our apps" width="740px" >}}
 
-We need to change our `db-checker` application so it now exposes an http endpoint called `/ping` which will execute the Ping method like before but this time it will return a status code which we could use in the `web` application (which we will implement soon).
+We need to change our `db-checker` application so it now exposes an http endpoint called `/ping` which will execute the Ping method like before but this time it will return a status code.
 
 {{< highlight golang >}}
 package main
@@ -124,7 +124,7 @@ What the application is doing is exposing an http endpoint called `/check_db` wh
 
 The address of the `db-checker` is provided using an environment variable called `CHECK_DB_URL` which is provided using Dokku command `dokku config:set web CHECK_DB_URL=http://db-checker/ping`.
 
-Now if we ran both of these applications and tried to access `web` and its `/check_db` endpoint it would throw an error with something along the lines of: `dial tcp: lookup db-checker on 127.0.0.11:53: no such host`
+Now if we ran both of these applications and tried to access `web` and its `/check_db` endpoint it would return an error with something along the lines of: `dial tcp: lookup db-checker on 127.0.0.11:53: no such host`
 
 The reason for this is that our `web` application does not know the address of `db-checker`.
 
@@ -134,7 +134,7 @@ Since both of our applications are actually Docker containers we can create link
 dokku docker-options:add web deploy "--link db-checker.web.1:db-checker"
 {{< /highlight >}}
 
-This solution works with one caveat. In case you want to scale the `db-checker` (wich makes no sence in our use-case but let's pretend it does for the sake of this blog post) our link is not good enough because `web` can only to talk to one container (`db-checker.web.1`) and it is not able to access other contaners (ther names would be `db-checker.web.2`, `db-checker.web.3`, ... and so on).
+This solution works, with one caveat. In case you want to scale the `db-checker` (wich makes no sense in our use-case but let's pretend it does for the sake of this blog post) our link is not good enough because `web` can only to talk to one container (`db-checker.web.1`) and it is not able to access other contaners (ther names would be `db-checker.web.2`, `db-checker.web.3`, ... and so on).
 
 What we can do (if we use a Docker version 1.11 or up) is put all containers in a user defined Docker network and put a Docker network alias on `db-checker` app so that every container of this app running in this network has this alias.
 Our `web` application is now able to use this alias to talk to one (any) `db-checker` container. Which `db-checker` container is accessed depends on the internal Docker DNS but they will be load balanced in a round-robin way by Docker (with some limitiations).

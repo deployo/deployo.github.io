@@ -89,11 +89,11 @@
 <div class="container deployo-min-height">
     <section class="section">
         <div class="content">
-            <p>Dokku is a wonderfull tool if you want to run you own Heroku-like platform where you can host a number of you applications. It helps you set up your deployment, database connection, nginx configuration and even SSL with Let&rsquo;s Encrypt.</p>
+            <p>Dokku is a wonderfull tool if you want to run you own Heroku-like platform where you can host a number of your applications. It helps you set up your deployment, database connection, nginx configuration and even SSL with Let&rsquo;s Encrypt.</p>
 
 <p>Dokku makes runing your application and connecting it to a database very easy, but what if you have multiple applications that need to talk to each other?</p>
 
-<p>Let&rsquo;s say that you have an application and a database. Your application can talk to your database without a problem using the DATABASE_URL environment variable provided by Dokku, after linking your database to your application. In this case, I wrote the applications in Golang just because I like it, but this approach works with any language, of course.</p>
+<p>Let&rsquo;s say that you have an application and a database. Your application can talk to your database without a problem using the DATABASE_URL environment variable provided by Dokku, after linking your database to your application. In this case, I wrote everything in Golang just because I like it, but this approach works with any language, of course.</p>
 
 <p>Everything the application, named <code>db-checker</code>, is doing is pingin the database to check if it is still available.</p>
 
@@ -145,7 +145,7 @@
 </figure>
 
 
-<p>We need to change our <code>db-checker</code> application so it now exposes an http endpoint called <code>/ping</code> which will execute the Ping method like before but this time it will return a status code which we could use in the <code>web</code> application (which we will implement soon).</p>
+<p>We need to change our <code>db-checker</code> application so it now exposes an http endpoint called <code>/ping</code> which will execute the Ping method like before but this time it will return a status code.</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
@@ -218,7 +218,7 @@
 
 <p>The address of the <code>db-checker</code> is provided using an environment variable called <code>CHECK_DB_URL</code> which is provided using Dokku command <code>dokku config:set web CHECK_DB_URL=http://db-checker/ping</code>.</p>
 
-<p>Now if we ran both of these applications and tried to access <code>web</code> and its <code>/check_db</code> endpoint it would throw an error with something along the lines of: <code>dial tcp: lookup db-checker on 127.0.0.11:53: no such host</code></p>
+<p>Now if we ran both of these applications and tried to access <code>web</code> and its <code>/check_db</code> endpoint it would return an error with something along the lines of: <code>dial tcp: lookup db-checker on 127.0.0.11:53: no such host</code></p>
 
 <p>The reason for this is that our <code>web</code> application does not know the address of <code>db-checker</code>.</p>
 
@@ -226,7 +226,7 @@
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">dokku</span> <span style="color:#a6e22e">docker</span><span style="color:#f92672">-</span><span style="color:#a6e22e">options</span>:<span style="color:#a6e22e">add</span> <span style="color:#a6e22e">web</span> <span style="color:#a6e22e">deploy</span> <span style="color:#e6db74">&#34;--link db-checker.web.1:db-checker&#34;</span></code></pre></div>
 
-<p>This solution works with one caveat. In case you want to scale the <code>db-checker</code> (wich makes no sence in our use-case but let&rsquo;s pretend it does for the sake of this blog post) our link is not good enough because <code>web</code> can only to talk to one container (<code>db-checker.web.1</code>) and it is not able to access other contaners (ther names would be <code>db-checker.web.2</code>, <code>db-checker.web.3</code>, &hellip; and so on).</p>
+<p>This solution works, with one caveat. In case you want to scale the <code>db-checker</code> (wich makes no sense in our use-case but let&rsquo;s pretend it does for the sake of this blog post) our link is not good enough because <code>web</code> can only to talk to one container (<code>db-checker.web.1</code>) and it is not able to access other contaners (ther names would be <code>db-checker.web.2</code>, <code>db-checker.web.3</code>, &hellip; and so on).</p>
 
 <p>What we can do (if we use a Docker version 1.11 or up) is put all containers in a user defined Docker network and put a Docker network alias on <code>db-checker</code> app so that every container of this app running in this network has this alias.
 Our <code>web</code> application is now able to use this alias to talk to one (any) <code>db-checker</code> container. Which <code>db-checker</code> container is accessed depends on the internal Docker DNS but they will be load balanced in a round-robin way by Docker (with some limitiations).</p>

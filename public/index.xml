@@ -6,10 +6,19 @@
     <description>Recent content in Web based server management tool on Deployo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 15 Jun 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://deployo.me/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Force HTTPS on Heroku</title>
+      <link>https://deployo.me/blog/https-heroku/</link>
+      <pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://deployo.me/blog/https-heroku/</guid>
+      <description>Recently I deployed and app to Heroku and I wanted to force my users to only access it over HTTPS. I tried finding a configuration option in the Heroku dashboard but found nothing, then I stumbeled upon this help page and the following sentence: &amp;ldquo;Redirects need to be performed at the application level as the Heroku router does not provide this functionality. You should code the redirect logic into your application&amp;rdquo;.</description>
+    </item>
     
     <item>
       <title>Interservice communication with Docker and Dokku</title>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111128681-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111128681-1');
+  </script>
+
+  <title> Deployo - Force HTTPS on Heroku </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="" />
+
+  <meta property="og:url" content="https://deployo.me">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Deployo - Force HTTPS on Heroku">
+  <meta property="og:image" content="https://deployo.me/img/og_image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="126">
+  <meta property="og:image:height" content="126">
+  <meta property="og:description" content="">
+
+  <link href="/img/favicon.png" rel="shortcut icon" />
+  <link href="/css/bulma.css" rel="stylesheet">
+  <link href="/css/custom.css" rel="stylesheet">
+  <link href="/fontawesome/css/fontawesome-all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  
+<div class="hero is-deployo is-info">
+    <div class="hero-head">
+        <nav class="navbar is-info">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <img src="/img/logo_light.svg" alt="Deployo" width="112" height="28">
+        </a>
+        <button class="button navbar-burger is-info" data-target="navbar">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+
+    <div class="navbar-menu is-info" id="navbar">
+        <div class="navbar-end">
+            <a class="navbar-item" data-scroll href='/#features'>Features</a>
+            <a class="navbar-item" data-scroll href='/#pricing'>Pricing</a>
+            
+            <a class="navbar-item" href='/docs'>Docs</a>
+            <a class="navbar-item" href='/blog'>Blog</a>
+
+            <div class="navbar-item">
+                <div class="field is-grouped">
+                    <p class="control" id="login-link">
+                        <a class="button is-link" href="//app.deployo.me/auth/login">
+                            <span>Log In</span>
+                        </a>
+                    </p>
+                    <p class="control" id="signup-link">
+                        <a class="button is-primary" href='/#signup'>
+                            <span>Sign Up</span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    </div>
+    <div class="hero-body has-text-centered">
+        <div class="columns">
+            <div class="column">
+                <h1 class="title is-1 is-spaced">Force HTTPS on Heroku</h1>
+                <h2 class="subtitle is-6 is-subtitle">
+                    by Miloš Krsmanović &#149; 15.06.2018
+                </h2>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container deployo-min-height">
+    <section class="section">
+        <div class="content">
+            <p>Recently I deployed and app to <a href="https://heroku.com">Heroku</a> and I wanted to force my users to only access it over HTTPS. I tried finding a  configuration option in the Heroku dashboard but found nothing, then I stumbeled upon <a href="https://help.heroku.com/J2R1S4T8/can-heroku-force-an-application-to-use-ssl-tls">this help page</a> and the following sentence: &ldquo;Redirects need to be performed at the application level as the Heroku router does not provide this functionality. You should code the redirect logic into your application&rdquo;.</p>
+
+<p>This does not agree with this <a href="https://tools.ietf.org/html/rfc2817#section-4.2">RFC</a> which says &ldquo;A server MAY indicate that a client request can not be completed without TLS using the &ldquo;426 Upgrade Required&rdquo; status code, which MUST include an an Upgrade header field specifying the token of the required TLS version&rdquo;. Which would mean that the server to requests made using HTTP should respond with:</p>
+
+<pre><code class="language-text">HTTP/1.1 426 Upgrade Required
+Upgrade: TLS/1.0, HTTP/1.1
+Connection: Upgrade
+</code></pre>
+
+<p>Or this <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.4">RFC</a> that explains the desired behaviour like this: &ldquo;The server understood the request, but is refusing to fulfill it&rdquo; and that the server should respond by using the 403 header. Specifically with</p>
+
+<pre><code>403.4 - SSL required
+</code></pre>
+
+<p>Since the recommendations of the two RFCs are pretty conflicting about what should be the propper way to handle access with non-https and the fact that Heroku is pretty clear with how it expects your app to behave I opted to just redirect the users to the same URL they requested except I then force HTTPS. I wrote a middleware and pluged it in my handler chain before handling any routes. The middleware looks like this:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">forceSSL</span>(<span style="color:#a6e22e">next</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Handler</span>) <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Handler</span> {
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">HandlerFunc</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">w</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ResponseWriter</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Request</span>) {
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">Header</span>.<span style="color:#a6e22e">Get</span>(<span style="color:#e6db74">&#34;X-Forwarded-Proto&#34;</span>) <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;https&#34;</span> {
+			<span style="color:#a6e22e">url</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">URL</span>{<span style="color:#a6e22e">Scheme</span>: <span style="color:#e6db74">&#34;https&#34;</span>, <span style="color:#a6e22e">Host</span>: <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">Host</span>, <span style="color:#a6e22e">Path</span>: <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">URL</span>.<span style="color:#a6e22e">Path</span>, <span style="color:#a6e22e">RawQuery</span>: <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">URL</span>.<span style="color:#a6e22e">RawQuery</span>}
+			<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Redirect</span>(<span style="color:#a6e22e">w</span>, <span style="color:#a6e22e">r</span>, <span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">String</span>(), <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusTemporaryRedirect</span>)
+			<span style="color:#66d9ef">return</span>
+		}
+		<span style="color:#a6e22e">next</span>.<span style="color:#a6e22e">ServeHTTP</span>(<span style="color:#a6e22e">w</span>, <span style="color:#a6e22e">r</span>)
+	})
+}</code></pre></div>
+
+<p>You notice that we are using <code>X-Forwarded-Proto</code> to check the originating protocol of the HTTP request. This is because &ldquo;Under the hood, Heroku router (over)writes the X-Forwarded-Proto and the X-Forwarded-Port request headers&rdquo; (<a href="https://help.heroku.com/J2R1S4T8/can-heroku-force-an-application-to-use-ssl-tls">source</a>).</p>
+
+<p>In a simple application you can use it like this:</p>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;log&#34;</span>
+	<span style="color:#e6db74">&#34;net/http&#34;</span>
+	<span style="color:#e6db74">&#34;os&#34;</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+
+	<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Handle</span>(<span style="color:#e6db74">&#34;/&#34;</span>, <span style="color:#a6e22e">forceSSL</span>(<span style="color:#a6e22e">handler</span>()))
+
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ListenAndServe</span>(<span style="color:#e6db74">&#34;:8080&#34;</span>, <span style="color:#66d9ef">nil</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+		<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#a6e22e">err</span>)
+	}
+}
+
+<span style="color:#75715e">// dummy handler
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">handler</span>() <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Handler</span> {
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">HandlerFunc</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">w</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ResponseWriter</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Request</span>) {
+		<span style="color:#a6e22e">w</span>.<span style="color:#a6e22e">WriteHeader</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusOK</span>)
+	})
+}</code></pre></div></p>
+
+<p>That is it.</p>
+
+<p>This was a simple fix but it allowed me to be sure that my users are accessing my app over HTTPS every time.</p>
+
+        </div>
+    </section>
+</div>
+<section class="hero is-link is-deployo">
+    <div class="container">
+        <section class="section">
+            <div class="level">
+                <div class="level-left">
+                    2018 © deployo.me
+                </div>
+                <div class="level-right">
+                    made with &nbsp;
+                    <i class="fas fa-hand-paper has-text-warning"></i>&nbsp;
+                    <i class="fas fa-hand-paper has-text-warning"></i>&nbsp;&nbsp;by&nbsp;
+                    <a href="https://twitter.com/miloskrca">
+                        @miloskrca
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+ 
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      
+      var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+      
+      if ($navbarBurgers.length > 0) {
+
+        
+        $navbarBurgers.forEach(function ($el) {
+          $el.addEventListener('click', function () {
+
+            
+            var target = $el.dataset.target;
+            var $target = document.getElementById(target);
+
+            
+            $el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+
+          });
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

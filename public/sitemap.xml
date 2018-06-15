@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://deployo.me/blog/https-heroku/</loc>
+    <lastmod>2018-06-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://deployo.me/blog/interservice-communication-docker-dokku/</loc>
     <lastmod>2018-06-01T00:00:00+00:00</lastmod>
   </url>
@@ -27,7 +32,7 @@
   
   <url>
     <loc>https://deployo.me/blog/</loc>
-    <lastmod>2018-06-01T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -53,7 +58,7 @@
   
   <url>
     <loc>https://deployo.me/</loc>
-    <lastmod>2018-06-01T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-15T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>

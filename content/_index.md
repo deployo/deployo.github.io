@@ -53,36 +53,31 @@ more_features:
 plans:
     - title: Free
       features:
+        - 1 user
         - 1 server
-        - 2 scripts
+        - Unlimited scripts
         - 10 entries in history
-        - Passwords
-        - Deploy Templates
-        - 5 minutes execution time
+        - 5 minutes execution limit
       price: $0
       style: info
     - title: Hobbyist
       features:
-        - 3 servers
-        - 10 scripts
-        - 1 000 entries in history
-        - Passwords
+        - 3 users (soon)
+        - 5 servers
+        - Unlimited scripts
+        - Unlimited history
         - SSH keys
-        - Deploy Templates
         - Cronjobs
-        - 30 minutes execution time
       price: $14
       style: link
     - title: Professional
       features:
-        - 10 servers
-        - 50 scripts
-        - 10 000 entries in history
-        - Passwords
+        - 10 users (soon)
+        - Unlimited servers
+        - Unlimited scripts
+        - Unlimited history
         - SSH keys
-        - Deploy Templates
         - Cronjobs
-        - 60 minutes execution time
         - Priority Support
         # - Metrics
       price: $24

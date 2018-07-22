@@ -72,8 +72,8 @@ plans:
       style: link
     - title: Professional
       features:
-        - 10 users (soon)
-        - Unlimited servers
+        - 8 users (soon)
+        - 10 servers
         - Unlimited scripts
         - Unlimited history
         - SSH keys

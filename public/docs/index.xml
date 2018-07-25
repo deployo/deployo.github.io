@@ -18,7 +18,7 @@
       <guid>https://deployo.me/docs/configuration/</guid>
       <description>The configuration page is the main place where you set up your servers and scripts. The entire configuration iss a YAML file where you can configure everything that you need.
 YAML A basic YAML configuration file would looks something like this:
-servers: - name: production host: prod.deployo.me port: 22 user: root password: root environment: ENV_VAR: var1 scripts: - name: echo_variable commands: - echo &amp;quot;command&amp;quot; - echo $ENV_VAR variables: - ENV_VAR2 environment: ENV_VAR3: var3 workdir: /tmp templates: - name: deploy_prod description: Deploy to production servers: - production scripts: - echo_variable variables: ENV_VAR2: value cronjobs: - schedule: &#39;* * * * *&#39; servers: - production scripts: - echo_variable variables: ENV_VAR2: value  It is consisted of these sections:</description>
+servers: - name: production host: prod.deployo.me port: 22 user: root password: root environment: ENV_VAR: var1 scripts: - name: echo_variable commands: - echo &amp;quot;command&amp;quot; - echo $ENV_VAR variables: - ENV_VAR2 environment: ENV_VAR3: var3 workdir: /tmp templates: - name: deploy_prod description: Deploy to production servers: - production scripts: - echo_variable variables: ENV_VAR2: value cronjobs: - schedule: &#39;* * * * *&#39; servers: - production scripts: - echo_variable variables: ENV_VAR2: value notifyOnFailed: email: - notification@email.</description>
     </item>
     
     <item>

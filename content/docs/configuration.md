@@ -44,6 +44,9 @@ cronjobs:
   - echo_variable
   variables:
     ENV_VAR2: value
+  notifyOnFailed:
+    email:
+    - notification@email.com
 ```
 
 It is consisted of these sections:
@@ -112,6 +115,7 @@ schedule | Definition of when this job should be executed using [Crontab notatio
 servers | List of server names | yes | array of strings | n/a
 scripts | List of script names | yes | array of strings | n/a
 variables | a list of variables required from the user for execution of scripts. When a script is triggered from the dashboard a value for every variable will be required. Empty values are allowed. | no | array of strings | [ ]
+notifyOnFailed | An object with a list of emails to receive notification if cronjob fails. | no | object (see example above) | empty object
 
 ## Servers
 

@@ -173,6 +173,9 @@ cronjobs:
   - echo_variable
   variables:
     ENV_VAR2: value
+  notifyOnFailed:
+    email:
+    - notification@email.com
 </code></pre>
 
 <p>It is consisted of these sections:</p>
@@ -426,6 +429,14 @@ cronjobs:
 <td>no</td>
 <td>array of strings</td>
 <td>[ ]</td>
+</tr>
+
+<tr>
+<td>notifyOnFailed</td>
+<td>An object with a list of emails to receive notification if cronjob fails.</td>
+<td>no</td>
+<td>object (see example above)</td>
+<td>empty object</td>
 </tr>
 </tbody>
 </table>

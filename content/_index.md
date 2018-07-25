@@ -56,7 +56,7 @@ plans:
         - 1 user
         - 1 server
         - Unlimited scripts
-        - 10 entries in history
+        - 1 day deploy history
         - 5 minutes execution limit
       price: $0
       style: info
@@ -65,7 +65,7 @@ plans:
         - 3 users (soon)
         - 5 servers
         - Unlimited scripts
-        - Unlimited history
+        - 30 days deploy history
         - SSH keys
         - Cronjobs
       price: $14
@@ -75,7 +75,7 @@ plans:
         - 8 users (soon)
         - 10 servers
         - Unlimited scripts
-        - Unlimited history
+        - Unlimited deploy history
         - SSH keys
         - Cronjobs
         - Priority Support

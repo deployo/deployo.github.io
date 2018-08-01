@@ -44,6 +44,11 @@
   </url>
   
   <url>
+    <loc>https://deployo.me/</loc>
+    <lastmod>2018-06-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://deployo.me/docs/ssh_keys/</loc>
   </url>
   
@@ -54,11 +59,6 @@
   
   <url>
     <loc>https://deployo.me/docs/user/</loc>
-  </url>
-  
-  <url>
-    <loc>https://deployo.me/</loc>
-    <lastmod>2018-06-15T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>

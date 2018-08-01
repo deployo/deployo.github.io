@@ -1,18 +1,18 @@
 ---
-title: Web based server management tool
+title: One click command execution from anywhere
 hero:
   subtitle: Simplify your
   typewriter:
     - server management.
     - shell executions.
     - scheduled jobs.
-  title: Web based server management tool.
+  title: One click command execution from anywhere
   call_to_action: Create Account For Free
 meta:
   description: A web based server management tool that uses SSH to connect to your servers. Simplify your server maintenence, deployments or remote shell executions.
 overview:
   title: Manage your servers with a button click.
-  summary: It is perfectly suited for personal projects, freelancers or small companies looking to speed up their remote tasks.
+  summary: Perfectly suited for personal projects, freelancers or small companies looking to speed up their remote tasks.
 screenshot: /img/frame-chrome-mac.png
 call_to_action: Create Account For Free
 features:

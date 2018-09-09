@@ -88,7 +88,7 @@
 <div class="container deployo-min-height">
     <section class="section">
         <div class="content">
-            <p>Recently I deployed and app to <a href="https://heroku.com">Heroku</a> and I wanted to force my users to only access it over HTTPS. I tried finding a  configuration option in the Heroku dashboard but found nothing, then I stumbeled upon <a href="https://help.heroku.com/J2R1S4T8/can-heroku-force-an-application-to-use-ssl-tls">this help page</a> and the following sentence: &ldquo;Redirects need to be performed at the application level as the Heroku router does not provide this functionality. You should code the redirect logic into your application&rdquo;.</p>
+            <p>Recently I deployed an app to <a href="https://heroku.com">Heroku</a> and I wanted to force my users to only access it over HTTPS. I tried finding a  configuration option in the Heroku dashboard but found nothing, then I stumbled upon <a href="https://help.heroku.com/J2R1S4T8/can-heroku-force-an-application-to-use-ssl-tls">this help page</a> and the following sentence: &ldquo;Redirects need to be performed at the application level as the Heroku router does not provide this functionality. You should code the redirect logic into your application&rdquo;.</p>
 
 <p>This does not agree with this <a href="https://tools.ietf.org/html/rfc2817#section-4.2">RFC</a> which says &ldquo;A server MAY indicate that a client request can not be completed without TLS using the &ldquo;426 Upgrade Required&rdquo; status code, which MUST include an an Upgrade header field specifying the token of the required TLS version&rdquo;. Which would mean that the server to requests made using HTTP should respond with:</p>
 

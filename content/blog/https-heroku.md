@@ -5,7 +5,7 @@ slug: https-heroku
 author: Miloš Krsmanović
 ---
 
-Recently I deployed and app to [Heroku](https://heroku.com) and I wanted to force my users to only access it over HTTPS. I tried finding a  configuration option in the Heroku dashboard but found nothing, then I stumbeled upon [this help page](https://help.heroku.com/J2R1S4T8/can-heroku-force-an-application-to-use-ssl-tls) and the following sentence: "Redirects need to be performed at the application level as the Heroku router does not provide this functionality. You should code the redirect logic into your application".
+Recently I deployed an app to [Heroku](https://heroku.com) and I wanted to force my users to only access it over HTTPS. I tried finding a  configuration option in the Heroku dashboard but found nothing, then I stumbled upon [this help page](https://help.heroku.com/J2R1S4T8/can-heroku-force-an-application-to-use-ssl-tls) and the following sentence: "Redirects need to be performed at the application level as the Heroku router does not provide this functionality. You should code the redirect logic into your application".
 
 This does not agree with this [RFC](https://tools.ietf.org/html/rfc2817#section-4.2) which says "A server MAY indicate that a client request can not be completed without TLS using the "426 Upgrade Required" status code, which MUST include an an Upgrade header field specifying the token of the required TLS version". Which would mean that the server to requests made using HTTP should respond with:
 

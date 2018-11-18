@@ -7,14 +7,14 @@ hero:
     - shell executions.
     - scheduled jobs.
   title: One click command execution from anywhere
-  call_to_action: Create Account For Free
+  call_to_action: Sign Up For Free
 meta:
   description: A web based server management tool that uses SSH to connect to your servers. Simplify your server maintenence, deployments or remote shell executions.
 overview:
   title: Manage your servers with a button click.
   summary: Perfectly suited for personal projects, freelancers or small companies looking to speed up their remote tasks.
 screenshot: /img/frame-chrome-mac.png
-call_to_action: Create Account For Free
+call_to_action: Sign Up For Free
 features:
 - title: Manage your servers
   description: Manage your servers by running scrips easily with live output streamed directly to your browser. You can configure multiple servers and multiple scripts.
@@ -51,36 +51,29 @@ more_features:
 #   description: Your SSH keys can be generated and stored online and used everytime you acces your server. Have a private key already? Just upload it!
 #   icon: fas fa-lock
 plans:
-    - title: Free
+    - title: Side Project
       features:
-        - 1 user
-        - 1 server
-        - Unlimited scripts
-        - 1 day deploy history
-        - 5 minutes execution limit
-      price: $0
-      style: info
-    - title: Hobbyist
-      features:
-        - 3 users (soon)
-        - 5 servers
+        - 5 users per project
+        - 3 projects
+        - 10 servers
         - Unlimited scripts
         - 30 days deploy history
-        - SSH keys
+        - SSH key storage
         - Cronjobs
-      price: $14
+      price: $7.99
       style: link
     - title: Professional
       features:
-        - 8 users (soon)
-        - 10 servers
+        - more users (soon)
+        - more projects
+        - more servers
         - Unlimited scripts
         - Unlimited deploy history
-        - SSH keys
+        - SSH key storage
         - Cronjobs
         - Priority Support
         # - Metrics
-      price: $24
+      price: Contact me
       style: info
 roadmap:
     - title: Webhooks

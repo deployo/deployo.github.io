@@ -12,7 +12,7 @@
         </ul>
         {{if .price}}
         <p>
-            <span class="title is-3">{{.price}}</span><span>/mo</span>
+            {{if not (eq .price "Contact me")}}<span class="title is-4">{{.price}}</span><span>/mo</span>{{else}}<a class="title is-4" href="mailto:support@deployo.me">{{.price}}</a>{{end}}
         </p>
         {{end}}
     </div>

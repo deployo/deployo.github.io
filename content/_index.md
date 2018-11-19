@@ -53,7 +53,7 @@ more_features:
 plans:
     - title: Side Project
       features:
-        - 5 users per project
+        - 3 users per project
         - 3 projects
         - 10 servers
         - Unlimited scripts

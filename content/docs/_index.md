@@ -1,6 +1,6 @@
 ---
 title: Deployo Docs
-description: Web based server management tool. 
+description: One click command execution from anywhere.
 ---
 
 Welcome!

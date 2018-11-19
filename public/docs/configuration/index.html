@@ -97,6 +97,13 @@
         </li>
         
         <li>
+            <a class="" href="/docs/projects/">Projects</a>
+            <ul>
+                
+            </ul>
+        </li>
+        
+        <li>
             <a class="is-active" href="/docs/configuration/">Configuration</a>
             <ul>
                 
@@ -118,6 +125,13 @@
         </li>
         
         <li>
+            <a class="" href="/docs/secrets/">Secrets</a>
+            <ul>
+                
+            </ul>
+        </li>
+        
+        <li>
             <a class="" href="/docs/user/">User</a>
             <ul>
                 
@@ -132,11 +146,9 @@
                 <div class="box">
                     
 
-<p>The configuration page is the main place where you set up your servers and scripts. The entire configuration iss a YAML file where you can configure everything that you need.</p>
+<p>The configuration page is the main place where you set up your servers and scripts. The entire configuration is a YAML file where you can configure everything that you need.</p>
 
-<h2 id="yaml">YAML</h2>
-
-<p>A basic YAML configuration file would looks something like this:</p>
+<p>A YAML configuration file looks something like this:</p>
 
 <pre><code class="language-yaml">servers:
 - name: production
@@ -239,7 +251,7 @@ cronjobs:
 
 <tr>
 <td>password</td>
-<td>password that will be used by Deployo to ssh in the the server. If there is an SSH key configured for a server the password can be ommited. *</td>
+<td>password that will be used by Deployo to ssh in the the server. A <a href="#secrets">secret</a> can also be used as a password. If there is an SSH key configured for a server the password can be ommited. *</td>
 <td>no</td>
 <td>string</td>
 <td></td>
@@ -440,21 +452,6 @@ cronjobs:
 </tr>
 </tbody>
 </table>
-
-<h2 id="servers">Servers</h2>
-
-<p>This page is giving you a nicer prevew over the servers you have configured in YAML.
-Here you can create and delete servers using the UI if you find it easier that way.</p>
-
-<h2 id="scripts">Scripts</h2>
-
-<p>This page is giving you a nicer prevew over the scripts you have configured in YAML.
-Here you can create and delete scripts using the UI if you find it easier that way.</p>
-
-<h2 id="templates">Templates</h2>
-
-<p>This page is giving you a nicer prevew over the templates you have configured in YAML.
-Here you can create and delete tempaltes using the UI if you find it easier that way.</p>
 
                 </div>
             </div>

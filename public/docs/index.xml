@@ -16,8 +16,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://deployo.me/docs/configuration/</guid>
-      <description>The configuration page is the main place where you set up your servers and scripts. The entire configuration iss a YAML file where you can configure everything that you need.
-YAML A basic YAML configuration file would looks something like this:
+      <description>The configuration page is the main place where you set up your servers and scripts. The entire configuration is a YAML file where you can configure everything that you need.
+A YAML configuration file looks something like this:
 servers: - name: production host: prod.deployo.me port: 22 user: root password: root environment: ENV_VAR: var1 scripts: - name: echo_variable commands: - echo &amp;quot;command&amp;quot; - echo $ENV_VAR variables: - ENV_VAR2 environment: ENV_VAR3: var3 workdir: /tmp templates: - name: deploy_prod description: Deploy to production servers: - production scripts: - echo_variable variables: ENV_VAR2: value cronjobs: - schedule: &#39;* * * * *&#39; servers: - production scripts: - echo_variable variables: ENV_VAR2: value notifyOnFailed: email: - notification@email.</description>
     </item>
     
@@ -44,6 +44,15 @@ You will be able to follow the execution as Deployo directly streams output from
     </item>
     
     <item>
+      <title>Projects</title>
+      <link>https://deployo.me/docs/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deployo.me/docs/projects/</guid>
+      <description>The Projects page allows you to create projects and add collaborators.</description>
+    </item>
+    
+    <item>
       <title>SSH Keys</title>
       <link>https://deployo.me/docs/ssh_keys/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -52,6 +61,15 @@ You will be able to follow the execution as Deployo directly streams output from
       <description>SSH keys allow you to connect to your server without using a password. If an SSH key is not configured the password will be used.
 In case both a password and an SSH keys have been configured the password will be used first.
 On this page you have a preview of all the keys stored by Deployo. You can see SSH keys connected to a server or keys that are not connected to any servers anymore.</description>
+    </item>
+    
+    <item>
+      <title>Secrets</title>
+      <link>https://deployo.me/docs/secrets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deployo.me/docs/secrets/</guid>
+      <description>This is a safe way yo store sensitive data.</description>
     </item>
     
     <item>

@@ -9,6 +9,10 @@ menu:
       identifier: "dashboard"
       weight: 1
       url: "/docs/dashboard/"
+    - name: "Projects"
+      identifier: "projects"
+      weight: 1
+      url: "/docs/projects/"
     - name: "Configuration"
       identifier: "configuration"
       weight: 2
@@ -17,10 +21,14 @@ menu:
       weight: 3
       identifier: "executing"
       url: "/docs/executing/"
+    - name: "Secrets"
+      weight: 4
+      identifier: "secrets"
+      url: "/docs/secrets/"
     - name: "SSH Keys"
       weight: 4
-      identifier: "ssh_Keys"
-      url: "/docs/ssh_Keys/"
+      identifier: "ssh_keys"
+      url: "/docs/ssh_keys/"
     - name: "User"
       weight: 5
       identifier: "user"

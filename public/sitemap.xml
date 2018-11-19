@@ -49,7 +49,15 @@
   </url>
   
   <url>
+    <loc>https://deployo.me/docs/projects/</loc>
+  </url>
+  
+  <url>
     <loc>https://deployo.me/docs/ssh_keys/</loc>
+  </url>
+  
+  <url>
+    <loc>https://deployo.me/docs/secrets/</loc>
   </url>
   
   <url>

@@ -62,9 +62,9 @@ plans:
         - Cronjobs
       price: $7.99
       style: link
-    - title: Professional
+    - title: Startup
       features:
-        - more users (soon)
+        - more users
         - more projects
         - more servers
         - Unlimited scripts
@@ -74,7 +74,7 @@ plans:
         - Priority Support
         # - Metrics
       price: Contact me
-      style: info
+      style: light
 roadmap:
     - title: Webhooks
       description: Run scripts triggered by webhooks from GitHub or Bitbucket.

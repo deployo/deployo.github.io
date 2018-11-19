@@ -2,11 +2,9 @@
 title: Configuration
 ---
 
-The configuration page is the main place where you set up your servers and scripts. The entire configuration iss a YAML file where you can configure everything that you need.
+The configuration page is the main place where you set up your servers and scripts. The entire configuration is a YAML file where you can configure everything that you need.
 
-## YAML
-
-A basic YAML configuration file would looks something like this:
+A YAML configuration file looks something like this:
 
 ```yaml
 servers:
@@ -68,7 +66,7 @@ name | name of your server to be displayed on the dasboard. Should be all lowerc
 host | the addrest of your server. Can be IP or a host name. | yes | string | n/a
 port | port of the server | no | number | 22
 user | user that will be used by Deployo to ssh in the the server. | yes | string | n/a
-password | password that will be used by Deployo to ssh in the the server. If there is an SSH key configured for a server the password can be ommited. * | no | string |
+password | password that will be used by Deployo to ssh in the the server. A [secret]({{< relref "#secrets" >}}) can also be used as a password. If there is an SSH key configured for a server the password can be ommited. * | no | string |
 environment | a list of environment variable that will be available during execution of scripts. | no | map of string to string |
 
 * In case both SSH key and password are configured the password will be used first.
@@ -116,18 +114,3 @@ servers | List of server names | yes | array of strings | n/a
 scripts | List of script names | yes | array of strings | n/a
 variables | a list of variables required from the user for execution of scripts. When a script is triggered from the dashboard a value for every variable will be required. Empty values are allowed. | no | array of strings | [ ]
 notifyOnFailed | An object with a list of emails to receive notification if cronjob fails. | no | object (see example above) | empty object
-
-## Servers
-
-This page is giving you a nicer prevew over the servers you have configured in YAML.
-Here you can create and delete servers using the UI if you find it easier that way.
-
-## Scripts
-
-This page is giving you a nicer prevew over the scripts you have configured in YAML.
-Here you can create and delete scripts using the UI if you find it easier that way.
-
-## Templates
-
-This page is giving you a nicer prevew over the templates you have configured in YAML.
-Here you can create and delete tempaltes using the UI if you find it easier that way.

@@ -9,7 +9,7 @@ You will be able to follow the execution as Deployo directly streams output from
 
 ## Viewing output of older executions
 
-By clicking on the output icon on the dashboard you will see the deploy page of the selected deploy.
+By clicking on the output icon ( <i class="fas fa-bars"></i> ) on the dashboard you will see the deploy page of the selected deploy.
 
 The deploy page is displaying your deploy parameters like environment variables, data, duration of execution, server.... and most importantly your script execution output.
 

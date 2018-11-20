@@ -55,7 +55,7 @@ plans:
       features:
         - 3 users per project
         - 3 projects
-        - 10 servers
+        - 3 servers per project
         - Unlimited scripts
         - 30 days deploy history
         - SSH key storage

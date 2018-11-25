@@ -51,18 +51,31 @@ more_features:
 #   description: Your SSH keys can be generated and stored online and used everytime you acces your server. Have a private key already? Just upload it!
 #   icon: fas fa-lock
 plans:
+    - title: Startup
+      features:
+        - 5 project
+        - 8 users per project
+        - 5 servers per project
+        - Unlimited scripts
+        - 90 days deploy history
+        - SSH key storage
+        - Cronjobs
+        - Priority Support
+        # - Metrics
+      price: $39.99
+      style: info
     - title: Side Project
       features:
-        - 3 users per project
-        - 3 projects
-        - 3 servers per project
+        - 1 project
+        - 3 users
+        - 3 servers
         - Unlimited scripts
         - 30 days deploy history
         - SSH key storage
         - Cronjobs
       price: $7.99
-      style: link
-    - title: Startup
+      style: primary
+    - title: Business
       features:
         - more users
         - more projects

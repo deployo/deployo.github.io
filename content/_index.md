@@ -7,14 +7,14 @@ hero:
     - shell executions.
     - scheduled jobs.
   title: One click command execution from anywhere
-  call_to_action: Sign Up For Free
+  call_to_action: Start Your 14-Day Free Trial
 meta:
   description: A web based server management tool that uses SSH to connect to your servers. Simplify your server maintenence, deployments or remote shell executions.
 overview:
   title: Manage your servers with a button click.
   summary: Perfectly suited for personal projects, freelancers or small companies looking to speed up their remote tasks.
 screenshot: /img/frame-chrome-mac.png
-call_to_action: Sign Up For Free
+call_to_action: Start Your 14-Day Free Trial
 features:
 - title: Manage your servers
   description: Manage your servers by running scrips easily with live output streamed directly to your browser. You can configure multiple servers and multiple scripts.

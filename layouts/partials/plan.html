@@ -7,7 +7,7 @@
         {{end}}
     </div>
     <div class="plan-footer">
-        {{if not (eq .price "_")}}
+        {{if not (eq .price " - ")}}
         <a href="//app.deployo.me/auth/signup?plan={{.code}}" class="button is-fullwidth">Choose</a>
         {{else}}
         <a class="button is-fullwidth" href="mailto:support@deployo.me">Contact me</a>

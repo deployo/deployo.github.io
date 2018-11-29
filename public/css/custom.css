@@ -7,15 +7,15 @@ nav.navbar.shadow {
     border: none;
 } */
 
-.hero.is-deployo, nav.navbar {    
+/* .hero, nav.navbar {    
     background:linear-gradient(135deg, #1bcedf 0%,#5b247a 100%);
-}
+} */
 
-.hero.is-deployo .navbar-burger, .hero.is-deployo .navbar-menu.is-active {    
+/* .hero .navbar-burger, .hero .navbar-menu.is-active {    
     background-color: transparent;
-}
+} */
 
-.hero.is-deployo .hero-foot img {
+.hero-image {
     margin-bottom: -100px;
 }
 

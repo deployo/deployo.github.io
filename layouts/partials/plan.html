@@ -1,19 +1,16 @@
-<article class="box has-text-centered notification is-{{.style}} has-shadow-close">
-    <div class="margin-bottom-20">
-        <h4 class="title is-3">
-            {{.title}}
-        </h4>
-    </div>
-    <div class="margin-bottom-20" style="padding-top: 0px;">
-        <ul class="margin-bottom-20">
-            {{range .features}}
-            <li>{{.}}</li>
-            {{end}}
-        </ul>
-        {{if .price}}
-        <p>
-            {{if not (eq .price "Contact me")}}<span class="title is-4">{{.price}}</span><span>/mo</span>{{else}}<a class="title is-4" href="mailto:support@deployo.me">{{.price}}</a>{{end}}
-        </p>
+<div class="pricing-plan {{.style}}">
+    <div class="plan-header">{{.title}}</div>
+    <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">$</span>{{.price}}</span>/month</div>
+    <div class="plan-items">
+        {{range .features}}
+        <div class="plan-item">{{.}}</div>
         {{end}}
     </div>
-</article>
+    <div class="plan-footer">
+        {{if not (eq .price "_")}}
+        <a href="//app.deployo.me/auth/signup?plan={{.code}}" class="button is-fullwidth">Choose</a>
+        {{else}}
+        <a class="button is-fullwidth" href="mailto:support@deployo.me">Contact me</a>
+        {{end}}
+    </div>
+</div>

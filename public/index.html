@@ -29,21 +29,22 @@
 
   <link href="/img/favicon.png" rel="shortcut icon" />
   <link href="/css/bulma.css" rel="stylesheet">
+  <link href="/css/bulma.pricingtable.min.css" rel="stylesheet">
   <link href="/css/custom.css" rel="stylesheet">
-  <link href="/fontawesome/css/fontawesome-all.min.css" rel="stylesheet">
+  <link href="/fontawesome/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
   
 <div class="container-fluid">
-    <div class="hero is-deployo is-info">
+    <div class="hero">
     <div class="hero-head">
-        <nav class="navbar is-info">
+        <nav class="navbar">
     <div class="navbar-brand">
         <a class="navbar-item" href="/">
-            <img src="/img/logo_light.svg" alt="Deployo" width="112" height="28">
+            <img src="/img/logo_dark.svg" alt="Deployo" width="112" height="28">
         </a>
-        <button class="button navbar-burger is-info" data-target="navbar">
+        <button class="navbar-burger" data-target="navbar">
             <span></span>
             <span></span>
             <span></span>
@@ -61,12 +62,12 @@
             <div class="navbar-item">
                 <div class="field is-grouped">
                     <p class="control" id="login-link">
-                        <a class="button is-link" href="//app.deployo.me/auth/login">
+                        <a class="button" href="//app.deployo.me/auth/login">
                             <span>Log In</span>
                         </a>
                     </p>
                     <p class="control" id="signup-link">
-                        <a class="button is-primary" href='/#signup'>
+                        <a class="button is-link" href='//app.deployo.me/auth/signup'>
                             <span>Sign Up</span>
                         </a>
                     </p>
@@ -88,22 +89,20 @@
                     
                 </h2>
                 <p class="has-text-centered">
-                    <a data-scroll href="#signup" class="button is-primary is-large is-hidden-mobile">Start Your 14-Day Free Trial</a>
-                    <a data-scroll href="#signup" class="button is-primary is-medium is-hidden-tablet">Start Your 14-Day Free Trial</a>
+                    <a data-scroll href="#signup" class="button is-link is-large is-hidden-mobile">Start Your 14-Day Free Trial</a>
+                    <a data-scroll href="#signup" class="button is-link is-medium is-hidden-tablet">Start Your 14-Day Free Trial</a>
                 </p>
             </div>
         </div>
     </div>
     <div class="hero-foot">
-        <div class="columns is-centered is-mobile">
-            <div class="column is-11-mobile is-9-tablet is-7-desktop">
-                <img src="/img/frame-chrome-mac.png" />
-            </div>
+        <div class="has-text-centered">
+            <img style="width: 80%; max-width: 1024px;" class="hero-image has-shadow-close" src="/img/frame-chrome-mac.png" />
         </div>
     </div>
 </div>
 </div>
-<section class="hero is-dark padding-top-100" id="overview">
+<section class="hero is-link padding-top-100" id="overview">
     <div class="container">
         <section class="section">
             <div class="columns">
@@ -210,7 +209,15 @@
                 <div class="column is-4">
                     <article>
     <h4 class="title is-4">
-        <i class="far fa-clock"></i>&nbsp;&nbsp;&nbsp;Cronjobs</h4>
+        <i class="fas fa-people-carry"></i>&nbsp;&nbsp;&nbsp;Collaborate</h4>
+    <p>Invite people on your projects so you can work better together.</p>
+</article>
+                </div>
+                 
+                <div class="column is-4">
+                    <article>
+    <h4 class="title is-4">
+        <i class="far fa-clock"></i>&nbsp;&nbsp;&nbsp;Schedule cronjobs</h4>
     <p>Schedule your tasks using standard crontab notation. Run your scripts in configured intervals. You can see cronjobs in history and preview the output like with any other execution.</p>
 </article>
                 </div>
@@ -223,10 +230,13 @@
 </article>
                 </div>
                  
+            </div>
+            <div class="columns">
+                
                 <div class="column is-4">
                     <article>
     <h4 class="title is-4">
-        <i class="fas fa-book"></i>&nbsp;&nbsp;&nbsp;Keep history</h4>
+        <i class="fas fa-history"></i>&nbsp;&nbsp;&nbsp;Keep history</h4>
     <p>History of all your script executions is shown right on your dashboard. You can access old executions and execute again the same script with same parameters with ease.</p>
 </article>
                 </div>
@@ -235,7 +245,7 @@
         </section>
     </div>
 </section>
-<section class="hero is-primary">
+<section class="hero is-light">
     <div class="container">
         <section class="section">
             <div class="columns is-centered">
@@ -247,31 +257,14 @@
         </section>
     </div>
 </section>
-<section class="hero is-dark margin-bottom-100" id="signup">
-    <div class="container">
+<section class="hero is-primary margin-bottom-100" id="signup">
+    <div class="container-fluid">
         <section class="section">
-            <h2 class="title is-3">Sign up</h2>
-<form action="//app.deployo.me/auth/signup" method="POST">
-    <div class="field is-horizontal">
-        <div class="field-body">
-            <div class="field">
-                <div class="control">
-                    <input type="email" class="input is-large" name="email" placeholder="Email" required />
-                </div>
-            </div>
-            <div class="field">
-                <div class="control">
-                    <input type="password" class="input is-large" name="password" placeholder="Password" required />
-                </div>
-            </div>
-            <div class="field">
-                <div class="control">
-                    <button type="submit" class="button is-primary is-large">Start Your 14-Day Free Trial</button>
-                </div>
-            </div>
-        </div>
+            <div class="columns">
+    <div class="column has-text-centered">
+        <a href="//app.deployo.me/auth/signup" class="button is-link is-large">Start Your 14-Day Free Trial</a>
     </div>
-</form>
+</div>
         </section>
     </div>
 </section>
@@ -279,122 +272,131 @@
     <div class="container">
         <section class="section">
             <h2 class="title is-3">Pricing</h2>
-            <div class="columns">
-                <div class="column"></div>
+            <div class="pricing-table">
                 
-                <div class="column is-one-quorter-desktop is-one-third-tablet">
-                    <article class="box has-text-centered notification is-info has-shadow-close">
-    <div class="margin-bottom-20">
-        <h4 class="title is-3">
-            Startup
-        </h4>
-    </div>
-    <div class="margin-bottom-20" style="padding-top: 0px;">
-        <ul class="margin-bottom-20">
-            
-            <li>5 project</li>
-            
-            <li>8 users per project</li>
-            
-            <li>5 servers per project</li>
-            
-            <li>Unlimited scripts</li>
-            
-            <li>90 days deploy history</li>
-            
-            <li>SSH key storage</li>
-            
-            <li>Cronjobs</li>
-            
-            <li>Priority Support</li>
-            
-        </ul>
+                <div class="pricing-plan is-info">
+    <div class="plan-header">Startup</div>
+    <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">$</span>39.99</span>/month</div>
+    <div class="plan-items">
         
-        <p>
-            <span class="title is-4">$39.99</span><span>/mo</span>
-        </p>
+        <div class="plan-item">5 project</div>
+        
+        <div class="plan-item">8 users per project</div>
+        
+        <div class="plan-item">5 servers per project</div>
+        
+        <div class="plan-item">Unlimited scripts</div>
+        
+        <div class="plan-item">90 days deploy history</div>
+        
+        <div class="plan-item">SSH key storage</div>
+        
+        <div class="plan-item">Cronjobs</div>
+        
+        <div class="plan-item">Priority Support</div>
         
     </div>
-</article>
-                </div>
+    <div class="plan-footer">
+        
+        <a href="//app.deployo.me/auth/signup?plan=startup" class="button is-fullwidth">Choose</a>
+        
+    </div>
+</div>
                 
-                <div class="column is-one-quorter-desktop is-one-third-tablet">
-                    <article class="box has-text-centered notification is-primary has-shadow-close">
-    <div class="margin-bottom-20">
-        <h4 class="title is-3">
-            Side Project
-        </h4>
-    </div>
-    <div class="margin-bottom-20" style="padding-top: 0px;">
-        <ul class="margin-bottom-20">
-            
-            <li>1 project</li>
-            
-            <li>3 users</li>
-            
-            <li>3 servers</li>
-            
-            <li>Unlimited scripts</li>
-            
-            <li>30 days deploy history</li>
-            
-            <li>SSH key storage</li>
-            
-            <li>Cronjobs</li>
-            
-        </ul>
+                <div class="pricing-plan is-primary is-active">
+    <div class="plan-header">Side Project</div>
+    <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">$</span>7.99</span>/month</div>
+    <div class="plan-items">
         
-        <p>
-            <span class="title is-4">$7.99</span><span>/mo</span>
-        </p>
+        <div class="plan-item">1 project</div>
+        
+        <div class="plan-item">3 users</div>
+        
+        <div class="plan-item">3 servers</div>
+        
+        <div class="plan-item">Unlimited scripts</div>
+        
+        <div class="plan-item">30 days deploy history</div>
+        
+        <div class="plan-item">SSH key storage</div>
+        
+        <div class="plan-item">Cronjobs</div>
         
     </div>
-</article>
-                </div>
+    <div class="plan-footer">
+        
+        <a href="//app.deployo.me/auth/signup?plan=side_project" class="button is-fullwidth">Choose</a>
+        
+    </div>
+</div>
                 
-                <div class="column is-one-quorter-desktop is-one-third-tablet">
-                    <article class="box has-text-centered notification is-light has-shadow-close">
-    <div class="margin-bottom-20">
-        <h4 class="title is-3">
-            Business
-        </h4>
-    </div>
-    <div class="margin-bottom-20" style="padding-top: 0px;">
-        <ul class="margin-bottom-20">
-            
-            <li>more users</li>
-            
-            <li>more projects</li>
-            
-            <li>more servers</li>
-            
-            <li>Unlimited scripts</li>
-            
-            <li>Unlimited deploy history</li>
-            
-            <li>SSH key storage</li>
-            
-            <li>Cronjobs</li>
-            
-            <li>Priority Support</li>
-            
-        </ul>
+                <div class="pricing-plan is-danger">
+    <div class="plan-header">Business</div>
+    <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">$</span> - </span>/month</div>
+    <div class="plan-items">
         
-        <p>
-            <a class="title is-4" href="mailto:support@deployo.me">Contact me</a>
-        </p>
+        <div class="plan-item">more users</div>
+        
+        <div class="plan-item">more projects</div>
+        
+        <div class="plan-item">more servers</div>
+        
+        <div class="plan-item">Unlimited scripts</div>
+        
+        <div class="plan-item">Unlimited deploy history</div>
+        
+        <div class="plan-item">SSH key storage</div>
+        
+        <div class="plan-item">Cronjobs</div>
+        
+        <div class="plan-item">Priority Support</div>
         
     </div>
-</article>
-                </div>
+    <div class="plan-footer">
+        
+        <a href="//app.deployo.me/auth/signup?plan=" class="button is-fullwidth">Choose</a>
+        
+    </div>
+</div>
                 
-                <div class="column"></div>
             </div>
         </section>
     </div>
 </section>
-
-
+<section class="hero is-white margin-bottom-100" id="roadmap">
+    <div class="container">
+        <section class="section">
+            <h2 class="title is-3">Roadmap</h2>
+            <div class="columns">
+                 
+                <div class="column is-4">
+                    <article>
+    <h4 class="title is-4">
+        <i class="fas fa-puzzle-piece"></i>&nbsp;&nbsp;&nbsp;Webhooks</h4>
+    <p>Run scripts triggered by webhooks from GitHub or Bitbucket.</p>
+</article>
+                </div>
+                 
+                <div class="column is-4">
+                    <article>
+    <h4 class="title is-4">
+        <i class="fab fa-slack-hash"></i>&nbsp;&nbsp;&nbsp;Slack integration</h4>
+    <p>Run scripts triggered directly from Slack.</p>
+</article>
+                </div>
+                 
+                <div class="column is-4">
+                    <article>
+    <h4 class="title is-4">
+        <i class="fas fa-terminal"></i>&nbsp;&nbsp;&nbsp;CLI</h4>
+    <p>A command-line tool for running your scripts from your terminal.</p>
+</article>
+                </div>
+                
+            </div>
+        </section>
+    </div>
+</section>
  
 <section class="hero is-link is-deployo">
     <div class="container">

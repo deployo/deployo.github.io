@@ -38,7 +38,10 @@ teaser:
   description: Deployo is available on all devices with a browser. With your configuration safely stored online you are able to deploy your software or setup servers easily and conveniently.
   image: /img/demo.gif
 more_features:
-- title: Cronjobs
+- title: Collaborate
+  description: Invite people on your projects so you can work better together.
+  icon: fas fa-people-carry
+- title: Schedule cronjobs
   description: Schedule your tasks using standard crontab notation. Run your scripts in configured intervals. You can see cronjobs in history and preview the output like with any other execution.
   icon: far fa-clock
 - title: Access from anywhere
@@ -46,12 +49,13 @@ more_features:
   icon: fas fa-mobile-alt
 - title: Keep history
   description: History of all your script executions is shown right on your dashboard. You can access old executions and execute again the same script with same parameters with ease.
-  icon: fas fa-book
+  icon: fas fa-history
 # - title: Connect using SSH keys
 #   description: Your SSH keys can be generated and stored online and used everytime you acces your server. Have a private key already? Just upload it!
 #   icon: fas fa-lock
 plans:
     - title: Startup
+      code: startup
       features:
         - 5 project
         - 8 users per project
@@ -62,9 +66,10 @@ plans:
         - Cronjobs
         - Priority Support
         # - Metrics
-      price: $39.99
-      style: info
+      price: 39.99
+      style: is-info
     - title: Side Project
+      code: side_project
       features:
         - 1 project
         - 3 users
@@ -73,9 +78,10 @@ plans:
         - 30 days deploy history
         - SSH key storage
         - Cronjobs
-      price: $7.99
-      style: primary
+      price: 7.99
+      style: is-primary is-active
     - title: Business
+      code: ""
       features:
         - more users
         - more projects
@@ -86,8 +92,8 @@ plans:
         - Cronjobs
         - Priority Support
         # - Metrics
-      price: Contact me
-      style: light
+      price: " - "
+      style: is-danger
 roadmap:
     - title: Webhooks
       description: Run scripts triggered by webhooks from GitHub or Bitbucket.

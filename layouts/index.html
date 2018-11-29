@@ -2,7 +2,7 @@
 <div class="container-fluid">
     {{partial "hero" .}}
 </div>
-<section class="hero is-dark padding-top-100" id="overview">
+<section class="hero is-link padding-top-100" id="overview">
     <div class="container">
         <section class="section">
             <div class="columns">
@@ -77,7 +77,7 @@
         </section>
     </div>
 </section>
-<section class="hero is-primary">
+<section class="hero is-light">
     <div class="container">
         <section class="section">
             <div class="columns is-centered">
@@ -89,8 +89,8 @@
         </section>
     </div>
 </section>
-<section class="hero is-dark margin-bottom-100" id="signup">
-    <div class="container">
+<section class="hero is-primary margin-bottom-100" id="signup">
+    <div class="container-fluid">
         <section class="section">
             {{partial "signup" .}}
         </section>
@@ -100,19 +100,15 @@
     <div class="container">
         <section class="section">
             <h2 class="title is-3">Pricing</h2>
-            <div class="columns">
-                <div class="column"></div>
+            <div class="pricing-table">
                 {{range .Params.plans}}
-                <div class="column is-one-quorter-desktop is-one-third-tablet">
-                    {{partial "plan" .}}
-                </div>
+                {{partial "plan" .}}
                 {{end}}
-                <div class="column"></div>
             </div>
         </section>
     </div>
 </section>
-<!-- <section class="hero is-white margin-bottom-100" id="roadmap">
+<section class="hero is-white margin-bottom-100" id="roadmap">
     <div class="container">
         <section class="section">
             <h2 class="title is-3">Roadmap</h2>
@@ -128,14 +124,7 @@
             </div>
         </section>
     </div>
-</section> -->
-<!-- <section class="hero is-dark" id="contact">
-    <div class="container">
-        <section class="section">
-            {{partial "contact" .}}
-        </section>
-    </div>
-</section> -->
+</section>
 {{ end }} {{define "footer"}}
 <section class="hero is-link is-deployo">
     <div class="container">

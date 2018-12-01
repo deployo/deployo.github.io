@@ -1,0 +1,16 @@
+[debug] [2018-12-01T23:06:48.984Z] ----------------------------------------------------------------------
+[debug] [2018-12-01T23:06:48.986Z] Command:       /usr/local/Cellar/node/10.11.0/bin/node /usr/local/bin/firebase deploy
+[debug] [2018-12-01T23:06:48.986Z] CLI Version:   6.1.1
+[debug] [2018-12-01T23:06:48.987Z] Platform:      darwin
+[debug] [2018-12-01T23:06:48.987Z] Node Version:  v10.11.0
+[debug] [2018-12-01T23:06:48.997Z] Time:          Sun Dec 02 2018 00:06:48 GMT+0100 (Central European Standard Time)
+[debug] [2018-12-01T23:06:48.997Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-12-01T23:06:49.011Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-12-01T23:06:49.011Z] > authorizing via signed-in user
+[debug] [2018-12-01T23:06:49.011Z] [iam] checking project deployo-landing-page for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2018-12-01T23:06:49.013Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/deployo-landing-page:testIamPermissions  
+
+[debug] [2018-12-01T23:06:49.885Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-01T23:06:49.887Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/deployo-landing-page  
+ 

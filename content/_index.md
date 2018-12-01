@@ -1,46 +1,44 @@
 ---
-title: One click command execution from anywhere
+title: One-click script execution from anywhere
 hero:
-  subtitle: Simplify your
-  typewriter:
-    - server management.
-    - shell executions.
-    - scheduled jobs.
-  title: One click command execution from anywhere
+  subtitle: A web based server management tool that executes your sscripts over SSH.
+  # typewriter:
+  #   - server management.
+  #   - shell executions.
+  #   - scheduled jobs.
+  title: One-click script execution from anywhere
   call_to_action: Start Your 14-Day Free Trial
 meta:
-  description: A web based server management tool that uses SSH to connect to your servers. Simplify your server maintenence, deployments or remote shell executions.
+  description: A web based server management tool that executes your sscripts over SSH. Simplify your server maintenence, deployments or remote shell executions.
 overview:
   title: Manage your servers with a button click.
-  summary: Perfectly suited for personal projects, freelancers or small companies looking to speed up their remote tasks.
+  summary: Perfectly suited for personal projects, freelancers or small companies looking to speed up their everyday workflows.
 screenshot: /img/frame-chrome-mac.png
 call_to_action: Start Your 14-Day Free Trial
 features:
-- title: Manage your servers
-  description: Manage your servers by running scrips easily with live output streamed directly to your browser. You can configure multiple servers and multiple scripts.
-  image:  /img/deploy.gif
-  video:  /img/deploy.mp4
+- title: Execute scripts with ease
+  description: Manage your servers by running scrips easily with live output streamed directly to your browser. You can execute multiple scripts on multiple servers simultaneously.
+  image:  /img/execute-scripts.png
   style: white
   inverted: true
+- title: Collaborate on Projects
+  description: Separate your work into projects. Invite people on your projects so you can work better together.
+  image: /img/collaborate.png
+  style: light
 - title: Configure easily with YAML
   description: All your configuration is stored online in a simple YAML file. Easily edit with syntax highlighting.
-  image: /img/configuration.gif
-  video: /img/configuration.mp4
-  style: white
-- title: Deploy preconfigured templates
-  description: Configure templates for your combinations of servers, scripts and variables that you execute most often.
-  image: /img/template_multiple_scripts.gif
-  video: /img/template_multiple_scripts.mp4
+  image: /img/configure-yaml.png
   style: white
   inverted: true
+- title: Generate and safely store SSH keys
+  description: Generate and store SSH keys used to access you servers, connecting new servers is a breeze.
+  image: /img/manage-ssh-keys.png
+  style: light
 teaser:
   title: Join other freelancers and companies that are already making their life simpler.
   description: Deployo is available on all devices with a browser. With your configuration safely stored online you are able to deploy your software or setup servers easily and conveniently.
   image: /img/demo.gif
 more_features:
-- title: Collaborate
-  description: Invite people on your projects so you can work better together.
-  icon: fas fa-people-carry
 - title: Schedule cronjobs
   description: Schedule your tasks using standard crontab notation. Run your scripts in configured intervals. You can see cronjobs in history and preview the output like with any other execution.
   icon: far fa-clock
@@ -50,9 +48,9 @@ more_features:
 - title: Keep history
   description: History of all your script executions is shown right on your dashboard. You can access old executions and execute again the same script with same parameters with ease.
   icon: fas fa-history
-# - title: Connect using SSH keys
-#   description: Your SSH keys can be generated and stored online and used everytime you acces your server. Have a private key already? Just upload it!
-#   icon: fas fa-lock
+- title: Deploy preconfigured templates
+  description: Configure templates for your combinations of servers, scripts and variables that you execute most often.
+  icon: fas fa-cubes
 plans:
     - title: Startup
       code: startup
@@ -94,6 +92,10 @@ plans:
         # - Metrics
       price: " - "
       style: is-danger
+usedBy:
+    - image: /img/tripscovery.png
+      title: tripscovery
+      link: https://www.tripscovery.io
 roadmap:
     - title: Webhooks
       description: Run scripts triggered by webhooks from GitHub or Bitbucket.

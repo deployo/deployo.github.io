@@ -15,9 +15,9 @@
         </section>
     </div>
 </section>
-<div id="features" class="margin-bottom-100"></div>
+<div id="features"></div>
 {{range .Params.features}}
-<section class="hero is-{{.style}} margin-bottom-100">
+<section class="hero is-{{.style}}">
     <div class="container">
         <section class="section">
             <div class="columns">
@@ -25,34 +25,34 @@
                 <div class="column is-half-desktop has-text-centered hero is-hidden-tablet">
                     <div class="hero-body">
                         <h3 class="title is-3">{{.title}}</h3>
-                        <p>{{.description}}</p>
+                        <p class="has-text-grey">{{.description}}</p>
                     </div>
                 </div>
                 <div class="column is-half-desktop">
                     <div class="has-shadow-far has-shadow-inverse">
-                        <video style="border-radius: 2px;" autoplay="autoplay" loop="loop">
-                            <source src="{{.video}}" type="video/mp4" />
-                        </video>
+                        <figure style="border-radius: 2px;" class="image is-5by4">
+                            <img alt="{{.title}}" src="{{.image}}" />
+                        </figure>
                     </div>
                 </div>
                 <div class="column is-half-desktop has-text-centered hero is-hidden-mobile">
                     <div class="hero-body">
                         <h3 class="title is-3">{{.title}}</h3>
-                        <p>{{.description}}</p>
+                        <p class="has-text-grey">{{.description}}</p>
                     </div>
                 </div>
                 {{else}}
                 <div class="column is-half-desktop has-text-centered hero">
                     <div class="hero-body">
                         <h3 class="title is-3">{{.title}}</h3>
-                        <p>{{.description}}</p>
+                        <p class="has-text-grey">{{.description}}</p>
                     </div>
                 </div>
                 <div class="column is-half-desktop">
                     <div class="has-shadow-far">
-                        <video style="border-radius: 2px;" autoplay="autoplay" loop="loop">
-                            <source src="{{.video}}" type="video/mp4" />
-                        </video>
+                        <figure style="border-radius: 2px;" class="image is-5by4">
+                            <img alt="{{.title}}" src="{{.image}}" />
+                        </figure>
                     </div>
                 </div>
                 {{end}}
@@ -61,7 +61,7 @@
     </div>
 </section>
 {{end}}
-<section class="hero is-white margin-bottom-100">
+<section class="hero is-white">
     <div class="container">
         <section class="section">
             <div class="columns">
@@ -80,6 +80,42 @@
 <section class="hero is-light">
     <div class="container">
         <section class="section">
+            <h4 class="title is-4">Used by</h4>
+            <div class="columns is-centered">
+                {{range .Params.usedBy}}
+                <div class="column has-text-centered">
+                    <figure class="image">
+                        <a title="{{.title}}" href="{{.link}}">
+                            <img style="max-width: 426px; max-height: 128px;" src="{{.image}}">
+                        </a>
+                    </figure>
+                </div>
+                {{end}}
+            </div>
+        </section>
+    </div>
+</section>
+<section class="hero is-primary" id="signup">
+    <div class="container-fluid">
+        <section class="section">
+            {{partial "signup" .}}
+        </section>
+    </div>
+</section>
+<section class="" id="pricing">
+    <div class="container">
+        <section class="section">
+            <div class="pricing-table">
+                {{range .Params.plans}}
+                {{partial "plan" .}}
+                {{end}}
+            </div>
+        </section>
+    </div>
+</section>
+<section class="hero is-light">
+    <div class="container">
+        <section class="section">
             <div class="columns is-centered">
                 <div class="column is-half-desktop has-text-centered">
                     <h3 class="title is-3">{{.Params.teaser.title}}</h3>
@@ -89,26 +125,7 @@
         </section>
     </div>
 </section>
-<section class="hero is-primary margin-bottom-100" id="signup">
-    <div class="container-fluid">
-        <section class="section">
-            {{partial "signup" .}}
-        </section>
-    </div>
-</section>
-<section class="margin-bottom-100" id="pricing">
-    <div class="container">
-        <section class="section">
-            <h2 class="title is-3">Pricing</h2>
-            <div class="pricing-table">
-                {{range .Params.plans}}
-                {{partial "plan" .}}
-                {{end}}
-            </div>
-        </section>
-    </div>
-</section>
-<section class="hero is-white margin-bottom-100" id="roadmap">
+<!-- <section class="hero is-white" id="roadmap">
     <div class="container">
         <section class="section">
             <h2 class="title is-3">Roadmap</h2>
@@ -124,7 +141,7 @@
             </div>
         </section>
     </div>
-</section>
+</section> -->
 {{ end }} {{define "footer"}}
 <section class="hero is-link is-deployo">
     <div class="container">

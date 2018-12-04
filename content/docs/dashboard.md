@@ -3,6 +3,12 @@ title: Dashboard
 ---
 
 The dashboard shows all your available servers and recent history.
+From here you can execute configured or predefined scripts adn templates.
+You are able to execute multiple scripts on multiple servers.
+
+If you are executing on multiple servers at the same time the execution will be done in parallel. 
+
+If you are executing multiple scripts at the same time, they will be execute sequentially in order they were selected.
 
 ## Servers
 

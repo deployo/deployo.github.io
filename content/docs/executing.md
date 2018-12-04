@@ -3,7 +3,9 @@ Title: Executing
 ---
 ## Executing scripts
 
-When you run a script you will be prompted for any user input configured for the sctript you are running that will manifest itself as an environment variale. After you enter everything you need Deployo will SSH into the chosen server export all environment variables and run the selected script.
+When you run a script you will be prompted for any user input configured for the sctript you are running that will manifest itself as an environment variale. If multiple scripts exepect a variable with the same name, the variable value will be shared between them.
+
+After you enter everything you need Deployo will SSH into the chosen server export all environment variables and run the selected script.
 
 You will be able to follow the execution as Deployo directly streams output from your servers using websockets.
 

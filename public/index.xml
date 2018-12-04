@@ -58,10 +58,9 @@ servers: - name: production host: prod.deployo.me port: 22 user: root password: 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://deployo.me/docs/dashboard/</guid>
-      <description>The dashboard shows all your available servers and recent history.
-Servers Every time the dashboard is loaded Deployo will try to ping all of your servers. If it succeds the server will be marked with a label connected in case pinging fails the server will be marked with unreachable.
-Hovering over an unreachable label will give you more information about the error.
-History The history displays the latest executions.</description>
+      <description>The dashboard shows all your available servers and recent history. From here you can execute configured or predefined scripts adn templates. You are able to execute multiple scripts on multiple servers.
+If you are executing on multiple servers at the same time the execution will be done in parallel.
+If you are executing multiple scripts at the same time, they will be execute sequentially in order they were selected.</description>
     </item>
     
     <item>
@@ -70,8 +69,8 @@ History The history displays the latest executions.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://deployo.me/docs/executing/</guid>
-      <description>Executing scripts When you run a script you will be prompted for any user input configured for the sctript you are running that will manifest itself as an environment variale. After you enter everything you need Deployo will SSH into the chosen server export all environment variables and run the selected script.
-You will be able to follow the execution as Deployo directly streams output from your servers using websockets.</description>
+      <description>Executing scripts When you run a script you will be prompted for any user input configured for the sctript you are running that will manifest itself as an environment variale. If multiple scripts exepect a variable with the same name, the variable value will be shared between them.
+After you enter everything you need Deployo will SSH into the chosen server export all environment variables and run the selected script.</description>
     </item>
     
     <item>
@@ -80,7 +79,10 @@ You will be able to follow the execution as Deployo directly streams output from
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://deployo.me/docs/projects/</guid>
-      <description>The Projects page allows you to create projects and add collaborators.</description>
+      <description>The Projects page allows you to create projects and add collaborators. For every project you have a separate configuration file with servers, scripts, templates, cronjobs belonging just to that project.
+Depending on your plan you can invite a certain number of collaboratiors on a project.
+All collaborators have have the same configuration editing and execution rights, but a collaborator cannot delete the project.
+Inviting collaborators The owner of a project can invite anyone to join.</description>
     </item>
     
     <item>
@@ -100,7 +102,10 @@ On this page you have a preview of all the keys stored by Deployo. You can see S
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://deployo.me/docs/secrets/</guid>
-      <description>This is a safe way yo store sensitive data.</description>
+      <description>This is a safe way to store sensitive data. Every project has its own dedicated set of secrets that can be used in the configuration file.
+All secrets have the same prefix (SECRET_) and can be referenced in the commands section of the scripts and as a password for a server.
+Secrets will never be exposed in logs or in the execution output of deploys.
+Any collaborator can toggle secret visibility in the UI.</description>
     </item>
     
     <item>

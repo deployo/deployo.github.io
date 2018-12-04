@@ -58,7 +58,7 @@ servers: - name: production host: prod.deployo.me port: 22 user: root password: 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://deployo.me/docs/dashboard/</guid>
-      <description>The dashboard shows all your available servers and recent history. From here you can execute configured or predefined scripts adn templates. You are able to execute multiple scripts on multiple servers.
+      <description>The dashboard shows all your available servers and recent history. From here you can execute configured or predefined scripts and templates. You are able to execute multiple scripts on multiple servers.
 If you are executing on multiple servers at the same time the execution will be done in parallel.
 If you are executing multiple scripts at the same time, they will be execute sequentially in order they were selected.</description>
     </item>
@@ -69,7 +69,7 @@ If you are executing multiple scripts at the same time, they will be execute seq
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://deployo.me/docs/executing/</guid>
-      <description>Executing scripts When you run a script you will be prompted for any user input configured for the sctript you are running that will manifest itself as an environment variale. If multiple scripts exepect a variable with the same name, the variable value will be shared between them.
+      <description>Executing scripts When you run a script you will be prompted for any user input configured for the script you are running that will manifest itself as an environment variable. If multiple scripts expect a variable with the same name, the variable value will be shared between them.
 After you enter everything you need Deployo will SSH into the chosen server export all environment variables and run the selected script.</description>
     </item>
     
@@ -80,7 +80,7 @@ After you enter everything you need Deployo will SSH into the chosen server expo
       
       <guid>https://deployo.me/docs/projects/</guid>
       <description>The Projects page allows you to create projects and add collaborators. For every project you have a separate configuration file with servers, scripts, templates, cronjobs belonging just to that project.
-Depending on your plan you can invite a certain number of collaboratiors on a project.
+Depending on your plan you can invite a certain number of collaborators on a project.
 All collaborators have have the same configuration editing and execution rights, but a collaborator cannot delete the project.
 Inviting collaborators The owner of a project can invite anyone to join.</description>
     </item>
@@ -116,7 +116,7 @@ Any collaborator can toggle secret visibility in the UI.</description>
       <guid>https://deployo.me/docs/user/</guid>
       <description>The User page allows you to edit some of your user information and change your plan.
 You can also add a credit card which will enable you to change your plan. You card information will be safely stored by Stripe.
-No credid card information will be stored by Deployo.</description>
+No credit card information will be stored by Deployo.</description>
     </item>
     
   </channel>

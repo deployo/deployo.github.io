@@ -9,7 +9,7 @@ hero:
   title: One-click script execution from anywhere
   call_to_action: Start Your 14-Day Free Trial
 meta:
-  description: A web based server management tool that executes your scripts over SSH. Simplify your server maintenence, deployments or remote shell executions.
+  description: A web based server management tool that executes your scripts over SSH. Simplify your server maintenance, deployments or remote shell executions.
 overview:
   title: Manage your servers with a button click.
   summary: Perfectly suited for personal projects, freelancers or small companies looking to speed up their everyday workflows.

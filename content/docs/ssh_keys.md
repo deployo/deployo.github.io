@@ -15,8 +15,8 @@ On this page you have a preview of all the keys stored by Deployo. You can see S
 
 ## Servers with Keys
 
-Here you have a list og SSH keys connected to a server, this key will be used to connect to your server alongside with the user that is configured in the configuration for that server.
-You can load the keys to see the public key and a cnvenient command for quickly [adding that key to your server]({{< relref "#adding-a-generated-private-key-to-your-server" >}}).
+Here you have a list of SSH keys connected to a server, this key will be used to connect to your server alongside with the user that is configured in the configuration for that server.
+You can load the keys to see the public key and a convenient command for quickly [adding that key to your server]({{< relref "#adding-a-generated-private-key-to-your-server" >}}).
 
 ## Servers without Keys
 
@@ -34,15 +34,15 @@ Here you can upload any private keys you have already generated. This allows you
 
 After you uploaded an already existing private key or generated a new one you have to authorize that key on your server. You do this by adding the key to the `authorized_keys` file located in the `.ssh` folder in your home folder. A convenient bash command is displayed next to every private key that allows you to do this easily. The necessary steps are:
 
-* genereate or upload a privat key
+* generate or upload a private key
 * click `Show keys` button to display the keys for the selected server
-* bllow the `Command` label there is a bash command
+* bellow the `Command` label there is a bash command
 * copy that command
 * open your terminal and paste the command into it
 * hit `ENTER`
 * you will be prompted to enter a password of the configured user for the server
-* enter the pasword and hit `ENTER`
-* your SSH keys should now be authprized and Deployo will now use them every time it connects to the server
+* enter the password and hit `ENTER`
+* your SSH keys should now be authorized and Deployo will now use them every time it connects to the server
 
 Example of the command:
 

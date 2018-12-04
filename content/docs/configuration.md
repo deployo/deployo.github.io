@@ -62,11 +62,11 @@ The available options are:
 
 Name | Description | Required | Type | Default value
 --- |--- |--- |--- |---
-name | name of your server to be displayed on the dasboard. Should be all lowercase without special or space characters. | yes | string | n/a
-host | the addrest of your server. Can be IP or a host name. | yes | string | n/a
+name | name of your server to be displayed on the dashboard. Should be all lowercase without special or space characters. | yes | string | n/a
+host | the address of your server. Can be IP or a host name. | yes | string | n/a
 port | port of the server | no | number | 22
 user | user that will be used by Deployo to ssh in the the server. | yes | string | n/a
-password | password that will be used by Deployo to ssh in the the server. A [secret]({{< relref "#secrets" >}}) can also be used as a password. If there is an SSH key configured for a server the password can be ommited. * | no | string |
+password | password that will be used by Deployo to ssh in the the server. A [secret]({{< relref "#secrets" >}}) can also be used as a password. If there is an SSH key configured for a server the password can be omitted. * | no | string |
 environment | a list of environment variable that will be available during execution of scripts. | no | map of string to string |
 
 * In case both SSH key and password are configured the password will be used first.
@@ -79,7 +79,7 @@ The available options are:
 
 Name | Description | Required | Type | Default value
 --- |--- |--- |--- |---
-name | name of your script to be displayed on the dasboard. Should be all lowercase without special or space characters. | yes | string | n/a
+name | name of your script to be displayed on the dashboard. Should be all lowercase without special or space characters. | yes | string | n/a
 commands | an array of commands that will be executed on a server in the given order. | yes | array of strings | [ ]
 variables | a list of variables required from the user for execution of scripts. When a script is triggered from the dashboard a value for every variable will be required. Empty values are allowed. | no | array of strings | [ ]
 environment | a list of environment variable that will be available during execution of scripts. | no | map of string to string |
@@ -87,7 +87,7 @@ workdir | a directory on the server where the script will start execution. Every
 
 In case both a server and a script have the same environment variable exposed, the value from the script will take precedence. The reason for this is that the server will export the variable first and then the script will export its own after that thus overriding the servers variable.
 
-If a script is requiring a variable to be provided and the name of the variable is the same as an environment variable in the script the script environement variable will take precedance.
+If a script is requiring a variable to be provided and the name of the variable is the same as an environment variable in the script the script environment variable will take precedence.
 
 Script environment variable > User-provided variable > Server environment variable
 
@@ -97,7 +97,7 @@ Here you can define templates, or more precisely, combinations of servers, scrip
 
 Name | Description | Required | Type | Default value
 --- |--- |--- |--- |---
-name | name of your script to be displayed on the dasboard. Should be all lowercase without special and space characters. | yes | string | n/a
+name | name of your script to be displayed on the dashboard. Should be all lowercase without special and space characters. | yes | string | n/a
 description | User friendly description | no | string | n/a
 servers | List of server names | yes | array of strings | n/a
 scripts | List of script names | yes | array of strings | n/a

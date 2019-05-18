@@ -6,7 +6,7 @@ help:
 
 .PHONY: dev
 dev:
-	hugo -D server --disableFastRender
+	hugo -D server --disableFastRender --buildFuture
 
 .PHONY: build
 build:

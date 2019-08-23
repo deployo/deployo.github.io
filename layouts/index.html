@@ -142,27 +142,7 @@
         </section>
     </div>
 </section> -->
-{{ end }} {{define "footer"}}
-<section class="hero is-link is-deployo">
-    <div class="container">
-        <section class="section">
-            <div class="level">
-                <div class="level-left">
-                    2019 © deployo.me
-                </div>
-                <div class="level-right">
-                    made with &nbsp;
-                    <i class="fas fa-hand-paper has-text-warning"></i>&nbsp;
-                    <i class="fas fa-hand-paper has-text-warning"></i>&nbsp;&nbsp;by&nbsp;
-                    <a href="https://twitter.com/miloskrca">
-                        @miloskrca
-                    </a>
-                </div>
-            </div>
-        </section>
-    </div>
-</section>
-{{ end }} {{define "script"}} {{if .Params.hero.typewriter}}
+{{ end }} {{define "footer"}}{{partial "footer" .}}{{ end }} {{define "script"}} {{if .Params.hero.typewriter}}
 <script src="/js/typewriter.js"></script>
 <script src="/js/smooth-scroll.js"></script>
 <script>

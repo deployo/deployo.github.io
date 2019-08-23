@@ -53,6 +53,16 @@ servers: - name: production host: prod.deployo.me port: 22 user: root password: 
     </item>
     
     <item>
+      <title>Cookie Policy</title>
+      <link>https://deployo.me/policies/cookie/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deployo.me/policies/cookie/</guid>
+      <description>This is the Cookie Policy for Deployo, accessible from https://www.deployo.me
+What Are Cookies As is common practice with almost all professional websites this site uses cookies, which are tiny files that are downloaded to your computer, to improve your experience. This page describes what information they gather, how we use it and why we sometimes need to store these cookies. We will also share how you can prevent these cookies from being stored however this may downgrade or &amp;lsquo;break&amp;rsquo; certain elements of the sites functionality.</description>
+    </item>
+    
+    <item>
       <title>Dashboard</title>
       <link>https://deployo.me/docs/dashboard/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -71,6 +81,15 @@ If you are executing multiple scripts at the same time, they will be execute seq
       <guid>https://deployo.me/docs/executing/</guid>
       <description>Executing scripts When you run a script you will be prompted for any user input configured for the script you are running that will manifest itself as an environment variable. If multiple scripts expect a variable with the same name, the variable value will be shared between them.
 After you enter everything you need Deployo will SSH into the chosen server export all environment variables and run the selected script.</description>
+    </item>
+    
+    <item>
+      <title>Privacy policy</title>
+      <link>https://deployo.me/policies/privacy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deployo.me/policies/privacy/</guid>
+      <description>This privacy policy (&amp;ldquo;Policy&amp;rdquo;) describes how Website Operator (&amp;ldquo;Website Operator&amp;rdquo;, &amp;ldquo;we&amp;rdquo;, &amp;ldquo;us&amp;rdquo; or &amp;ldquo;our&amp;rdquo;) collects, protects and uses the personally identifiable information (&amp;ldquo;Personal Information&amp;rdquo;) you (&amp;ldquo;User&amp;rdquo;, &amp;ldquo;you&amp;rdquo; or &amp;ldquo;your&amp;rdquo;) may provide on the deployo.me website and any of its products or services (collectively, &amp;ldquo;Website&amp;rdquo; or &amp;ldquo;Services&amp;rdquo;). It also describes the choices available to you regarding our use of your Personal Information and how you can access and update this information.</description>
     </item>
     
     <item>
@@ -106,6 +125,16 @@ On this page you have a preview of all the keys stored by Deployo. You can see S
 All secrets have the same prefix (SECRET_) and can be referenced in the commands section of the scripts and as a password for a server.
 Secrets will never be exposed in logs or in the execution output of deploys.
 Any collaborator can toggle secret visibility in the UI.</description>
+    </item>
+    
+    <item>
+      <title>Terms And Conditions</title>
+      <link>https://deployo.me/policies/terms_and_conditions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deployo.me/policies/terms_and_conditions/</guid>
+      <description>These terms and conditions (&amp;ldquo;Terms&amp;rdquo;, &amp;ldquo;Agreement&amp;rdquo;) are an agreement between Website Operator (&amp;ldquo;Website Operator&amp;rdquo;, &amp;ldquo;us&amp;rdquo;, &amp;ldquo;we&amp;rdquo; or &amp;ldquo;our&amp;rdquo;) and you (&amp;ldquo;User&amp;rdquo;, &amp;ldquo;you&amp;rdquo; or &amp;ldquo;your&amp;rdquo;). This Agreement sets forth the general terms and conditions of your use of the deployo.me website and any of its products or services (collectively, &amp;ldquo;Website&amp;rdquo; or &amp;ldquo;Services&amp;rdquo;).
+Accounts and membership If you create an account on the Website, you are responsible for maintaining the security of your account and you are fully responsible for all activities that occur under the account and any other actions taken in connection with it.</description>
     </item>
     
     <item>

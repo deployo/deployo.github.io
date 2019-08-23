@@ -14,4 +14,4 @@ build:
 
 .PHONY: deploy
 deploy: build
-	firebase deploy
+	./node_modules/.bin/firebase deploy
